@@ -1,0 +1,4 @@
+- Monitor youtube channels and automatically download videos.
+- Download youtube videos
+- Transcode videos to encode audio to th video file
+- Create a NFO file alongside the video file.
