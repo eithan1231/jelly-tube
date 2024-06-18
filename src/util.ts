@@ -11,3 +11,5 @@ export const cleanFilename = (file: string) => {
 
 export const sleep = (ms: number): Promise<void> =>
   new Promise((resolve) => setTimeout(resolve, ms));
+
+export const unixTimestamp = () => Math.round(Date.now() / 1000);

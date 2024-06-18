@@ -1,4 +1,6 @@
 {
+  "routineInterval": 3600,
+
   "channels": [
     {
       "id": "UCXuqSBlHAE6Xw-yeJA0Tunw",

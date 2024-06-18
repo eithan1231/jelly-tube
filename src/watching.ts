@@ -4,6 +4,11 @@ import { readFile, writeFile } from "fs/promises";
 const WATCHING_FILENAME = "./config/watching.json" as const;
 
 export const WatchingSchema = z.object({
+  /**
+   * In seconds
+   */
+  routineInterval: z.number().default(60 * 60),
+
   channels: z.array(
     z.object({
       id: z.string(),

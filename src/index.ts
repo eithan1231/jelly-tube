@@ -1,15 +1,9 @@
-import z from "zod";
 import { downloadAudio, downloadVideo, getChannelVideos } from "./jelly-tube";
-import {
-  WatchingSchema,
-  WatchingSchemaType,
-  getWatchingConfig,
-  saveWatchingConfig,
-} from "./watching";
+import { getWatchingConfig, saveWatchingConfig } from "./watching";
 import { YTNodes } from "youtubei.js";
 import { mkdir, rename, rm, writeFile } from "fs/promises";
 import path from "path";
-import { cleanFilename, sleep } from "./util";
+import { cleanFilename, sleep, unixTimestamp } from "./util";
 import { processFfmpeg } from "./ffmpeg";
 import { createNfoMovie } from "./nfo";
 
@@ -117,6 +111,8 @@ export const handleDownload = async (
 };
 
 export const handleRemoval = async (id: string) => {
+  console.warn(`[handleRemoval] Removing ${id}`);
+
   const watching = await getWatchingConfig();
 
   const index = watching.downloads.findIndex(
@@ -135,6 +131,8 @@ export const handleRemoval = async (id: string) => {
   }
 
   await saveWatchingConfig();
+
+  console.warn(`[handleRemoval] Removed ${id}, ${removedDownloads[0]?.title}`);
 };
 
 export const applicationRoutine = async () => {
@@ -200,14 +198,21 @@ export const applicationRoutine = async () => {
       }
     }
   }
+
+  console.log(`[applicationRoutine] Finished`);
 };
 
 const main = async () => {
-  while (true) {
-    await applicationRoutine();
+  const watching = await getWatchingConfig();
 
-    // Sleep for an hour
-    await sleep(1000 * 60 * 60);
+  let unixLastRun = 0;
+
+  while (true) {
+    if (unixLastRun + watching.routineInterval < unixTimestamp()) {
+      await applicationRoutine();
+    }
+
+    await sleep(1000);
   }
 };
 
