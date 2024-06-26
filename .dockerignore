@@ -3,4 +3,5 @@ node_modules
 .gitignore
 *.md
 dist
-esp8266
+downloads/completed/*
+downloads/processing/*
