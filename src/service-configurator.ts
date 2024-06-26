@@ -3,7 +3,7 @@ import {
   ConfigChannelItemSchemaType,
   ConfigDownloadItemSchemaType,
   addChannel,
-  getChannel,
+  addDownload,
   getChannels,
   getDownloads,
   removeChannels,
@@ -11,6 +11,10 @@ import {
   updateDownloads,
 } from "./config";
 import { handleRemoval } from "./service-core";
+import { randomUUID } from "crypto";
+import { unixTimestamp } from "./util";
+import { getSearch, getVideo, getVideoBasicInfo } from "./youtube";
+import { YTNodes } from "youtubei.js";
 
 const buildDownloadsFilter = (
   query: any
@@ -19,6 +23,10 @@ const buildDownloadsFilter = (
 
   if (typeof query["uuid"] === "string") {
     filter.uuid = query["uuid"];
+  }
+
+  if (typeof query["videoId"] === "string") {
+    filter.videoId = query["videoId"];
   }
 
   if (typeof query["channelId"] === "string") {
@@ -67,6 +75,91 @@ export const handleConfiguratorRoutine = async () => {
     res.json({
       items: downloads,
     });
+  });
+
+  server.post("/downloads", async (req, res) => {
+    console.log(`[express] POST (/downloads)`);
+
+    const videoId = req.body["videoId"];
+
+    if (typeof videoId !== "string") {
+      res.json({
+        success: false,
+        errors: [{ message: "Bad input, video id not found." }],
+      });
+
+      return;
+    }
+
+    const downloads = await getDownloads(buildDownloadsFilter({ videoId }));
+
+    if (downloads.length >= 1) {
+      res.json({
+        success: false,
+        errors: [{ message: "Video ID already exists." }],
+      });
+
+      return;
+    }
+
+    const payload: ConfigDownloadItemSchemaType = {
+      uuid: randomUUID(),
+
+      videoId,
+      channelId: "",
+      title: "",
+
+      status: "queued",
+      log: "Queued for manual download",
+
+      automationEnabled: false,
+
+      date: unixTimestamp(),
+
+      folder: "N/A",
+
+      metadata: {},
+    };
+
+    const videoBasicInfo = await getVideoBasicInfo(videoId);
+
+    payload.channelId = videoBasicInfo.channel_id ?? "";
+    payload.title = videoBasicInfo.title ?? "";
+    payload.metadata.description = videoBasicInfo.short_description;
+    payload.metadata.duration = videoBasicInfo.duration;
+
+    if (videoBasicInfo.thumbnail && videoBasicInfo.thumbnail.length >= 1) {
+      payload.metadata.thumbnail = videoBasicInfo.thumbnail[0].url;
+    }
+
+    if (!payload.channelId) {
+      res.json({
+        success: false,
+        errors: [{ message: "Failed to fetch channel id." }],
+      });
+
+      return;
+    }
+
+    try {
+      await addDownload(payload);
+
+      res.json({
+        success: true,
+        items: downloads,
+      });
+    } catch (err) {
+      console.log(err);
+
+      res.json({
+        success: false,
+        errors: [
+          { message: (err as any)?.message ?? "Failed to create download" },
+        ],
+      });
+
+      return;
+    }
   });
 
   server.delete("/downloads", async (req, res) => {
@@ -211,6 +304,50 @@ export const handleConfiguratorRoutine = async () => {
       success: true,
       message: `Successfully removed channels`,
     });
+  });
+
+  server.get("/search", async (req, res) => {
+    console.log(`[express] GET (/search)`);
+
+    if (typeof req.query["q"] !== "string") {
+      res.json({
+        success: false,
+        errors: [
+          {
+            message: `Query string not found on body`,
+          },
+        ],
+      });
+
+      return;
+    }
+
+    const searchResults = await getSearch(req.query["q"]);
+
+    const transformedResults = searchResults.map((item) => {
+      if (item.is(YTNodes.Video)) {
+        return {
+          type: "video",
+          videoId: item.id,
+          title: item.title.text,
+          channelName: item.author.name,
+          views: item.view_count.text,
+          thumbnail: item.best_thumbnail?.url,
+        };
+      }
+
+      if (item.is(YTNodes.Channel)) {
+        return {
+          type: "channel",
+          channelId: item.id,
+          channelName: item.author.name,
+          subscribers: item.subscriber_count.text,
+          thumbnail: item.author.best_thumbnail?.url,
+        };
+      }
+    });
+
+    res.json({ items: transformedResults });
   });
 
   server.listen(port, () => {

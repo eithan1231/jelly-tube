@@ -1,3 +1,15 @@
+window.fetchSearch = async (search) => {
+  let url = "./search?";
+
+  if (search) {
+    url += `q=${search}&`;
+  }
+
+  const response = await fetch(url);
+
+  return response.json();
+};
+
 window.fetchDownloads = async (channelId = undefined) => {
   let url = "./downloads?";
 
@@ -34,6 +46,18 @@ window.patchDownloads = async (uuid, patch) => {
   const response = await fetch(url, {
     method: "PATCH",
     body: JSON.stringify(patch),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return response.json();
+};
+
+window.createDownloads = async (payload) => {
+  const response = await fetch("./downloads", {
+    method: "POST",
+    body: JSON.stringify(payload),
     headers: {
       "Content-Type": "application/json",
     },
@@ -153,9 +177,9 @@ window.loadDownloads = async () => {
 
     const channelNameElement = document.createElement("span");
     channelNameElement.className = "fw-medium";
-    channelNameElement.innerText = channels.items.find(
-      (channel) => channel.id === download.channelId
-    ).name;
+    channelNameElement.innerText =
+      channels.items.find((channel) => channel.id === download.channelId)
+        ?.name ?? "";
 
     const channelIdElement = document.createElement("small");
     channelIdElement.className = "text-muted";
@@ -272,4 +296,158 @@ window.loadChannels = async () => {
 
     tbodyElement.appendChild(row);
   }
+};
+
+window.populateSearchTableChannels = (channels) => {
+  const tableElement = document.getElementById("search-channels");
+  const theadElement = document.createElement("thead");
+  const tbodyElement = document.createElement("tbody");
+
+  tableElement.replaceChildren();
+  tableElement.appendChild(theadElement);
+  tableElement.appendChild(tbodyElement);
+
+  if (channels.length <= 0) {
+    return;
+  }
+
+  theadElement.replaceChildren(
+    createTableRow("th", ["", "Channel", "Meta", "Actions"])
+  );
+
+  for (const channel of channels) {
+    // Thumb TD Element
+    const thumbTdElement = document.createElement("td");
+    if (channel.thumbnail) {
+      const videoImageElement = document.createElement("img");
+      videoImageElement.style = "height: 5em";
+      videoImageElement.className = "border rounded rounded-3";
+      videoImageElement.src = channel.thumbnail;
+
+      thumbTdElement.appendChild(videoImageElement);
+    }
+
+    // Channel TD Element
+    const channelTdElement = document.createElement("td");
+    if (channel.channelName) {
+      const channelNameElement = document.createElement("span");
+      channelNameElement.className = "fw-medium";
+      channelNameElement.innerText = channel.channelName;
+
+      const channelIdElement = document.createElement("small");
+      channelIdElement.className = "text-muted";
+      channelIdElement.innerText = channel.channelId;
+
+      channelTdElement.appendChild(channelNameElement);
+      channelTdElement.appendChild(document.createElement("br"));
+      channelTdElement.appendChild(channelIdElement);
+    }
+
+    const buttonMonitoring = document.createElement("a");
+    buttonMonitoring.href = `add-channel.html?channelId=${channel.channelId}&channelName=${channel.channelName}`;
+    buttonMonitoring.className = "btn btn-primary btn-sm";
+    buttonMonitoring.textContent = "Add Channel";
+
+    const row = createTableRow("td", [
+      thumbTdElement,
+      channelTdElement,
+      channel.subscribers,
+      buttonMonitoring,
+    ]);
+
+    tbodyElement.appendChild(row);
+  }
+};
+
+window.populateSearchTableVideos = (videos) => {
+  const tableElement = document.getElementById("search-videos");
+  const theadElement = document.createElement("thead");
+  const tbodyElement = document.createElement("tbody");
+
+  tableElement.replaceChildren();
+  tableElement.appendChild(theadElement);
+  tableElement.appendChild(tbodyElement);
+
+  if (videos.length <= 0) {
+    return;
+  }
+
+  theadElement.replaceChildren(
+    createTableRow("th", ["", "Video", "Meta", "Actions"])
+  );
+
+  for (const video of videos) {
+    // Thumb TD Element
+    const thumbTdElement = document.createElement("td");
+    if (video.thumbnail) {
+      const videoIdLinkElement = document.createElement("a");
+      videoIdLinkElement.className = "text-muted";
+      videoIdLinkElement.href = `https://youtube.come/watch?v=${video.videoId}`;
+
+      const videoImageElement = document.createElement("img");
+      videoImageElement.style = "height: 5em";
+      videoImageElement.className = "border rounded rounded-3";
+      videoImageElement.src = video.thumbnail;
+
+      videoIdLinkElement.appendChild(videoImageElement);
+
+      thumbTdElement.appendChild(videoIdLinkElement);
+    }
+
+    // Channel TD Element
+    const videoTdElement = document.createElement("td");
+    if (video.channelName) {
+      const videoTitleElement = document.createElement("span");
+      videoTitleElement.className = "fw-medium";
+      videoTitleElement.innerText = video.title;
+
+      const videoChannelElement = document.createElement("small");
+      videoChannelElement.className = "text-muted";
+      videoChannelElement.innerText = video.channelName;
+
+      videoTdElement.appendChild(videoTitleElement);
+      videoTdElement.appendChild(document.createElement("br"));
+      videoTdElement.appendChild(videoChannelElement);
+    }
+
+    const buttonMonitoring = document.createElement("button");
+    buttonMonitoring.className = "btn btn-primary btn-sm";
+    buttonMonitoring.textContent = "Download Video";
+    buttonMonitoring.onclick = () => {
+      window
+        .createDownloads({
+          videoId: video.videoId,
+        })
+        .then((result) => {
+          if (!result.success) {
+            alert(result.errors.map((error) => error.message).join("\n"));
+          } else {
+            alert(result.message);
+          }
+
+          buttonMonitoring.disabled = true;
+        });
+    };
+
+    const row = createTableRow("td", [
+      thumbTdElement,
+      videoTdElement,
+      video.views,
+      buttonMonitoring,
+    ]);
+
+    tbodyElement.appendChild(row);
+  }
+};
+
+window.loadSearch = async (query) => {
+  const searchResults = await window.fetchSearch(query);
+
+  populateSearchTableChannels(
+    searchResults.items.filter((item) => item.type === "channel")
+  );
+
+  populateSearchTableVideos(
+    searchResults.items.filter((item) => item.type === "video")
+  );
 };

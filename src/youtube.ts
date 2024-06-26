@@ -103,6 +103,36 @@ export const getVideo = async (id: string) => {
   return null;
 };
 
+export const getVideoBasicInfo = async (id: string) => {
+  const client = await getClient();
+
+  const result = await client.getBasicInfo(id);
+
+  return result.basic_info;
+};
+
+export const getSearch = async (query: string) => {
+  const client = await getClient();
+
+  const searchChannelResults = await client.search(query);
+
+  const results: Array<YTNodes.Video | YTNodes.Channel> = [];
+
+  for (const video of searchChannelResults.videos) {
+    if (video.is(YTNodes.Video)) {
+      results.push(video);
+    }
+  }
+
+  for (const channel of searchChannelResults.channels) {
+    if (channel.is(YTNodes.Channel)) {
+      results.push(channel);
+    }
+  }
+
+  return results;
+};
+
 export const getChannelVideos = async (id: string) => {
   const client = await getClient();
 
