@@ -124,11 +124,56 @@ window.loadDownloads = async () => {
       await window.loadDownloads();
     };
 
+    const titleElement = document.createElement("td");
+    titleElement.className = "fw-medium";
+    titleElement.innerText = download.title;
+
+    const statusTdElement = document.createElement("td");
+
+    const statusElement = document.createElement("span");
+    statusElement.className = "fw-semibold border-bottom border-3 ";
+    statusElement.innerText = download.status;
+
+    switch (download.status) {
+      case "downloaded":
+      case "removed":
+        statusElement.className += "border-success";
+        break;
+
+      case "downloading":
+        statusElement.className += "border-primary";
+        break;
+
+      case "failed":
+        statusElement.className += "border-danger";
+        break;
+
+      case "queued":
+        statusElement.className += "border-secondary";
+        break;
+    }
+
+    const logElement = document.createElement("small");
+    logElement.className = "text-muted";
+    logElement.innerText = download.log;
+
+    statusTdElement.appendChild(statusElement);
+    statusTdElement.appendChild(document.createElement("br"));
+    statusTdElement.appendChild(logElement);
+
+    const videoIdElement = document.createElement("td");
+    videoIdElement.className = "fw-light";
+    videoIdElement.innerText = download.videoId;
+
+    const channelIdElement = document.createElement("td");
+    channelIdElement.className = "fw-light";
+    channelIdElement.innerText = download.channelId;
+
     const row = createTableRow("td", [
-      download.title,
-      download.status,
-      download.videoId,
-      download.channelId,
+      titleElement,
+      statusTdElement,
+      videoIdElement,
+      channelIdElement,
       [deleteButton, buttonAutomationEnabled],
     ]);
 
