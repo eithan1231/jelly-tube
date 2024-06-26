@@ -141,6 +141,23 @@ export const handleConfiguratorRoutine = async () => {
       return;
     }
 
+    const channels = await getChannels({
+      id: payload.channelId,
+    });
+
+    if (
+      channels.length === 0 &&
+      videoBasicInfo.channel?.id &&
+      videoBasicInfo.channel?.name
+    ) {
+      await addChannel({
+        downloadCount: 0,
+        maximumDuration: 30,
+        id: videoBasicInfo.channel.id,
+        name: videoBasicInfo.channel.name,
+      });
+    }
+
     try {
       await addDownload(payload);
 
@@ -193,7 +210,7 @@ export const handleConfiguratorRoutine = async () => {
   server.patch("/downloads", async (req, res) => {
     console.log(`[express] PATCH (/downloads)`);
 
-    const protectedKeys = ["status", "videoId", "channelId", "uuid"];
+    const protectedKeys = ["videoId", "channelId", "uuid"];
 
     for (const protectedKey of protectedKeys) {
       if (Object.keys(req.body).includes(protectedKey)) {
@@ -208,6 +225,19 @@ export const handleConfiguratorRoutine = async () => {
 
         return;
       }
+    }
+
+    if (req.body["status"] && req.body["status"] !== "queued") {
+      res.json({
+        success: false,
+        errors: [
+          {
+            message: `Cannot set status to any value besides "queued"`,
+          },
+        ],
+      });
+
+      return;
     }
 
     await updateDownloads(buildDownloadsFilter(req.query), req.body);

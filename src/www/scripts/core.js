@@ -117,120 +117,154 @@ window.loadDownloads = async () => {
   for (const download of downloads.items) {
     // Status TD Element
     const statusTdElement = document.createElement("td");
+    if (download.status) {
+      const statusElement = document.createElement("span");
+      statusElement.className = "fw-semibold border-bottom border-3 ";
+      statusElement.innerText = download.status;
 
-    const statusElement = document.createElement("span");
-    statusElement.className = "fw-semibold border-bottom border-3 ";
-    statusElement.innerText = download.status;
+      switch (download.status) {
+        case "downloaded":
+        case "removed":
+          statusElement.className += "border-success";
+          break;
 
-    switch (download.status) {
-      case "downloaded":
-      case "removed":
-        statusElement.className += "border-success";
-        break;
+        case "downloading":
+          statusElement.className += "border-primary";
+          break;
 
-      case "downloading":
-        statusElement.className += "border-primary";
-        break;
+        case "failed":
+          statusElement.className += "border-danger";
+          break;
 
-      case "failed":
-        statusElement.className += "border-danger";
-        break;
+        case "queued":
+          statusElement.className += "border-secondary";
+          break;
+      }
 
-      case "queued":
-        statusElement.className += "border-secondary";
-        break;
+      const logElement = document.createElement("small");
+      logElement.className = "text-muted";
+      logElement.innerText = download.log;
+
+      statusTdElement.appendChild(statusElement);
+      statusTdElement.appendChild(document.createElement("br"));
+      statusTdElement.appendChild(logElement);
     }
 
-    const logElement = document.createElement("small");
-    logElement.className = "text-muted";
-    logElement.innerText = download.log;
-
-    statusTdElement.appendChild(statusElement);
-    statusTdElement.appendChild(document.createElement("br"));
-    statusTdElement.appendChild(logElement);
-
+    // ThumbTD Element
     const thumbTdElement = document.createElement("td");
+    if (download.metadata.thumbnail) {
+      const videoImageElement = document.createElement("img");
+      videoImageElement.style = "height: 5em";
+      videoImageElement.className = "border rounded rounded-3";
+      videoImageElement.src = download.metadata.thumbnail;
 
-    const videoImageElement = document.createElement("img");
-    videoImageElement.style = "height: 5em";
-    videoImageElement.className = "border rounded rounded-3";
-    videoImageElement.src = download.metadata.thumbnail;
-
-    thumbTdElement.appendChild(videoImageElement);
+      thumbTdElement.appendChild(videoImageElement);
+    }
 
     // Video TD Element
     const tdVideoElement = document.createElement("td");
-    const videoTitleElement = document.createElement("span");
-    videoTitleElement.className = "fw-medium";
-    videoTitleElement.innerText = download.title;
+    if (download.title && download.videoId) {
+      const videoTitleElement = document.createElement("span");
+      videoTitleElement.className = "fw-medium";
+      videoTitleElement.innerText = download.title;
 
-    const videoIdElement = document.createElement("small");
-    videoIdElement.className = "text-muted";
-    videoIdElement.innerText = download.videoId;
+      const videoIdElement = document.createElement("small");
+      videoIdElement.className = "text-muted";
+      videoIdElement.innerText = download.videoId;
 
-    tdVideoElement.appendChild(videoTitleElement);
-    tdVideoElement.appendChild(document.createElement("br"));
-    tdVideoElement.appendChild(videoIdElement);
+      tdVideoElement.appendChild(videoTitleElement);
+      tdVideoElement.appendChild(document.createElement("br"));
+      tdVideoElement.appendChild(videoIdElement);
+    }
 
     // Channel TD Element
     const channelTdElement = document.createElement("td");
+    if (download.channelId) {
+      const channelNameElement = document.createElement("span");
+      channelNameElement.className = "fw-medium";
+      channelNameElement.innerText =
+        channels.items.find((channel) => channel.id === download.channelId)
+          ?.name ?? "";
 
-    const channelNameElement = document.createElement("span");
-    channelNameElement.className = "fw-medium";
-    channelNameElement.innerText =
-      channels.items.find((channel) => channel.id === download.channelId)
-        ?.name ?? "";
+      const channelIdElement = document.createElement("small");
+      channelIdElement.className = "text-muted";
+      channelIdElement.innerText = download.channelId;
 
-    const channelIdElement = document.createElement("small");
-    channelIdElement.className = "text-muted";
-    channelIdElement.innerText = download.channelId;
-
-    channelTdElement.appendChild(channelNameElement);
-    channelTdElement.appendChild(document.createElement("br"));
-    channelTdElement.appendChild(channelIdElement);
+      channelTdElement.appendChild(channelNameElement);
+      channelTdElement.appendChild(document.createElement("br"));
+      channelTdElement.appendChild(channelIdElement);
+    }
 
     // Actions
     const actionsTdElement = document.createElement("td");
-    const buttonGroup = document.createElement("div");
-    buttonGroup.className = "btn-group btn-group-sm";
+    if (download.uuid) {
+      const buttonGroup = document.createElement("div");
+      buttonGroup.className = "btn-group btn-group-sm";
 
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "btn btn-danger";
-    deleteButton.textContent = "Delete";
-    deleteButton.onclick = async () => {
-      const result = await window.deleteDownloads(download.uuid);
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "btn btn-danger";
+      deleteButton.textContent = "Delete";
+      deleteButton.onclick = async () => {
+        const result = await window.deleteDownloads(download.uuid);
 
-      console.log(result);
+        console.log(result);
 
-      if (!result.success) {
-        alert(result.errors.map((error) => error.message).join("\n"));
+        if (!result.success) {
+          alert(result.errors.map((error) => error.message).join("\n"));
+        }
+
+        await window.loadDownloads();
+      };
+
+      const requeueButton = document.createElement("button");
+      requeueButton.className = "btn btn-primary";
+      requeueButton.textContent = "Requeue";
+      requeueButton.onclick = async () => {
+        const result = await window.patchDownloads(download.uuid, {
+          status: "queued",
+          log: "Requeued for download",
+        });
+
+        console.log(result);
+
+        if (!result.success) {
+          alert(result.errors.map((error) => error.message).join("\n"));
+        }
+
+        await window.loadDownloads();
+      };
+
+      const buttonAutomationEnabled = document.createElement("button");
+      buttonAutomationEnabled.className = "btn btn-primary";
+      buttonAutomationEnabled.textContent = download.automationEnabled
+        ? "Disable Automation"
+        : "Enable Automation";
+      buttonAutomationEnabled.onclick = async () => {
+        const result = await window.patchDownloads(download.uuid, {
+          automationEnabled: !download.automationEnabled,
+        });
+
+        console.log(result);
+
+        if (!result.success) {
+          alert(result.errors.map((error) => error.message).join("\n"));
+        }
+
+        await window.loadDownloads();
+      };
+
+      if (["queued", "downloaded", "failed"].includes(download.status)) {
+        buttonGroup.appendChild(deleteButton);
       }
 
-      await window.loadDownloads();
-    };
-
-    const buttonAutomationEnabled = document.createElement("button");
-    buttonAutomationEnabled.className = "btn btn-primary";
-    buttonAutomationEnabled.textContent = download.automationEnabled
-      ? "Disable Automation"
-      : "Enable Automation";
-    buttonAutomationEnabled.onclick = async () => {
-      const result = await window.patchDownloads(download.uuid, {
-        automationEnabled: !download.automationEnabled,
-      });
-
-      console.log(result);
-
-      if (!result.success) {
-        alert(result.errors.map((error) => error.message).join("\n"));
+      if (["removed", "failed"].includes(download.status)) {
+        buttonGroup.appendChild(requeueButton);
       }
 
-      await window.loadDownloads();
-    };
+      buttonGroup.appendChild(buttonAutomationEnabled);
 
-    actionsTdElement.appendChild(buttonGroup);
-    buttonGroup.appendChild(deleteButton);
-    buttonGroup.appendChild(buttonAutomationEnabled);
+      actionsTdElement.appendChild(buttonGroup);
+    }
 
     const row = createTableRow("td", [
       statusTdElement,

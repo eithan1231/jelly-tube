@@ -231,6 +231,14 @@ const handleScrapeRoutine = async () => {
       `[handleScrapeRoutine] Processing channel ${channel.name} (${channel.id}), with a non-preserved download limit of ${channel.downloadCount}`
     );
 
+    if (channel.downloadCount <= 0 || channel.maximumDuration <= 0) {
+      console.log(
+        `[handleScrapeRoutine] Skipping channel ${channel.name} (${channel.id}), downloadCount or maximumDuration is 0 or lower`
+      );
+
+      continue;
+    }
+
     const channelVideos = await getChannelVideos(channel.id);
 
     const targetDownloadVideos = channelVideos.slice(0, channel.downloadCount);
