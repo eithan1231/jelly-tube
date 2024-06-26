@@ -1,41 +1,5 @@
 {
   "routineInterval": 3600,
-  "channels": [
-    {
-      "id": "UCXuqSBlHAE6Xw-yeJA0Tunw",
-      "name": "@LinusTechTips",
-      "downloadCount": 4,
-      "maximumDuration": 30
-    }
-  ],
-  "downloads": [
-    {
-      "preserve": false,
-      "videoId": "v3JULO-C70U",
-      "title": "5 Mods Nintendo wishes were Illegal",
-      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
-      "folder": "/home/eithan/projects/jelly-tube/downloads/completed/5 Mods Nintendo wishes were Illegal"
-    },
-    {
-      "preserve": false,
-      "videoId": "P6rH5b479qw",
-      "title": "Tech Experts React to Bad & Great Tech in Movies",
-      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
-      "folder": "/home/eithan/projects/jelly-tube/downloads/completed/Tech Experts React to Bad  Great Tech in Movies"
-    },
-    {
-      "preserve": false,
-      "videoId": "esQLFQugzmI",
-      "title": "Reacting to More Janky Game Controllers",
-      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
-      "folder": "/home/eithan/projects/jelly-tube/downloads/completed/Reacting to More Janky Game Controllers"
-    },
-    {
-      "videoId": "xKT6WiI6H7E",
-      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
-      "title": "The Ultimate Gamer Camper Van",
-      "preserve": false,
-      "folder": "/home/eithan/projects/jelly-tube/downloads/completed/The Ultimate Gamer Camper Van"
-    }
-  ]
+  "channels": [],
+  "downloads": []
 }

@@ -1,9 +1,10 @@
 import { handleCoreRoutine } from "./service-core";
 import { sleep, unixTimestamp } from "./util";
 import { getConfig } from "./config";
+import { handleConfiguratorRoutine } from "./service-configurator";
 
 const runnerConfiguratorRoutine = async () => {
-  //
+  await handleConfiguratorRoutine();
 };
 
 const runnerCoreRoutine = async () => {
@@ -14,9 +15,10 @@ const runnerCoreRoutine = async () => {
   while (true) {
     if (unixLastRun + watching.routineInterval < unixTimestamp()) {
       await handleCoreRoutine();
+
+      unixLastRun = unixTimestamp();
     }
 
-    unixLastRun = unixTimestamp();
     await sleep(1000);
   }
 };

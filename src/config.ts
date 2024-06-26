@@ -1,11 +1,12 @@
 import z from "zod";
 import { readFile, writeFile } from "fs/promises";
+import { randomUUID } from "crypto";
 
 const CONFIG_FILENAME = "./config/watching.json" as const;
 
 const ConfigChannelItemSchema = z.object({
-  id: z.string(),
-  name: z.string(),
+  id: z.string().min(1),
+  name: z.string().min(1),
   downloadCount: z.number(),
   maximumDuration: z.number(),
 });
@@ -15,7 +16,9 @@ export type ConfigChannelItemSchemaType = z.infer<
 >;
 
 const ConfigDownloadItemSchema = z.object({
-  status: z.enum(["downloading", "downloaded", "removed"]),
+  uuid: z.string(),
+
+  status: z.enum(["queued", "downloading", "failed", "downloaded", "removed"]),
   log: z.string(),
 
   automationEnabled: z.boolean(),
@@ -27,6 +30,12 @@ const ConfigDownloadItemSchema = z.object({
   folder: z.string(),
 
   date: z.number(),
+
+  metadata: z.object({
+    thumbnail: z.string().optional(),
+    description: z.string().optional(),
+    duration: z.number().optional(),
+  }),
 });
 
 export type ConfigDownloadItemSchemaType = z.infer<
@@ -60,7 +69,7 @@ export const getConfig = async (): Promise<z.infer<typeof ConfigSchema>> => {
   return configInstance;
 };
 
-export const saveWatchingConfig = async (): Promise<void> => {
+export const saveConfig = async (): Promise<void> => {
   const config = await getConfig();
 
   // Validating config before we write it
@@ -72,21 +81,59 @@ export const saveWatchingConfig = async (): Promise<void> => {
 export const addDownload = async (item: ConfigDownloadItemSchemaType) => {
   const config = await getConfig();
 
-  config.downloads.push(item);
+  const download = await ConfigDownloadItemSchema.parseAsync(item);
 
-  await saveWatchingConfig();
+  config.downloads.push(download);
+
+  await saveConfig();
 };
 
-export const removeDownload = async (
+export const removeDownloads = async (
   filter: Partial<ConfigDownloadItemSchemaType>
 ) => {
   const config = await getConfig();
 
-  for (const downloadIndex in config.downloads) {
+  config.downloads = config.downloads.filter((download) => {
+    const filterKeys = Object.keys(filter) as Array<
+      keyof ConfigDownloadItemSchemaType
+    >;
+
+    for (const filterKey of filterKeys) {
+      if (filter[filterKey] !== download[filterKey]) {
+        return true;
+      }
+    }
+
+    return false;
+  });
+};
+
+export const updateDownloads = async (
+  filter: Partial<ConfigDownloadItemSchemaType>,
+  update: Partial<ConfigDownloadItemSchemaType>
+) => {
+  const downloads = await getDownloads(filter);
+
+  for (const download of downloads) {
+    const updateKeys = Object.keys(update) as Array<
+      keyof ConfigDownloadItemSchemaType
+    >;
+
+    for (const updateKey of updateKeys) {
+      (download as any)[updateKey] = update[updateKey];
+    }
+  }
+
+  await saveConfig();
+};
+
+export const getDownloads = async (
+  filter: Partial<ConfigDownloadItemSchemaType> = {}
+) => {
+  const config = await getConfig();
+
+  return config.downloads.filter((download) => {
     let match = true;
-
-    const download = config.downloads[downloadIndex];
-
     const filterKeys = Object.keys(filter) as Array<
       keyof ConfigDownloadItemSchemaType
     >;
@@ -99,45 +146,104 @@ export const removeDownload = async (
       }
     }
 
-    if (match) {
-      // Indexes will change, fixme. Will only work with SIGNULAR at the moment.
-      config.downloads.splice(downloadIndex, 1);
-    }
-  }
+    return match;
+  });
 };
 
-export const updateDownload = async () => {
-  //
-};
-
-export const getDownload = async () => {
-  //
-};
-
-export const getDownloads = async (
+export const getDownload = async (
   filter: Partial<ConfigDownloadItemSchemaType>
 ) => {
-  //
+  const downloads = await getDownloads(filter);
+
+  if (downloads.length >= 1) {
+    return downloads[0];
+  }
+
+  return null;
 };
 
-export const addChannel = async () => {
-  //
+export const addChannel = async (item: ConfigChannelItemSchemaType) => {
+  const config = await getConfig();
+
+  const channel = await ConfigChannelItemSchema.parseAsync(item);
+
+  config.channels.push(channel);
+
+  await saveConfig();
 };
 
-export const removeChannel = async () => {
-  //
+export const removeChannels = async (
+  filter: Partial<ConfigChannelItemSchemaType>
+) => {
+  const config = await getConfig();
+
+  config.channels = config.channels.filter((channel) => {
+    const filterKeys = Object.keys(filter) as Array<
+      keyof ConfigChannelItemSchemaType
+    >;
+
+    for (const filterKey of filterKeys) {
+      if (filter[filterKey] !== channel[filterKey]) {
+        return true;
+      }
+    }
+
+    return false;
+  });
+
+  await saveConfig();
 };
 
-export const updateChannel = async () => {
-  //
-};
+export const updateChannels = async (
+  filter: Partial<ConfigChannelItemSchemaType>,
+  update: Partial<ConfigChannelItemSchemaType>
+) => {
+  const channels = await getChannels(filter);
 
-export const getChannel = async () => {
-  //
+  for (const channel of channels) {
+    const updateKeys = Object.keys(update) as Array<
+      keyof ConfigChannelItemSchemaType
+    >;
+
+    for (const updateKey of updateKeys) {
+      (channel as any)[updateKey] = update[updateKey];
+    }
+  }
+
+  await saveConfig();
 };
 
 export const getChannels = async (
-  filter: Partial<ConfigChannelItemSchemaType>
+  filter: Partial<ConfigChannelItemSchemaType> = {}
 ) => {
-  //
+  const config = await getConfig();
+
+  return config.channels.filter((download) => {
+    let match = true;
+    const filterKeys = Object.keys(filter) as Array<
+      keyof ConfigChannelItemSchemaType
+    >;
+
+    for (const filterKey of filterKeys) {
+      if (filter[filterKey] !== download[filterKey]) {
+        match = false;
+
+        break;
+      }
+    }
+
+    return match;
+  });
+};
+
+export const getChannel = async (
+  filter: Partial<ConfigChannelItemSchemaType> = {}
+) => {
+  const channels = await getChannels(filter);
+
+  if (channels.length >= 1) {
+    return channels[0];
+  }
+
+  return null;
 };

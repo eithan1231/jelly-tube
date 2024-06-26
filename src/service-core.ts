@@ -1,173 +1,248 @@
 import { downloadAudio, downloadVideo, getChannelVideos } from "./youtube";
-import { getConfig, saveWatchingConfig } from "./config";
-import { YTNodes } from "youtubei.js";
-import { access, lstat, mkdir, rename, rm, stat, writeFile } from "fs/promises";
+import {
+  addDownload,
+  getChannels,
+  getDownload,
+  getDownloads,
+  updateDownloads,
+} from "./config";
+import { mkdir, rename, rm, writeFile } from "fs/promises";
 import path from "path";
 import { cleanFilename, unixTimestamp } from "./util";
 import { processFfmpeg } from "./ffmpeg";
 import { createNfoMovie } from "./nfo";
+import { randomUUID } from "crypto";
 
-export const handleDownload = async (
-  video: YTNodes.Video,
-  preserve: boolean = false
-) => {
-  console.log(`[handleDownload] ${video.id} Title: "${video.title}"`);
+export type ServiceCoreGenericResult = {
+  errors: Array<{
+    message: string;
+  }>;
+};
 
-  if (video.duration.seconds / 60 > 30) {
+export const handleDownload = async (uuid: string) => {
+  console.log(`[handleDownload] ${uuid}`);
+
+  const download = await getDownload({ uuid });
+
+  if (!download) {
+    console.log(`[handleDownload] ${uuid} cannot find uuid`);
+
+    return;
+  }
+
+  console.log(
+    `[handleDownload] ${uuid}, meta ${download.videoId} Title: "${download.title}"`
+  );
+
+  await updateDownloads(
+    { uuid },
+    {
+      log: "Downloading Video and Audio",
+      status: "downloading",
+    }
+  );
+
+  try {
+    const [resultVideo, resultAudio] = await Promise.all([
+      await downloadVideo(download.videoId),
+      await downloadAudio(download.videoId),
+    ]);
+
+    if (download.metadata.duration && download.metadata.duration / 60 > 30) {
+      console.log(
+        `[handleDownload] ${download.videoId} Unable to download, exceeds maximum duration`
+      );
+
+      await updateDownloads(
+        { uuid },
+        {
+          status: "failed",
+          log: "Exceeds maximum video duration",
+        }
+      );
+
+      return;
+    }
+
     console.log(
-      `[handleDownload] ${video.id} Unable to download, exceeds maximum duration`
+      `[handleDownload] ${download.videoId} Downloaded audio and video`
     );
 
-    return;
+    await updateDownloads(
+      { uuid },
+      {
+        channelId: resultAudio.video.basic_info.channel_id ?? "N/A",
+        log: "Processing Video and Audio",
+      }
+    );
+
+    const filename = cleanFilename(download.title);
+    const filenameNfo = `movie.nfo`;
+
+    const processingFolder = path.join("./downloads/processing", filename);
+    const destinationFolder = path.join("./downloads/completed", filename);
+
+    await mkdir(processingFolder, { recursive: true });
+
+    const processingVideoOutputFile = path.join(
+      processingFolder,
+      `${filename}.mp4`
+    );
+    const processingVideoOriginalFile = path.join(
+      processingFolder,
+      `${filename}.original.mp4`
+    );
+    const processingAudioOriginalFile = path.join(
+      processingFolder,
+      `${filename}.original.webm`
+    );
+    const processingVideoNfo = path.join(processingFolder, filenameNfo);
+
+    await rename(resultVideo.filename, processingVideoOriginalFile);
+    await rename(resultAudio.filename, processingAudioOriginalFile);
+    await writeFile(
+      processingVideoNfo,
+      createNfoMovie({
+        uniqueId: {
+          type: "youtube",
+          value: download.videoId,
+        },
+        title: download.title,
+        plot: download.metadata.description,
+        studio: resultAudio.video.basic_info.channel?.name,
+        thumbs: [download.metadata.thumbnail ?? ""],
+      })
+    );
+
+    console.log(
+      `[handleDownload] ${download.videoId} Copied source and NFO files to processing directory`
+    );
+
+    await processFfmpeg(
+      download.videoId,
+      path.join(process.cwd(), processingVideoOriginalFile),
+      path.join(process.cwd(), processingAudioOriginalFile),
+      path.join(process.cwd(), processingVideoOutputFile)
+    );
+
+    await updateDownloads(
+      { uuid },
+      { log: "Copying to destination directory" }
+    );
+
+    console.log(`[handleDownload] ${download.videoId} ffmpeg processed`);
+
+    const destinationVideoFile = path.join(
+      destinationFolder,
+      `${filename}.mp4`
+    );
+    const destinationVideoNfo = path.join(destinationFolder, filenameNfo);
+
+    await mkdir(destinationFolder, { recursive: true });
+    await rename(processingVideoOutputFile, destinationVideoFile);
+    await rename(processingVideoNfo, destinationVideoNfo);
+
+    console.log(
+      `[handleDownload] ${download.videoId} Copied to destination/completed folder`
+    );
+
+    await rm(processingFolder, { recursive: true });
+
+    console.log(
+      `[handleDownload] ${download.videoId} Removed processing folder.`
+    );
+
+    await updateDownloads(
+      { uuid },
+      {
+        log: "Complete",
+        status: "downloaded",
+        folder: destinationFolder,
+      }
+    );
+
+    console.log(
+      `[handleDownload] ${download.videoId} Updated watching record to include downloaded movie.`
+    );
+  } catch (err) {
+    await updateDownloads(
+      { uuid },
+      {
+        log: "Download Failed",
+        status: "failed",
+      }
+    );
+
+    throw err;
   }
+};
 
-  const [resultVideo, resultAudio] = await Promise.all([
-    await downloadVideo(video.id),
-    await downloadAudio(video.id),
-  ]);
+export const handleRemoval = async (
+  uuid: string
+): Promise<ServiceCoreGenericResult> => {
+  console.warn(`[handleRemoval] Removing ${uuid}...`);
 
-  console.log(`[handleDownload] ${video.id} Downloaded audio and video`);
+  const result: ServiceCoreGenericResult = { errors: [] };
 
-  const filename = cleanFilename(video.title.text ?? video.id);
-  const filenameNfo = `movie.nfo`;
-
-  const processingFolder = path.join(
-    process.cwd(),
-    "./downloads/processing",
-    filename
-  );
-  const destinationFolder = path.join(
-    process.cwd(),
-    "./downloads/completed",
-    filename
-  );
-
-  await mkdir(processingFolder, { recursive: true });
-
-  const processingVideoOutputFile = path.join(
-    processingFolder,
-    `${filename}.mp4`
-  );
-  const processingVideoOriginalFile = path.join(
-    processingFolder,
-    `${filename}.original.mp4`
-  );
-  const processingAudioOriginalFile = path.join(
-    processingFolder,
-    `${filename}.original.webm`
-  );
-  const processingVideoNfo = path.join(processingFolder, filenameNfo);
-
-  await rename(resultVideo.filename, processingVideoOriginalFile);
-  await rename(resultAudio.filename, processingAudioOriginalFile);
-  await writeFile(
-    processingVideoNfo,
-    createNfoMovie({
-      uniqueId: {
-        type: "youtube",
-        value: video.id,
-      },
-      title: video.title.text ?? video.id,
-      plot: video.description,
-      studio: resultAudio.video.basic_info.channel?.name,
-      thumbs: [video.best_thumbnail?.url ?? ""],
-    })
-  );
-
-  console.log(
-    `[handleDownload] ${video.id} Copied source and NFO files to processing directory`
-  );
-
-  await processFfmpeg(
-    video.id,
-    processingVideoOriginalFile,
-    processingAudioOriginalFile,
-    processingVideoOutputFile
-  );
-
-  console.log(`[handleDownload] ${video.id} ffmpeg processed`);
-
-  const destinationVideoFile = path.join(destinationFolder, `${filename}.mp4`);
-  const destinationVideoNfo = path.join(destinationFolder, filenameNfo);
-
-  await mkdir(destinationFolder, { recursive: true });
-  await rename(processingVideoOutputFile, destinationVideoFile);
-  await rename(processingVideoNfo, destinationVideoNfo);
-
-  console.log(
-    `[handleDownload] ${video.id} Copied to destination/completed folder`
-  );
-
-  await rm(processingFolder, { recursive: true });
-
-  console.log(`[handleDownload] ${video.id} Removed processing folder.`);
-
-  const watching = await getConfig();
-
-  watching.downloads.push({
-    videoId: video.id,
-    channelId:
-      resultAudio.video.basic_info.channel?.id ?? `error getting channel name`,
-    title: video.title.text ?? video.id,
-    preserve: preserve,
-    folder: destinationFolder,
-    // date: unixTimestamp(),
+  const downloads = await getDownloads({
+    uuid,
   });
 
-  await saveWatchingConfig();
+  for (const download of downloads) {
+    if (download.status === "downloading") {
+      result.errors.push({
+        message: "Cannot remove video that is mid-download",
+      });
 
-  console.log(
-    `[handleDownload] ${video.id} Updated watching record to include downloaded movie.`
-  );
-};
+      console.warn(
+        `[handleRemoval] Cannot remove downloading video ${download.videoId} ${download.title}`
+      );
 
-export const handleRemoval = async (id: string) => {
-  console.warn(`[handleRemoval] Removing ${id}...`);
+      continue;
+    }
 
-  const watching = await getConfig();
+    if (download.status === "downloaded") {
+      await rm(download.folder, { recursive: true });
+    }
 
-  const index = watching.downloads.findIndex(
-    (download) => download.videoId === id
-  );
+    await updateDownloads(
+      { uuid: download.uuid },
+      {
+        status: "removed",
+        log: "Removed",
+        folder: "",
+      }
+    );
 
-  if (index === -1) {
-    console.warn("[handleRemoval] returned -1 for download.");
-    return;
+    console.warn(
+      `[handleRemoval] Removed ${download.videoId} ${download.title}`
+    );
   }
 
-  const removedDownloads = watching.downloads.splice(index, 1);
-
-  for (const download of removedDownloads) {
-    await rm(download.folder, { recursive: true });
-  }
-
-  await saveWatchingConfig();
-
-  console.warn(`[handleRemoval] Removed ${id}, ${removedDownloads[0]?.title}`);
+  return result;
 };
 
-export const handleCoreRoutine = async () => {
-  console.log(`[handleCoreRoutine] Initiated`);
+const handleScrapeRoutine = async () => {
+  console.log(`[handleScrapeRoutine] Initiated`);
 
-  const watching = await getConfig();
-
-  for (const channel of watching.channels) {
+  const channels = await getChannels();
+  for (const channel of channels) {
     console.log(
-      `[handleCoreRoutine] Processing channel ${channel.name} (${channel.id}), with a non-preserved download limit of ${channel.downloadCount}`
+      `[handleScrapeRoutine] Processing channel ${channel.name} (${channel.id}), with a non-preserved download limit of ${channel.downloadCount}`
     );
 
     const channelVideos = await getChannelVideos(channel.id);
 
     const targetDownloadVideos = channelVideos.slice(0, channel.downloadCount);
 
-    const channelDownloads = watching.downloads.filter(
-      (value) => value.channelId === channel.id
-    );
+    const channelDownloads = await getDownloads({
+      channelId: channel.id,
+    });
 
     for (const download of channelDownloads) {
-      if (download.preserve) {
+      if (!download.automationEnabled) {
         console.log(
-          `[handleCoreRoutine] Video already downloaded with preservation flag. Will not touch, modify or delete. ${download.videoId}`
+          `[handleScrapeRoutine] Video already downloaded with automation disabled. Will not touch, modify or delete. ${download.videoId}`
         );
 
         continue;
@@ -177,28 +252,61 @@ export const handleCoreRoutine = async () => {
         !targetDownloadVideos.find((video) => video.id === download.videoId)
       ) {
         console.log(
-          `[handleCoreRoutine] Downloaded video flagged for removal ${download.videoId}`
+          `[handleScrapeRoutine] Downloaded video flagged for removal ${download.videoId}`
         );
 
-        await handleRemoval(download.videoId);
+        await handleRemoval(download.uuid);
       }
     }
 
     for (const video of targetDownloadVideos) {
-      const download = watching.downloads.find(
-        (download) => download.videoId === video.id
-      );
+      const download = await getDownload({
+        videoId: video.id,
+      });
 
       if (download) {
-        console.log(`[handleCoreRoutine] Already downloaded ${video.id}`);
+        console.log(`[handleScrapeRoutine] Already downloaded ${video.id}`);
         continue;
       }
 
+      await addDownload({
+        automationEnabled: true,
+        videoId: video.id,
+        channelId: channel.id,
+        title: video.title.text ?? video.id,
+        date: unixTimestamp(),
+        folder: "N/A",
+        log: "Queued for download",
+        status: "queued",
+        uuid: randomUUID(),
+        metadata: {
+          description: video.description,
+          thumbnail: video.best_thumbnail?.url,
+          duration: video.duration.seconds,
+        },
+      });
+    }
+  }
+};
+
+const handleQueueDownloadRoutine = async () => {
+  console.log(`[handleQueueDownloadRoutine] Started`);
+
+  const downloadsQueued = await getDownloads({
+    status: "queued",
+  });
+
+  console.log(
+    `[handleQueueDownloadRoutine] ${downloadsQueued.length} items in download queue`
+  );
+
+  for (const download of downloadsQueued) {
+    if (download.status === "queued") {
       try {
-        await handleDownload(video, false);
+        await handleDownload(download.uuid);
       } catch (err) {
         console.log(
-          `[handleCoreRoutine] Failed to download video ${video.title.text} (${video.id})`
+          `[handleQueueDownloadRoutine] Failed to download video ${download.title} (${download.videoId})`
         );
 
         if (err instanceof Error) {
@@ -209,6 +317,10 @@ export const handleCoreRoutine = async () => {
       }
     }
   }
+};
 
+export const handleCoreRoutine = async () => {
+  await handleScrapeRoutine();
+  await handleQueueDownloadRoutine();
   console.log(`[handleCoreRoutine] Finished`);
 };
