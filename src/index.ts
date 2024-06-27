@@ -1,31 +1,49 @@
-import { handleCoreRoutine } from "./service-core";
+import {
+  routineChannelsCrawl,
+  routineDownloadQueue,
+  routineDownloadThumbnailRefresh,
+} from "./service-core";
 import { sleep, unixTimestamp } from "./util";
-import { getConfig } from "./config";
-import { handleConfiguratorRoutine } from "./service-configurator";
-
-const runnerConfiguratorRoutine = async () => {
-  await handleConfiguratorRoutine();
-};
-
-const runnerCoreRoutine = async () => {
-  const watching = await getConfig();
-
-  let unixLastRun = 0;
-
-  while (true) {
-    if (unixLastRun + watching.routineInterval < unixTimestamp()) {
-      await handleCoreRoutine();
-
-      unixLastRun = unixTimestamp();
-    }
-
-    await sleep(1000);
-  }
-};
+import { setupConfigurator } from "./service-configurator";
 
 const main = async () => {
-  runnerConfiguratorRoutine();
-  runnerCoreRoutine();
+  await setupConfigurator();
+
+  const intervalDownloadThumbnailRefresh = 60 * 60 * 4;
+  const intervalChannelsCrawl = 60 * 60;
+  const intervalDownloadQueue = 30;
+
+  let lastDownloadThumbnailRefresh = 0;
+  let lastChannelsCrawl = 0;
+  let lastDownloadQueue = 0;
+
+  while (true) {
+    // Refresh Downloads
+    if (
+      lastDownloadThumbnailRefresh + intervalDownloadThumbnailRefresh <
+      unixTimestamp()
+    ) {
+      await routineDownloadThumbnailRefresh();
+
+      lastDownloadThumbnailRefresh = unixTimestamp();
+    }
+
+    // Crawl Channels
+    if (lastChannelsCrawl + intervalChannelsCrawl < unixTimestamp()) {
+      await routineChannelsCrawl();
+
+      lastChannelsCrawl = unixTimestamp();
+    }
+
+    // Handle download queue
+    if (lastDownloadQueue + intervalDownloadQueue < unixTimestamp()) {
+      await routineDownloadQueue();
+
+      lastDownloadQueue = unixTimestamp();
+    }
+
+    await sleep(5000);
+  }
 };
 
 main();

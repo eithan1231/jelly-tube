@@ -43,11 +43,6 @@ export type ConfigDownloadItemSchemaType = z.infer<
 >;
 
 export const ConfigSchema = z.object({
-  /**
-   * In seconds
-   */
-  routineInterval: z.number().default(60 * 60),
-
   channels: z.array(ConfigChannelItemSchema),
 
   downloads: z.array(ConfigDownloadItemSchema),

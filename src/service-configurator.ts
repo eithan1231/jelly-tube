@@ -60,7 +60,7 @@ const buildChannelsFilter = (
   return filter;
 };
 
-export const handleConfiguratorRoutine = async () => {
+export const setupConfigurator = async () => {
   const port = 3000;
   const server = express();
 

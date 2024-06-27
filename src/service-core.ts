@@ -1,6 +1,13 @@
-import { downloadAudio, downloadVideo, getChannelVideos } from "./youtube";
 import {
+  downloadAudio,
+  downloadVideo,
+  getChannelVideos,
+  getVideoBasicInfo,
+} from "./youtube";
+import {
+  ConfigDownloadItemSchemaType,
   addDownload,
+  getChannel,
   getChannels,
   getDownload,
   getDownloads,
@@ -43,12 +50,17 @@ export const handleDownload = async (uuid: string) => {
   );
 
   try {
-    const [resultVideo, resultAudio] = await Promise.all([
+    const [channel, resultVideo, resultAudio] = await Promise.all([
+      await getChannel({ id: download.channelId }),
       await downloadVideo(download.videoId),
       await downloadAudio(download.videoId),
     ]);
 
-    if (download.metadata.duration && download.metadata.duration / 60 > 30) {
+    if (
+      channel &&
+      download.metadata.duration &&
+      download.metadata.duration / 60 > channel.maximumDuration
+    ) {
       console.log(
         `[handleDownload] ${download.videoId} Unable to download, exceeds maximum duration`
       );
@@ -165,15 +177,23 @@ export const handleDownload = async (uuid: string) => {
       `[handleDownload] ${download.videoId} Updated watching record to include downloaded movie.`
     );
   } catch (err) {
+    let message = "Download Failed";
+
+    if (err instanceof Error) {
+      if (err.name === "InnertubeError") {
+        message = `Innertube Error, ${err.message.substring(0, 64)}`;
+      }
+    }
+
     await updateDownloads(
       { uuid },
       {
-        log: "Download Failed",
+        log: message,
         status: "failed",
       }
     );
 
-    throw err;
+    console.error(err);
   }
 };
 
@@ -222,18 +242,18 @@ export const handleRemoval = async (
   return result;
 };
 
-const handleScrapeRoutine = async () => {
-  console.log(`[handleScrapeRoutine] Initiated`);
+export const routineChannelsCrawl = async () => {
+  console.log(`[routineChannelsCrawl] Initiated`);
 
   const channels = await getChannels();
   for (const channel of channels) {
     console.log(
-      `[handleScrapeRoutine] Processing channel ${channel.name} (${channel.id}), with a non-preserved download limit of ${channel.downloadCount}`
+      `[routineChannelsCrawl] Processing channel ${channel.name} (${channel.id}), with a non-preserved download limit of ${channel.downloadCount}`
     );
 
     if (channel.downloadCount <= 0 || channel.maximumDuration <= 0) {
       console.log(
-        `[handleScrapeRoutine] Skipping channel ${channel.name} (${channel.id}), downloadCount or maximumDuration is 0 or lower`
+        `[routineChannelsCrawl] Skipping channel ${channel.name} (${channel.id}), downloadCount or maximumDuration is 0 or lower`
       );
 
       continue;
@@ -250,7 +270,7 @@ const handleScrapeRoutine = async () => {
     for (const download of channelDownloads) {
       if (!download.automationEnabled) {
         console.log(
-          `[handleScrapeRoutine] Video already downloaded with automation disabled. Will not touch, modify or delete. ${download.videoId}`
+          `[routineChannelsCrawl] Video already downloaded with automation disabled. Will not touch, modify or delete. ${download.videoId}`
         );
 
         continue;
@@ -260,7 +280,7 @@ const handleScrapeRoutine = async () => {
         !targetDownloadVideos.find((video) => video.id === download.videoId)
       ) {
         console.log(
-          `[handleScrapeRoutine] Downloaded video flagged for removal ${download.videoId}`
+          `[routineChannelsCrawl] Downloaded video flagged for removal ${download.videoId}`
         );
 
         await handleRemoval(download.uuid);
@@ -273,11 +293,11 @@ const handleScrapeRoutine = async () => {
       });
 
       if (download) {
-        console.log(`[handleScrapeRoutine] Already downloaded ${video.id}`);
+        console.log(`[routineChannelsCrawl] Already downloaded ${video.id}`);
         continue;
       }
 
-      await addDownload({
+      const downloadItem: ConfigDownloadItemSchemaType = {
         automationEnabled: true,
         videoId: video.id,
         channelId: channel.id,
@@ -292,20 +312,34 @@ const handleScrapeRoutine = async () => {
           thumbnail: video.best_thumbnail?.url,
           duration: video.duration.seconds,
         },
-      });
+      };
+
+      if (video.is_live) {
+        downloadItem.status = "failed";
+        downloadItem.log = "Video is Live";
+      }
+
+      if (video.upcoming) {
+        downloadItem.status = "failed";
+        downloadItem.log = `Video is upcoming ${video.upcoming.toISOString()}`;
+      }
+
+      await addDownload(downloadItem);
     }
   }
+
+  console.log(`[routineChannelsCrawl] Finished`);
 };
 
-const handleQueueDownloadRoutine = async () => {
-  console.log(`[handleQueueDownloadRoutine] Started`);
+export const routineDownloadQueue = async () => {
+  console.log(`[routineDownloadQueue] Started`);
 
   const downloadsQueued = await getDownloads({
     status: "queued",
   });
 
   console.log(
-    `[handleQueueDownloadRoutine] ${downloadsQueued.length} items in download queue`
+    `[routineDownloadQueue] ${downloadsQueued.length} items in download queue`
   );
 
   for (const download of downloadsQueued) {
@@ -314,7 +348,7 @@ const handleQueueDownloadRoutine = async () => {
         await handleDownload(download.uuid);
       } catch (err) {
         console.log(
-          `[handleQueueDownloadRoutine] Failed to download video ${download.title} (${download.videoId})`
+          `[routineDownloadQueue] Failed to download video ${download.title} (${download.videoId})`
         );
 
         if (err instanceof Error) {
@@ -325,10 +359,60 @@ const handleQueueDownloadRoutine = async () => {
       }
     }
   }
+
+  console.log(`[routineDownloadQueue] Finished`);
 };
 
-export const handleCoreRoutine = async () => {
-  await handleScrapeRoutine();
-  await handleQueueDownloadRoutine();
-  console.log(`[handleCoreRoutine] Finished`);
+export const routineDownloadThumbnailRefresh = async () => {
+  console.log(`[routineDownloadThumbnailRefresh] Started`);
+
+  const downloads = await getDownloads();
+
+  for (const download of downloads) {
+    if (!download.metadata.thumbnail) {
+      continue;
+    }
+
+    const response = await fetch(download.metadata.thumbnail);
+    if (response.status !== 404) {
+      continue;
+    }
+
+    console.log(
+      `[routineDownloadThumbnailRefresh] Thumbnail ${download.videoId} is invalid`
+    );
+
+    const videoInfo = await getVideoBasicInfo(download.videoId);
+
+    if (!videoInfo.thumbnail || videoInfo.thumbnail.length <= 0) {
+      continue;
+    }
+
+    const thumbnail = videoInfo.thumbnail[0].url;
+
+    console.log(
+      `[routineDownloadThumbnailRefresh] Thumbnail ${
+        download.videoId
+      } Updating... ${download.metadata.thumbnail.substring(
+        0,
+        64
+      )}... to ${thumbnail.substring(0, 64)}...`
+    );
+
+    await updateDownloads(
+      { uuid: download.uuid },
+      {
+        metadata: {
+          ...download.metadata,
+          thumbnail,
+        },
+      }
+    );
+
+    console.log(
+      `[routineDownloadThumbnailRefresh] Thumbnail ${download.videoId} updated successfully`
+    );
+  }
+
+  console.log(`[routineDownloadThumbnailRefresh] Finished`);
 };
