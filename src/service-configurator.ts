@@ -337,7 +337,7 @@ export const setupConfigurator = async () => {
   server.patch("/channels", async (req, res) => {
     console.log(`[express] PATCH (/channels)`);
 
-    if (typeof req.body["id"] !== "string") {
+    if (typeof req.body["id"] !== "undefined") {
       res.json({
         success: false,
         errors: [
