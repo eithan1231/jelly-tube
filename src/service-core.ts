@@ -15,7 +15,7 @@ import {
   updateConfigChannels,
   updateConfigDownloads,
 } from "./config";
-import { mkdir, rename, rm, writeFile } from "fs/promises";
+import { copyFile, mkdir, rm, writeFile } from "fs/promises";
 import path from "path";
 import { cleanFilename, unixTimestamp } from "./util";
 import { processFfmpeg } from "./ffmpeg";
@@ -112,8 +112,12 @@ export const handleDownload = async (uuid: string) => {
     );
     const processingVideoNfo = path.join(processingFolder, filenameNfo);
 
-    await rename(resultVideo.filename, processingVideoOriginalFile);
-    await rename(resultAudio.filename, processingAudioOriginalFile);
+    await Promise.all([
+      copyFile(resultVideo.filename, processingVideoOriginalFile),
+      copyFile(resultAudio.filename, processingAudioOriginalFile),
+    ]);
+    await Promise.all([rm(resultVideo.filename), rm(resultAudio.filename)]);
+
     await writeFile(
       processingVideoNfo,
       createNfoMovie({
@@ -153,8 +157,13 @@ export const handleDownload = async (uuid: string) => {
     const destinationVideoNfo = path.join(destinationFolder, filenameNfo);
 
     await mkdir(destinationFolder, { recursive: true });
-    await rename(processingVideoOutputFile, destinationVideoFile);
-    await rename(processingVideoNfo, destinationVideoNfo);
+
+    await Promise.all([
+      copyFile(processingVideoOutputFile, destinationVideoFile),
+      copyFile(processingVideoNfo, destinationVideoNfo),
+    ]);
+
+    await Promise.all([rm(processingVideoOutputFile), rm(processingVideoNfo)]);
 
     console.log(
       `[handleDownload] ${download.videoId} Copied to destination/completed folder`

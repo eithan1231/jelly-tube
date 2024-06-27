@@ -1,5 +1,2446 @@
 {
-  "routineInterval": 3600,
-  "channels": [],
-  "downloads": []
+  "channels": [
+    {
+      "id": "UCXuqSBlHAE6Xw-yeJA0Tunw",
+      "name": "@LinusTechTips",
+      "downloadCount": 4,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/Vy6KL7EM_apxPSxF0pPy5w_c87YDTOlBQo3MADDF0Wl51kwxmt9wmRotnt2xQXwlrcyO0Xe56w=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCp68_FLety0O-n9QU6phsgw",
+      "name": "@colinfurze",
+      "downloadCount": 4,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nx0_jjIdix_fYOdMrts1Qk3GsxLzurlxZecRi93qEw-js=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCdmcAwbdiXQWs9d4Qd4KzDw",
+      "name": "@2MuchColinFurze",
+      "downloadCount": 2,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/vF7FCtgDbI9X2FCvHy1Zw5WDqIMwodYkuh8UJPNAJwIiIVlZ9Gwjk1_FzjQ8Dv5dqfYd2ZP_7g=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCjtUS7-SZTi6pXjUbzGHQCg",
+      "name": "Undecided with Matt Ferrell",
+      "downloadCount": 5,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nYFWjG64F27JNXiQXMCKYB0umXlsvIxNxkHzaBByxxeDk=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCHnyfMqiRRG1u-2MsSQLbXA",
+      "name": "Veritasium",
+      "downloadCount": 3,
+      "maximumDuration": 45,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nSatGjGLZG1_O1ztYxuKvRazCbk9A0kPhtt2NxEH4ZKfA=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC2-i3KuYoODXsM99Z3-Gm0A",
+      "name": "friendlyjordies",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/JFGH-KJiGm2lQ1WNQJA8dI0UoJDtdRBMv8yATKrcVrrQjd-T5TbCvxjxChAJDQT7HIhJ9Ivv=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCOk-gHyjcWZNj3Br4oxwh0A",
+      "name": "Techno Tim",
+      "downloadCount": 4,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nGJyJb61DqT1C0fQ1CkRoalHuH3Nu8CIQbfqaflvaoUyU=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC-2YHgc363EdcusLIBbgxzg",
+      "name": "Joe Scott",
+      "downloadCount": 6,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/EVU50u7KqYoqHNKbpiEGCMkugLFBeKpsy3i_5UbE1b12NzVOyTNwBkvRZVICWtZ777jQYDpq=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCYzO4HZxgXc2UJQD5bIo8AQ",
+      "name": "Biffa Plays Indie Games",
+      "downloadCount": 3,
+      "maximumDuration": 90,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lN8mAPkHhSxJcAv4CHaU3yGYOIrFJf90zpNqeEYEf0khU=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "name": "Dave's Garage",
+      "downloadCount": 6,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/5L93CQxZo-_EhDIqIG6KdRMkJ2YBYpusQ8gL3awif3JmRLEJJYPM2bP7M-8TGcfnN2GyVlOWC2w=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCJLZe_NoiG0hT7QCX_9vmqw",
+      "name": "I did a thing",
+      "downloadCount": 4,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_mj5xe_kr7JYc4PDpmc3FaYasPAg5ups859rpzqeXnkuXg=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+      "name": "PewDiePie",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/5oUY3tashyxfqsjO5SGhjT4dus8FkN9CsAHwXWISFrdPYii1FudD4ICtLfuCw6-THJsJbgoY=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCP5tjEmvPItGyLhmjdwP7Ww",
+      "name": "RealLifeLore",
+      "downloadCount": 2,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lK3FQppzWeqpXhyk8SpqvzzlrKr-pqjpRtY3PUfeF9poY=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCQ-W1KE9EYfdxhL6S4twUNw",
+      "name": "The Cherno",
+      "downloadCount": 4,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/tGVMddNMdUHLv2zoH7OBL4e4yIle3e6dJV8qmfBinzckCcgzMPoh3NnxuEwAcWasarTx5x4o=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCzgA9CBrIXPtkB2yNTTiy1w",
+      "name": "Level 2 Jeff",
+      "downloadCount": 3,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/WrUZymX11gyx-p1E5u_LJVYz9F3zRrKImBn8S-XerZiPYrP_1VTw5hLJHlMBRhsuCjZuJ0-t4w=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "name": "Half as Interesting",
+      "downloadCount": 6,
+      "maximumDuration": 20,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lrhEmfrgwQlzJM4UwITdeCak68LTWLaJ6_2bbofLCFb3s=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCdqp0KK_Io7TwK5cJMBvB0Q",
+      "name": "WhistlinDiesel",
+      "downloadCount": 4,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/SsmCSeJP63Ni-BIDQSWrkFgn6BVOenI1gdkGRUywXuenaFi8SzRwoD4MY5MFuZRbJjhjU95k3EI=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCsXVk37bltHxD1rDPwtNM8Q",
+      "name": "Kurzgesagt – In a Nutshell",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_llZywFuLruYcXUgaYGurJsuMkyauzPoyn7q99G8UdyKlw=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCgdTVe88YVSrOZ9qKumhULQ",
+      "name": "Hardware Haven",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/T8cugA1wDX4vSGCP8y3sihpGDvESSLwK4NkvWAahf7pG1TsafhkArCTWnZDHga0PtRh4i6uRprc=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "name": "Practical Engineering",
+      "downloadCount": 6,
+      "maximumDuration": 45,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_m1Y4p9FzWjJBIhIwbVt6Z1qGKa8eWUTzE3kizORZMFKf4=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC7_gcs09iThXybpVgjHZ_7g",
+      "name": "PBS Space Time",
+      "downloadCount": 3,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/b6JwZU9KF2dIt06sct2fAmw1Ki9pJRDQHQ0lPR9LfSe9KjuV_xN1rsYWrTb_VDyvVKx3WixupUQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCp3yVOm6A55nx65STpm3tXQ",
+      "name": "Craft Computing",
+      "downloadCount": 3,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/0SQ2R06KTSdeNBuuMg9NJ_VYVEUZq8b10wYRZhLl8UWmQ14HhNk90HH9_-LM_PK9zQ4Aeq9U0WQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCWFKCr40YwOZQx8FHU_ZqqQ",
+      "name": "JerryRigEverything",
+      "downloadCount": 3,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_k01MOc0fX-wCfHCJa3v5BG-mbgCTpiZguKpFFGikSKB6o=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCy0tKL1T7wFoYcxCe0xjN6Q",
+      "name": "Technology Connections",
+      "downloadCount": 4,
+      "maximumDuration": 90,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lG8iUz4mpHBrzJSDYEKT0qe2XmhZUUUzhzcJbz9cE3rQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC5NO8MgTQKHAWXp6z8Xl7yQ",
+      "name": "This Old Tony",
+      "downloadCount": 3,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_nJisvM3xWeEdy5fdqPPH63qNEgSGB_uhXdaq_odgkFctw=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCR-DXc1voovS8nhAvccRZhg",
+      "name": "Jeff Geerling",
+      "downloadCount": 4,
+      "maximumDuration": 45,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/WwqeAQdiKVOJ7Z4bJ5PeKCRXVaaSPNs_7qFGbRMvoCqBI0kinfkJolPIuEDFPE_F4BSdBKGMEw=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCUQo7nzH1sXVpzL92VesANw",
+      "name": "DIY Perks",
+      "downloadCount": 3,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_m8aksXNScLOKv-RBjATnijOQ9SyYcq5X0k14hSWvpENx4=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC6mIxFTvXkWQVEHPsEdflzQ",
+      "name": "GreatScott!",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/qgdI4gsBC6ofXFQF9WMxTrchUAtWleRBDJLWnhId8tSEa9vbgWWAGYGb875_FiZxAFjqscBq=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCsBjURrPoezykLs9EqgamOA",
+      "name": "Fireship",
+      "downloadCount": 3,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_mKzklyPPhghBJQH5H3HpZ108YcE618DBRLAvRUD1AjKNw=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCcT_WBynr2K8nANsVrR8BYw",
+      "name": "LabCoatz",
+      "downloadCount": 3,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lzOr03Q3OPtNFShvow2vC0RCW0_U2xA7FnTbli9gYYsIw=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCR1IuLEqb6UEA_zQ81kwXfg",
+      "name": "Real Engineering",
+      "downloadCount": 4,
+      "maximumDuration": 60,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_mzOoa3L9W_0hApabWg66Ryujuw7FGmLt23dOpIoO5mVNaC=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+      "name": "Wendover Productions",
+      "downloadCount": 4,
+      "maximumDuration": 45,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/Qs26R6RA_ZNwCyPLsdtOS-8sM6k_TFVa6vNgFWbezvDr_mN097YVwT8fKGj5P_pY6midBYy6fQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UClcE-kVhqyiHCcjYwcpfj9w",
+      "name": "LiveOverflow",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_kBtDJJEl5_NzLvYTlkuAS8q0uPsCj8pUP4IVFJN5wIBTQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC67gfx2Fg7K2NSHqoENVgwA",
+      "name": "Tom Stanton",
+      "downloadCount": 4,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lN5k-a9pdJ2Mc0bpSMVcAnjhdIq9JpvZxZMwo79A7CB0A=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCZYvU-ZWbgl1rJv0trRk_fA",
+      "name": "Tim Station",
+      "downloadCount": 1,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_mgW0S3MKeeLO7JDH4lXaTGhoDt2J8ir9fRSxxdQ-Fn4g=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCJ0-OtVpF0wOKEqT2Z1HEtA",
+      "name": "ElectroBOOM",
+      "downloadCount": 2,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_ke-DEskgJ9heHzi2ngH0XuRePseFtY7eVO2Uk3v5E0_XQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCj1VqrHhDte54oLgPG4xpuQ",
+      "name": "Stuff Made Here",
+      "downloadCount": 2,
+      "maximumDuration": 45,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_mzfzJ9E1WEzyt1YlPXemHOwGBBnVCKzXva_mzmS5qqMg=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UCe0iAfs-GMrx92OYZJ3udbA",
+      "name": "Everything Is Hacked",
+      "downloadCount": 0,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/gxi8ggYdWCzgJFbtQF1t04iHS7ZYHxFWmQPgDbp1IrWHTJID37OAy9KV2b3yqNtwT6AftZ5_VQ=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC67SMH0qLMJ4b4Guud0mKjw",
+      "name": "Home Automation Guy",
+      "downloadCount": 0,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_lmKnFHu3l71_kzjRxLKULlAjvGR6PklJG8mCm6c4Zh4Q=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    },
+    {
+      "id": "UC6nSFpj9HTCZ5t-N3Rm3-HA",
+      "name": "Vsauce",
+      "downloadCount": 0,
+      "maximumDuration": 30,
+      "metadata": {
+        "thumbnail": "https://yt3.googleusercontent.com/ytc/AIdro_mpYedipdXUXCKkwjQEeFrepFlDHZ0LiczqWeKyG0YmJvA=s200-c-k-c0x00ffffff-no-rj?days_since_epoch=19901"
+      }
+    }
+  ],
+  "downloads": [
+    {
+      "uuid": "43fb3830-b424-4b82-bf8f-897ff3676b02",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "wTuOasmssE0",
+      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
+      "title": "My Wifi is Better than Yours",
+      "folder": "downloads/completed/My Wifi is Better than Yours",
+      "date": 1719335915,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/wTuOasmssE0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC3F813jjZTYIJEngO29K5qoKVFqw",
+        "description": "Don't miss @EcoFlowTech exclusive offer from June 25 to July 23! Buy an EcoFlow DELTA Pro 3 and get a free EcoFlow 400W Portable Solar Panel, or a $500 coupon.\n\nSave $300 on these bundles:...",
+        "duration": 1664
+      }
+    },
+    {
+      "uuid": "b9ae0ba4-e02a-4d50-ac21-3f6b69e93ce2",
+      "status": "removed",
+      "log": "Removed",
+      "automationEnabled": true,
+      "videoId": "4RLkkVMVHj4",
+      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
+      "title": "Tech Experts React to Bad & Great Tech in TV Crime Shows ep2",
+      "folder": "",
+      "date": 1719335915,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/4RLkkVMVHj4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCAebXDB6-xUNdYrTNqijweArZ-AA",
+        "description": "https://lmg.gg/telloltt\nCan you save money & still get reliable phone service? The answer is YES with Tello Mobile! You get top-notch coverage, no contracts, and no hidden fees. Plus, you can...",
+        "duration": 1174
+      }
+    },
+    {
+      "uuid": "3b877aef-805a-40a3-a282-8a019065df70",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "RXQOpChgksI",
+      "channelId": "UCp68_FLety0O-n9QU6phsgw",
+      "title": "Drift Trike vs Wall of Death!!",
+      "folder": "downloads/completed/Drift Trike vs Wall of Death",
+      "date": 1719335916,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/RXQOpChgksI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAJqJ0zyfXF8rJw3xab3kExkjs3iQ",
+        "description": "Visit https://www.eightsleep.com/colin/ to get $350 off the Pod 4 Ultra\"\nIt's WALL OF DEATH MK2 to answer the question i never got chance to on the first one, going back to the project that...",
+        "duration": 1682
+      }
+    },
+    {
+      "uuid": "1264eefe-b207-4925-98c9-545937354d80",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Af66yVb_zGY",
+      "channelId": "UCp68_FLety0O-n9QU6phsgw",
+      "title": "80yrs since THE GREAT ESCAPE so Tunnelled OUT the Garden!!",
+      "folder": "downloads/completed/80yrs since THE GREAT ESCAPE so Tunnelled OUT the Garden",
+      "date": 1719335916,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Af66yVb_zGY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDr0qr5yUYXlXqvyrZZksKHpNCTww",
+        "description": "What a scream this was, really puts into perspective what they achieved in 1944.\n\nCheck out Tunnel Daves project here https://youtu.be/Cw1D23k9_YA?si=-Yhf-NQsKjubpcAk\nCheck out my Tunnel here...",
+        "duration": 664
+      }
+    },
+    {
+      "uuid": "caae9d5c-f2bd-4f74-b258-8b17040cc492",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "XWNAf7yuRDQ",
+      "channelId": "UCp68_FLety0O-n9QU6phsgw",
+      "title": "Digging A SECRET GARAGE Part 3",
+      "folder": "downloads/completed/Digging A SECRET GARAGE Part 3",
+      "date": 1719335916,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/XWNAf7yuRDQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8Ic3gFJMWfiUgIbQvWeTiHKnHbw",
+        "description": "Secure your privacy with Surfshark! Enter coupon code COLIN for an extra 3 months free at https://surfshark.deals/colin\n\nGet your furze Merch and MilkinTea Mugs at https://www.colinfurzeshop.com...",
+        "duration": 1244
+      }
+    },
+    {
+      "uuid": "d3b9a2b9-7294-469e-938f-84a1ae7550a2",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "IK3jLYR-aC4",
+      "channelId": "UCp68_FLety0O-n9QU6phsgw",
+      "title": "Flamethrower Underware!",
+      "folder": "downloads/completed/Flamethrower Underware",
+      "date": 1719335916,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/IK3jLYR-aC4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdYiV4H6afhd6880nJprGVz1gHyQ",
+        "description": "Why would anyone not want this........\nCheck out @KidsInventStuff video here https://youtu.be/5_trQ9EQZgo?si=UNyDyPgRpt6wz01Z\nCheck out @alispagnola video here https://youtu.be/jl8z1N3rAvU?si=2gFkK...",
+        "duration": 694
+      }
+    },
+    {
+      "uuid": "519d683d-ac6c-46d2-be47-7ba10f60d83b",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "InbYdIKgnHI",
+      "channelId": "UCdmcAwbdiXQWs9d4Qd4KzDw",
+      "title": "Secret Garage UPDATE #8 THE BIG QUESTIONS",
+      "folder": "downloads/completed/Secret Garage UPDATE 8 THE BIG QUESTIONS",
+      "date": 1719335916,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/InbYdIKgnHI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA9l7W4AeV1IIO_hfVNmhrJhMOd6A",
+        "description": "Don't forget, use FURZE10 for 10% discount on the air up store: https://airup.link/ColinFurze\nHashtagAD\n\nI may not have dug anymore out but at least ive delt with not having to fill it in lol....",
+        "duration": 1866
+      }
+    },
+    {
+      "uuid": "122687e4-ccd7-4c99-866a-3a7bc3b571d5",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "zITVBb49rEc",
+      "channelId": "UCdmcAwbdiXQWs9d4Qd4KzDw",
+      "title": "Secret Garage Update #7 HEAVY STEEL TIME",
+      "folder": "downloads/completed/Secret Garage Update 7 HEAVY STEEL TIME",
+      "date": 1719335916,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/zITVBb49rEc/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDpMfZ5RFqOgNDld6F4n0Ee-MItKQ",
+        "description": "Take your personal data back with Incogni! Use code 2MUCH at the link below and get 60% off an annual plan: http://incogni.com/2much\n\nOne Last pour then it's more digging time, Main channel...",
+        "duration": 1547
+      }
+    },
+    {
+      "uuid": "82ed5f16-5276-44de-bb09-acf471c9f9fe",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Q7piAXkqvOM",
+      "channelId": "UCjtUS7-SZTi6pXjUbzGHQCg",
+      "title": "The Best Home Battery for a Net Zero Home?",
+      "folder": "downloads/completed/The Best Home Battery for a Net Zero Home",
+      "date": 1719370140,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Q7piAXkqvOM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnTLPnFfJgsJgrBZ3plVFvYi5HBQ",
+        "description": "The Best Home Battery for a Net Zero Home? Use code UNDECIDED50 to get 50% OFF your first Factor box plus 20% off your next month at https://bit.ly/3R5fOSk The number of whole home battery...",
+        "duration": 856
+      }
+    },
+    {
+      "uuid": "078368f2-c41a-40ff-ad23-d40fd0144baf",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "81JgczyzXy8",
+      "channelId": "UCjtUS7-SZTi6pXjUbzGHQCg",
+      "title": "How Quantum Dots Solar Panels Could Change Everything",
+      "folder": "downloads/completed/How Quantum Dots Solar Panels Could Change Everything",
+      "date": 1719370140,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/81JgczyzXy8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIEHkUCANZlsW9OBI9AFlidtTyCg",
+        "description": "How Quantum Dots Could Make the Most Efficient Solar Panel. EcoFlow DELTA Pro 3: https://undecided.link/EcoFlowDELTAPro3 Register now on @EcoFlowTech's official website to stay tuned on the...",
+        "duration": 837
+      }
+    },
+    {
+      "uuid": "12e6c9e5-34f6-4fab-a167-0592402912b4",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "KNlDu_ZHIo8",
+      "channelId": "UCjtUS7-SZTi6pXjUbzGHQCg",
+      "title": "Why This Window Heat Pump Is Genius",
+      "folder": "downloads/completed/Why This Window Heat Pump Is Genius",
+      "date": 1719370140,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/KNlDu_ZHIo8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAHwVF-x-GaYugxnxzrrFjNOn1WzQ",
+        "description": "Why This Window Heat Pump Is Genius. Enter the CCAN Action Fund EV raffle: https://undecided.link/CCANActionFund I talk a lot about heat pumps. It’s a fantastic technology that uses a little...",
+        "duration": 804
+      }
+    },
+    {
+      "uuid": "58c6d818-3e7a-4815-9aa7-d0b110452888",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "e3F6L-AQOSo",
+      "channelId": "UCjtUS7-SZTi6pXjUbzGHQCg",
+      "title": "This Tech FINALLY Makes Robot Lawn Mowers Worth it",
+      "folder": "downloads/completed/This Tech FINALLY Makes Robot Lawn Mowers Worth it",
+      "date": 1719370140,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/e3F6L-AQOSo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBhqg0E0TobBYZ21MeTOsZUFdqfMg",
+        "description": "This Tech FINALLY Makes Robot Lawn Mowers Worth it Secure your privacy with Surfshark! Enter coupon code UNDECIDED for an extra 4 months free at https://surfshark.deals/undecided Electric...",
+        "duration": 860
+      }
+    },
+    {
+      "uuid": "f5550be3-b422-4b96-b3f1-181a6e884f47",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "q9_BY2QsK1Y",
+      "channelId": "UCjtUS7-SZTi6pXjUbzGHQCg",
+      "title": "AI Just Changed Everything … Again",
+      "folder": "downloads/completed/AI Just Changed Everything  Again",
+      "date": 1719370140,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/q9_BY2QsK1Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBp1vamKbTFfUFw98hTw1OzS5bG_g",
+        "description": "AI Just Changed Everything … Again. Go to https://brilliant.org/Undecided/ and get 20% off your subscription and a 30 day free trial with Brilliant.org! Let’s stop pretending AI is new....",
+        "duration": 1108
+      }
+    },
+    {
+      "uuid": "92fd16f1-2579-42b2-9e46-5f3f60e2c7dd",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "v4r71kEdYME",
+      "channelId": "UCHnyfMqiRRG1u-2MsSQLbXA",
+      "title": "Why People Prefer More Pain",
+      "folder": "downloads/completed/Why People Prefer More Pain",
+      "date": 1719370141,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/v4r71kEdYME/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGDxnDv-OCxatimOu9DTzKNu8tZQ",
+        "description": "We experimented to see how much pain our volunteers could handle. Go to https://headspace-web.app.link/e/vstm to try Headspace for free using the code VERITASIUM\n\nStudies on Headspace - https://ve4...",
+        "duration": 1023
+      }
+    },
+    {
+      "uuid": "73706bd3-286e-4f85-9d42-81de41c8d258",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "nfAqTSjMBJk",
+      "channelId": "UCHnyfMqiRRG1u-2MsSQLbXA",
+      "title": "What Jumping Spiders Teach Us About Color",
+      "folder": "downloads/completed/What Jumping Spiders Teach Us About Color",
+      "date": 1719370141,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/nfAqTSjMBJk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCEqWqO4ulhSKYvJug7oDfOus72Hg",
+        "description": "How jumping spiders reveal an entire secret world of colors. Let BetterHelp connect you to a therapist who can support you - all from the comfort of your own home. Visit https://betterhelp.com/veri...",
+        "duration": 1957
+      }
+    },
+    {
+      "uuid": "d2bea2c2-1f28-4c35-a8d5-b38f106d1a66",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Zce-V0YVzeI",
+      "channelId": "UCHnyfMqiRRG1u-2MsSQLbXA",
+      "title": "Avalanche Expert Explains How To Survive One",
+      "folder": "downloads/completed/Avalanche Expert Explains How To Survive One",
+      "date": 1719370141,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Zce-V0YVzeI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC03LviXsUIR4yew4BL6gSSw_GGow",
+        "description": "Avalanches are beautiful, majestic, and completely terrifying – this is a video all about the science of avalanches. Head to https://brilliant.org/veritasium to start your free 30-day trial,...",
+        "duration": 1504
+      }
+    },
+    {
+      "uuid": "03d98372-5056-4f05-bdd1-f190aea447a0",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "ByjNNlFj6jA",
+      "channelId": "UC2-i3KuYoODXsM99Z3-Gm0A",
+      "title": "Israel's Influence",
+      "folder": "downloads/completed/Israels Influence",
+      "date": 1719370142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/ByjNNlFj6jA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC66-cObu3gWpf7i4vlRuZP_hE24w",
+        "description": "Is there an Israel lobby in Australia like in the US?\nAmerica Scams Australia: https://youtu.be/IOHvB6Fzemk?si=3W3VWmBe7jtDRGOo\nThe Australian Media's High Horse: https://youtu.be/IXiXr_dt1QA?si=kt...",
+        "duration": 639
+      }
+    },
+    {
+      "uuid": "a0986117-8592-48e2-95f8-a392f9947696",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Wsi-uYB9PRE",
+      "channelId": "UC2-i3KuYoODXsM99Z3-Gm0A",
+      "title": "Banned From McDonald's",
+      "folder": "downloads/completed/Banned From McDonalds",
+      "date": 1719370142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Wsi-uYB9PRE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAnqKg6Wgxx15K8TeZZL2akWUl65A",
+        "description": "Stories about getting thrown out of Maccas, I'm lovin' it.\n\nSupport us on Patreon: https://www.patreon.com/friendlyjordies\nShirts and Merch: https://www.friendlyjordies.com/merch-past-shows...",
+        "duration": 696
+      }
+    },
+    {
+      "uuid": "481e22ab-a38a-430f-a05c-73135536741a",
+      "status": "failed",
+      "log": "Exceeds maximum video duration",
+      "automationEnabled": true,
+      "videoId": "o_iG4Wunh98",
+      "channelId": "UCOk-gHyjcWZNj3Br4oxwh0A",
+      "title": "Meet ChangeDetection - A Self-Hosted Website Change Detector!",
+      "folder": "N/A",
+      "date": 1719370142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/o_iG4Wunh98/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDucfY2iAmvxmbHy94tgC6bqTOM-g",
+        "description": "Thanks to Docker for Sponsoring this Video!  Get Actionable insights for software supply chain management with Docker Scout! https://dockr.ly/45HWDnR\n\nTracking things on the web just got a...",
+        "duration": 2020
+      }
+    },
+    {
+      "uuid": "7fc6571f-6a0c-4667-a3c6-c5ab9536d456",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "4p-INidMqxY",
+      "channelId": "UCOk-gHyjcWZNj3Br4oxwh0A",
+      "title": "TrueNAS vs Unraid - Which one is the BEST NAS OS for my HomeLab",
+      "folder": "downloads/completed/TrueNAS vs Unraid - Which one is the BEST NAS OS for my HomeLab",
+      "date": 1719370142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/4p-INidMqxY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDNLEUkFdH6ZFiJcjHy3NUxj8f9uA",
+        "description": "Which is the best NAS operating system to use at home and in your HomeLab?  Is it Unraid for maximizing storage efficiency?  Or is it TrueNAS for bringing enterprise ZFS to home?  Let's find...",
+        "duration": 1163
+      }
+    },
+    {
+      "uuid": "eeb06e25-1f5f-4bae-97d9-32a92af62f9a",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "kcpu4z5eSEU",
+      "channelId": "UCOk-gHyjcWZNj3Br4oxwh0A",
+      "title": "Proxmox Automation with Proxmox Helper Scripts!",
+      "folder": "downloads/completed/Proxmox Automation with Proxmox Helper Scripts",
+      "date": 1719370142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/kcpu4z5eSEU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDemd0HI7HGXYvs2xMkMNdjuATLrg",
+        "description": "Proxmox helper scripts is a collection of scripts to help you easily make changes to your Proxmox  VE server along with installing many LXC Containers.  This makes installing, configuring,...",
+        "duration": 1455
+      }
+    },
+    {
+      "uuid": "da763d12-d633-4ef4-b3ca-eaaf407b7a1f",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Hu6WemKa__k",
+      "channelId": "UCOk-gHyjcWZNj3Br4oxwh0A",
+      "title": "I tried Unraid for the FIRST time in 2024",
+      "folder": "downloads/completed/I tried Unraid for the FIRST time in 2024",
+      "date": 1719370142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Hu6WemKa__k/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKcJtjjxdkW0KUkPe_hOmgxLfDfw",
+        "description": "I knew nothing about Unraid until today. I finally installed Unraid in my HomeLab on one of my servers.  Is it any good?  Does it live up to the hype?  Let's find out in my candid walkthrough...",
+        "duration": 1265
+      }
+    },
+    {
+      "uuid": "38574019-b18b-41a0-9c21-3655a23207c1",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "_4VXS1O20EY",
+      "channelId": "UC-2YHgc363EdcusLIBbgxzg",
+      "title": "Does Space Travel Create Superbugs? (And Other Questions)",
+      "folder": "downloads/completed/Does Space Travel Create Superbugs And Other Questions",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/_4VXS1O20EY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLApzqvIQ8CtrHoSI9HJbHz35dMnog",
+        "description": "In today’s Lightning Round Video, we talk about the danger of space bugs, the use of AI in YouTube videos, and the demise of the International Space Station, plus more thoughts and questions...",
+        "duration": 1169
+      }
+    },
+    {
+      "uuid": "253d1239-468a-44a9-8264-e2766cd93e2d",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "_vFxGhRq4N4",
+      "channelId": "UC-2YHgc363EdcusLIBbgxzg",
+      "title": "This Is Why You Can’t Go To Antarctica",
+      "folder": "downloads/completed/This Is Why You Cant Go To Antarctica",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/_vFxGhRq4N4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLChlraCqSKsSEBjr602ZI-f3dY08w",
+        "description": "Get Nebula using my link for 40% off an annual subscription, just $30 for a year or $2.50/month: https://go.nebula.tv/joescott\n\nAntarctica is the last truly untamed land on the planet. It’s...",
+        "duration": 1770
+      }
+    },
+    {
+      "uuid": "4124fca8-e790-44d4-8da0-b1a1be7b4f7e",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "qqijEATGnlA",
+      "channelId": "UC-2YHgc363EdcusLIBbgxzg",
+      "title": "Why Even Learn Things Anymore?",
+      "folder": "downloads/completed/Why Even Learn Things Anymore",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/qqijEATGnlA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAXUOBimoRe0_rrxSYHo2WYZukPbA",
+        "description": "Use code JOESCOTT50 to get 50% OFF your first Factor box plus 20% off your next month at https://bit.ly/4ajfhEs!\n\nWith AI progressing by leaps and bounds and several commercial humanoid robots...",
+        "duration": 1733
+      }
+    },
+    {
+      "uuid": "16bc4274-2060-4b90-a93d-be12d4f8d2ec",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "W-KEH7LYye8",
+      "channelId": "UC-2YHgc363EdcusLIBbgxzg",
+      "title": "Today I Learned About The Ghost Of The Internet | Lightning Round",
+      "folder": "downloads/completed/Today I Learned About The Ghost Of The Internet  Lightning Round",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/W-KEH7LYye8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1yBrJVKDnRpATEogwb8tfTZZ5nQ",
+        "description": "Get Nebula using my link for 40% off an annual subscription, just $30 for a year or $2.50/month: https://go.nebula.tv/joescott\nIn today’s lightning round video, I learned some things about...",
+        "duration": 1613
+      }
+    },
+    {
+      "uuid": "ee9ba7bb-cca3-4150-b8b4-36613a348388",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "P4hFRfOeZX8",
+      "channelId": "UC-2YHgc363EdcusLIBbgxzg",
+      "title": "What Happened To The First Human Head Transplant? (Feat. Medlife Crisis)",
+      "folder": "downloads/completed/What Happened To The First Human Head Transplant Feat. Medlife Crisis",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/P4hFRfOeZX8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASfL4IyW1hn1Cc558Butt-DPY7HQ",
+        "description": "Use code JOESCOTT50 to get 50% OFF your first Factor box plus 20% off your next month at https://bit.ly/4ajfhEs!\n\nIn 2015, Italian neurosurgeon Sergio Canavero announced that he intended...",
+        "duration": 1511
+      }
+    },
+    {
+      "uuid": "b9a96ff4-35fe-4618-9cdd-b2123c6d3b49",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "1OgOc-AAaz4",
+      "channelId": "UC-2YHgc363EdcusLIBbgxzg",
+      "title": "What If Another Planet Smashed Into Earth? (And Other Questions) | Lightning Round",
+      "folder": "downloads/completed/What If Another Planet Smashed Into Earth And Other Questions  Lightning Round",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/1OgOc-AAaz4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8cQ7VXV_-BKHkq6HWM5tFWx_7zA",
+        "description": "Try Rocket Money for free: https://RocketMoney.com/joescott\n#rocketmoney  #personalfinance\n\nIn today’s Lightning Round video, I’m taking questions from Patreon supporters on topics such...",
+        "duration": 1215
+      }
+    },
+    {
+      "uuid": "846e3000-c250-42c4-a65f-ee788f9a22f7",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Rf0OVtwmZcA",
+      "channelId": "UCYzO4HZxgXc2UJQD5bIo8AQ",
+      "title": "Can You Survive the NEW \"Frosty Planet\" DLC for Oxygen Not Included?",
+      "folder": "downloads/completed/Can You Survive the NEW Frosty Planet DLC for Oxygen Not Included",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Rf0OVtwmZcA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWvWlfTxhmGqYleSrzOU-tkHAHww",
+        "description": "Oxygen Not Included \"Frosty Planet Pack\" is out for Beta testing with new Biomes, New Creatures, New Dupes, New Machines & MORE! Enjoy! :-) \n\n👍HOW TO SUPPORT ME:\n===============================...",
+        "duration": 1803
+      }
+    },
+    {
+      "uuid": "485888c5-05b7-4e45-a0c0-16cbe4d85de0",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "0iBe1RnPG_8",
+      "channelId": "UCYzO4HZxgXc2UJQD5bIo8AQ",
+      "title": "Saving My City Post Economy 2.0 Patch Took Over EIGHT Hours in Cities Skylines 2!",
+      "folder": "downloads/completed/Saving My City Post Economy 2.0 Patch Took Over EIGHT Hours in Cities Skylines 2",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/0iBe1RnPG_8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAiPkDtSmqd6ywuej049ghFOQcVGw",
+        "description": "Buckle up! The Economy 2.0 Cities Skylines 2 patch is here. Is it possible to save your cities and get them to work? ....this is an epic journey where we try to answer that question! Bring...",
+        "duration": 2090
+      }
+    },
+    {
+      "uuid": "376e5cb0-6149-476b-b252-3d6bc7ee2483",
+      "status": "removed",
+      "log": "Removed",
+      "automationEnabled": true,
+      "videoId": "Ut8_v9CAEnY",
+      "channelId": "UCYzO4HZxgXc2UJQD5bIo8AQ",
+      "title": "Saving my Town from Starvation Was Harder Than I Thought! (Banished! #2)",
+      "folder": "",
+      "date": 1719370143,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Ut8_v9CAEnY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCETZNoMxhhVL9D7ARrMUEMqkuB0A",
+        "description": "⭐ If you wish to Support me on Patreon & have a Beaver named after you AND enjoy the Patreon Only Satisfactory series click this: http://www.patreon.com/Biffa2001 ⭐ \n\nTaking a trip down...",
+        "duration": 1826
+      }
+    },
+    {
+      "uuid": "cc837d7b-61d9-45ed-a3e0-f9d6f31301f8",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "6v07GxjJwTo",
+      "channelId": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "title": "Studio Tour: More LEDs than Any Man Should Have!",
+      "folder": "downloads/completed/Studio Tour More LEDs than Any Man Should Have",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/6v07GxjJwTo/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg1IGUoTTAP&rs=AOn4CLATPXAE-OYvQAP21ZBf-o6pVeHEjA",
+        "description": "A behind-the-scenes tour of the Dave's Garage studios.  For my book on Autism, check out: https://amzn.to/3KPOKTz",
+        "duration": 372
+      }
+    },
+    {
+      "uuid": "e9df8f27-e84c-42fc-9684-9d179d581ae4",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "VdDihKOkUaI",
+      "channelId": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "title": "Daft Punk Helmet Very Short Reveal",
+      "folder": "downloads/completed/Daft Punk Helmet Very Short Reveal",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/VdDihKOkUaI/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IBMoOzAP&rs=AOn4CLBUcG8lIv5ttZueHrH7okxwzK0omQ",
+        "description": "Make sure you're sub'd for the build episode and Amazon recipe!  It's cheap and easy to make!",
+        "duration": 9
+      }
+    },
+    {
+      "uuid": "b79cfaad-97df-4a5d-a6ad-3ebf08d3c0be",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "F4iv5zZMr6Y",
+      "channelId": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "title": "Mindblindness",
+      "folder": "downloads/completed/Mindblindness",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/F4iv5zZMr6Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYvGnQEcQj91ugoc0NC1B7H3jenw",
+        "description": "Dave Explores and Explains Mindblindness in autism.    For my book on Autism, check out: https://amzn.to/3KPOKTz",
+        "duration": 355
+      }
+    },
+    {
+      "uuid": "83ac1c63-00d3-4a19-82e4-62781dc79051",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "BQIkyfpbUao",
+      "channelId": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "title": "Can I Freeze a Fan in Time with its RGB Light?",
+      "folder": "downloads/completed/Can I Freeze a Fan in Time with its RGB Light",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/BQIkyfpbUao/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAacGU9nZBVcskFG-r2Erjvqzj1gQ",
+        "description": "Dave uses PWM lighting on an RGB fan to \"freeze frame\" a running fan in time.  For my book on Amazon, check out: https://amzn.to/45kWPJC\n\nNote: Contains flashing light elements.\n\nCode: https://gith...",
+        "duration": 647
+      }
+    },
+    {
+      "uuid": "cae8640c-f280-4ccb-9586-39db262a818f",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "EuSMCWu02hA",
+      "channelId": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "title": "World Record: Tempest High Score!",
+      "folder": "downloads/completed/World Record Tempest High Score",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/EuSMCWu02hA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnPGwgt8YRdE48Yz6lLsj-9qp2bw",
+        "description": "Dave sets the world record on the classic game Tempest.  For my book on Autism, check out: https://amzn.to/3KPOKTz",
+        "duration": 1018
+      }
+    },
+    {
+      "uuid": "21a7a168-a8dd-4eb5-975e-9b12ac82f61f",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "49PhEUZVjzQ",
+      "channelId": "UCNzszbnvQeFzObW0ghk0Ckw",
+      "title": "DNS Demystified: Everything You Should Know for Faster Internet!",
+      "folder": "downloads/completed/DNS Demystified Everything You Should Know for Faster Internet",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/49PhEUZVjzQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDwC9nxf2paVhX6AwXoejUxqUcXQQ",
+        "description": "Dave explains DNS, the Domain Name System, as well as how to benchmark and optimize your own DNS.  For my book on Amazon, check out: https://amzn.to/45kWPJC",
+        "duration": 843
+      }
+    },
+    {
+      "uuid": "b3b23e9a-5172-461c-840d-330c5cc36547",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Sfpr_S8nVLA",
+      "channelId": "UCJLZe_NoiG0hT7QCX_9vmqw",
+      "title": "I made the worlds most powerful soccer shoe",
+      "folder": "downloads/completed/I made the worlds most powerful soccer shoe",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Sfpr_S8nVLA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8QULEXIqjiRgiSHzsv7qonNFHZw",
+        "description": "Get a free 14-day trial of Odoo's all-in-one business solution and see how it can make your life easier. Check it out at https://www.odoo.com/r/22D\n\nTwitter: https://twitter.com/ididathing1...",
+        "duration": 1290
+      }
+    },
+    {
+      "uuid": "12b678cb-8d73-4152-9156-9e5798534477",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "cLl95jjlw0s",
+      "channelId": "UCJLZe_NoiG0hT7QCX_9vmqw",
+      "title": "Can this forgotten invention save your life?",
+      "folder": "downloads/completed/Can this forgotten invention save your life",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/cLl95jjlw0s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCxGvsxKtpN_qCTZlbKuwGhHz1Y0w",
+        "description": "Get a free 14-day trial of Odoo's all-in-one business solution and see how it can make your life easier. Check it out at https://www.odoo.com/r/rX8\n\nanimation by @RushLightInvader \n\nsources...",
+        "duration": 1216
+      }
+    },
+    {
+      "uuid": "f2cd4e8b-a7f0-496e-9895-1b1a68f3db36",
+      "status": "failed",
+      "log": "Exceeds maximum video duration",
+      "automationEnabled": true,
+      "videoId": "yA1GhMqaQao",
+      "channelId": "UCJLZe_NoiG0hT7QCX_9vmqw",
+      "title": "I made an underwater shotgun for fishing",
+      "folder": "N/A",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/yA1GhMqaQao/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD37bBsRUSp1e2o1l3HVlvMwW8u2g",
+        "description": "Download Opera its free and honestly the best browser out there https://opr.as/Opera-browser-I-did-a-thing and say goodbye to tab overload and hello to productivity paradise\n\n\nTwitter: https://twit...",
+        "duration": 1969
+      }
+    },
+    {
+      "uuid": "d6f653fc-031d-4692-83d6-e623e5e6cd32",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Y5RQgchauHs",
+      "channelId": "UCJLZe_NoiG0hT7QCX_9vmqw",
+      "title": "I put a ballista on my car",
+      "folder": "downloads/completed/I put a ballista on my car",
+      "date": 1719370144,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Y5RQgchauHs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQjSVeA4OtHm6hybIxC2zZUmzPGg",
+        "description": "Let’s Clash for Nature! Click the link to join my team and contribute to the environment by getting gold from multiplayer battles!  https://wehy.pe/y/1/Ididathing\n#clashofclans #ad\n\nTwitter:...",
+        "duration": 1204
+      }
+    },
+    {
+      "uuid": "d996c5b1-8ad0-4c58-9aa6-2f70b0c0af8c",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "hrHK7FNgnrM",
+      "channelId": "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+      "title": "Training like Mishima for 7 Days",
+      "folder": "downloads/completed/Training like Mishima for 7 Days",
+      "date": 1719370145,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/hrHK7FNgnrM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmPrmRcuF4aSajVyyJeNeBLVgOBg",
+        "description": "Shop GFUEL now! https://affiliateshop.gfuel.com/pewdiepie\n\nGet exclusive NordVPN deal here ➵ https://NordVPN.com/pewdiepie It’s risk free with Nord’s 30 day money-back guarantee!✌\n...",
+        "duration": 503
+      }
+    },
+    {
+      "uuid": "0e85cffd-effe-4c1b-84a1-a88579d8f5ea",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "ZYsJQmKeZb4",
+      "channelId": "UC-lHJZR3Gqxm24_Vd_AJ5Yw",
+      "title": "I'll play Minecraft Again... (MAYBE)",
+      "folder": "downloads/completed/Ill play Minecraft Again... MAYBE",
+      "date": 1719370145,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/ZYsJQmKeZb4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAv81Rs5SBRgUtJcE5EG6PkQDjnvg",
+        "description": "🌏 Get exclusive NordVPN deal here ➵  https://NordVPN.com/pewdiepie It’s risk free with Nord’s 30 day money-back guarantee!✌\n\nOfficial ƿ૯ωძɿ૯ƿɿ૯ TikTok: https://www.tiktok.co...",
+        "duration": 951
+      }
+    },
+    {
+      "uuid": "b4fd7612-478b-49b1-a1b4-5fa4275a8bab",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "WmKireMHUfM",
+      "channelId": "UCP5tjEmvPItGyLhmjdwP7Ww",
+      "title": "Why Afghanistan is Headed to War With ALL its Neighbors",
+      "folder": "downloads/completed/Why Afghanistan is Headed to War With ALL its Neighbors",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/WmKireMHUfM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDa7FwnYXIbJ8iY_b4FmAtkKEaLMw",
+        "description": "Get Nebula using my link for 50% off an annual subscription: https://go.nebula.tv/reallifelore\nOr get a Nebula lifetime subscription here: https://go.nebula.tv/lifetime?ref=reallifelore\nTo...",
+        "duration": 2932
+      }
+    },
+    {
+      "uuid": "f4ec986f-85b9-4010-b9b9-0ed2ae9c2e97",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "PbHuspY9ai8",
+      "channelId": "UCP5tjEmvPItGyLhmjdwP7Ww",
+      "title": "Why Saudi Arabia’s $2 Trillion Line City is Failing",
+      "folder": "downloads/completed/Why Saudi Arabias 2 Trillion Line City is Failing",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/PbHuspY9ai8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDA0UwUIKxiwiSZUSL9qtclRHU_uw",
+        "description": "Compare news coverage. Spot media bias. Avoid algorithms. Try Ground News today and get 40% off your subscription by going to https://ground.news/reallifelore\n\nWatch more than 30 additional...",
+        "duration": 2680
+      }
+    },
+    {
+      "uuid": "66fe0b6b-5b8b-44dc-84a8-54f29edbdc12",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "EK4QSO_qO9Q",
+      "channelId": "UCQ-W1KE9EYfdxhL6S4twUNw",
+      "title": "Serialization in Hazel - My Game Engine",
+      "folder": "downloads/completed/Serialization in Hazel - My Game Engine",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/EK4QSO_qO9Q/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgQSg2MA8=&rs=AOn4CLAuQnyQUQFc_vWlWGO0Jfrmg-eLmA",
+        "description": "To try everything Brilliant has to offer—free—for a full 30 days, visit https://brilliant.org/TheCherno . You’ll also get 20% off an annual premium subscription.\n\nPatreon ► https://patreon....",
+        "duration": 1702
+      }
+    },
+    {
+      "uuid": "cacdfab7-0d91-4fa1-be1b-9e7e6fdbea61",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "tB3Cnepkre4",
+      "channelId": "UCQ-W1KE9EYfdxhL6S4twUNw",
+      "title": "WHY did this C++ code FAIL?",
+      "folder": "downloads/completed/WHY did this C++ code FAIL",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/tB3Cnepkre4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAZ-qigJ9XntYCJwI9fvosvFcf9wQ",
+        "description": "To try everything Brilliant has to offer—free—for a full 30 days, visit https://brilliant.org/TheCherno . You’ll also get 20% off an annual premium subscription.\n\nPatreon ► https://patreon....",
+        "duration": 2290
+      }
+    },
+    {
+      "uuid": "7dee54f5-c857-41dd-b152-1891ac0ad3c3",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "JPlTuRj1OJo",
+      "channelId": "UCQ-W1KE9EYfdxhL6S4twUNw",
+      "title": "Make C++ Apps & Games FOR THE WEB",
+      "folder": "downloads/completed/Make C++ Apps  Games FOR THE WEB",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/JPlTuRj1OJo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0bfSLOKVgGMyuAnTzlPckgcYm1Q",
+        "description": "Use code CHERNO for a limited time to get an additional discount for all yearly plans! ► https://hostinger.com/cherno\n\nPatreon ► https://patreon.com/thecherno\nInstagram ► https://instagram.co...",
+        "duration": 930
+      }
+    },
+    {
+      "uuid": "2b71cafa-1661-489d-80a4-00e80c093117",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "t11q4qgwngQ",
+      "channelId": "UCQ-W1KE9EYfdxhL6S4twUNw",
+      "title": "Harder Than It Seems? 5 Minute Timer in C++",
+      "folder": "downloads/completed/Harder Than It Seems 5 Minute Timer in C++",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/t11q4qgwngQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA9DmdbbmRQUjd4G6SpjwnXkJ4RNg",
+        "description": "To try everything Brilliant has to offer—free—for a full 30 days, visit https://brilliant.org/TheCherno . You’ll also get 20% off an annual premium subscription.\n\nPatreon ► https://patreon....",
+        "duration": 1210
+      }
+    },
+    {
+      "uuid": "9cba7424-31fa-4020-bc50-e36f484009c8",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Gkw1ZhShkiw",
+      "channelId": "UCzgA9CBrIXPtkB2yNTTiy1w",
+      "title": "Remote controlling a Raspberry Pi at 38,000 ft",
+      "folder": "downloads/completed/Remote controlling a Raspberry Pi at 38000 ft",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Gkw1ZhShkiw/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFQgWihlMA8=&rs=AOn4CLDUfKhHAftXf6P2jSM_bqkqpdEZCQ",
+        "description": "Raspberry Pi Connect just added remote shell access for all Pis enrolled in the service, and it also supports older Pis now!\n\nCheck out the full story from Raspberry Pi's blog: https://www.raspberr...",
+        "duration": 113
+      }
+    },
+    {
+      "uuid": "70d14696-c030-4c26-97bb-be3570774f8a",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "a3nLRlYZEm8",
+      "channelId": "UCzgA9CBrIXPtkB2yNTTiy1w",
+      "title": "Watch Me Build: Ender 3 S1 3D Printer",
+      "folder": "downloads/completed/Watch Me Build Ender 3 S1 3D Printer",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/a3nLRlYZEm8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQywyF8xY5tlqaLy4bZuQ-zy1VfA",
+        "description": "I bought this printer almost a year ago, and it's been sitting in a box. I needed it for a project at Open Sauce, so assemble it I must!\n\nHere are links to a couple things I mentioned:\n\n  -...",
+        "duration": 2765
+      }
+    },
+    {
+      "uuid": "41167911-032e-4088-9eac-73682628179d",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "oFNKfMCGiqE",
+      "channelId": "UCzgA9CBrIXPtkB2yNTTiy1w",
+      "title": "I built a MONSTER AI Pi with 8 Neural Processors!",
+      "folder": "downloads/completed/I built a MONSTER AI Pi with 8 Neural Processors",
+      "date": 1719370146,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/oFNKfMCGiqE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAx1MC8qoi6lJIA04CIAaDgQW0SiQ",
+        "description": "The thumbnail about says it all. It works! But what does that mean, exactly?\n\nSome of the things I mentioned in this video:\n\n  - Alftel 12x PCIe Card: https://pipci.jeffgeerling.com/cards_m2/alftel...",
+        "duration": 509
+      }
+    },
+    {
+      "uuid": "3f3a23d6-8df7-4edb-aa80-3524bcbfed09",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "czJaA0S2AjE",
+      "channelId": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "title": "The Weird, Terrible Smartphones They Only Have in North Korea",
+      "folder": "downloads/completed/The Weird Terrible Smartphones They Only Have in North Korea",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/czJaA0S2AjE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-uQboVE1v-l0UmecHQB1kgtFqKQ",
+        "description": "Get Nebula using my link for 40% off an annual subscription: https://go.nebula.tv/halfasinteresting\nHalf as Interesting’s Crime Spree: https://nebula.tv/haicrimespree\n\nGet a Half as Interesting...",
+        "duration": 499
+      }
+    },
+    {
+      "uuid": "955a260f-297e-4fab-874f-abf3ce99185d",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "tfk3dgpAals",
+      "channelId": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "title": "Why Nobody Knows What 彁 Means",
+      "folder": "downloads/completed/Why Nobody Knows What  Means",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/tfk3dgpAals/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBP3oSL81nrAUZEA5g8MK2As9u2Mw",
+        "description": "To try everything Brilliant has to offer for free for a full 30 days, visit http://brilliant.org/HAI\nYou’ll also get 20% off an annual premium subscription.\n\nGet a Half as Interesting t-shirt:...",
+        "duration": 564
+      }
+    },
+    {
+      "uuid": "933664aa-0102-4322-b178-b7a12a9206e4",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Olj8arvfYj4",
+      "channelId": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "title": "Why the US Drops 14.7 Million Worms On Panama Every Week",
+      "folder": "downloads/completed/Why the US Drops 14.7 Million Worms On Panama Every Week",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Olj8arvfYj4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZWIM04WDmjy-WjN_snA30tDweaA",
+        "description": "Use code HAI50 to get 50% OFF your first Factor box plus 20% off your next month at https://bit.ly/4aKohl9!\n\nGet a Half as Interesting t-shirt: https://standard.tv/collections/half-as-interesting...",
+        "duration": 498
+      }
+    },
+    {
+      "uuid": "9c05e372-ce8e-46e2-90f9-4f4f62539a02",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "1QOboTl1L6k",
+      "channelId": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "title": "Why the Ocean Looks So Fake on Google Maps",
+      "folder": "downloads/completed/Why the Ocean Looks So Fake on Google Maps",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/1QOboTl1L6k/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1W-If9N6HsxBGYh0SPfTMExuxZg",
+        "description": "To try everything Brilliant has to offer for free for a full 30 days, visit http://brilliant.org/HAI\nYou’ll also get 20% off an annual premium subscription.\n\nGet a Half as Interesting t-shirt:...",
+        "duration": 519
+      }
+    },
+    {
+      "uuid": "8dbd0354-e228-47b5-a31e-42a3f2fb2fbe",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "OhzY5QLO4FA",
+      "channelId": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "title": "Why There’s a Pacific Ocean Port in Idaho",
+      "folder": "downloads/completed/Why Theres a Pacific Ocean Port in Idaho",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/OhzY5QLO4FA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAMehnEN4S3FqRWhFZnxmRx5niEig",
+        "description": "How balanced is your news diet? Go to https://ground.news/halfasinteresting to get 40% off the Ground News Vantage to discover stories you might be missing and see how your reading stats change...",
+        "duration": 517
+      }
+    },
+    {
+      "uuid": "b410b870-e759-4752-b636-40e81024e225",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "4_xSaWBrZK0",
+      "channelId": "UCuCkxoKLYO_EQ2GeFtbM_bw",
+      "title": "The 517,431 Emails That Trained Siri",
+      "folder": "downloads/completed/The 517431 Emails That Trained Siri",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/4_xSaWBrZK0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDF3jmlToQm794L4v-fsgOrtdhhjw",
+        "description": "Use code HAI50 to get 50% OFF your first Factor box plus 20% off your next box at https://bit.ly/48fuIf7\n\nGet a Half as Interesting t-shirt: https://standard.tv/collections/half-as-interesting...",
+        "duration": 502
+      }
+    },
+    {
+      "uuid": "f48bca96-153e-4d2e-b5d7-09171dc297f0",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "oaXPYHpxKoE",
+      "channelId": "UCdqp0KK_Io7TwK5cJMBvB0Q",
+      "title": "I Found The Only Remaining Piece From The Real Killdozer",
+      "folder": "downloads/completed/I Found The Only Remaining Piece From The Real Killdozer",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/oaXPYHpxKoE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCRf4uugyRfypRXkE25lqnGlA5ZqA",
+        "description": "Unfortunately the FBI forgot to get rid of one piece of the Killdozer when they disassembled it... It has now ended up in just the right persons hands. Na Na Na Na Boo Boo come and get it big...",
+        "duration": 1097
+      }
+    },
+    {
+      "uuid": "cbe323de-d0e1-4c7b-880e-441a8b1da998",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "O46z1N8iqtI",
+      "channelId": "UCdqp0KK_Io7TwK5cJMBvB0Q",
+      "title": "Driving Until I Get Pulled Over",
+      "folder": "downloads/completed/Driving Until I Get Pulled Over",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/O46z1N8iqtI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQF2gvYdmVfJ2PI1NpcI-WPckA0w",
+        "description": "Today I will be driving the world's fastest General Lee next to cops until I get pulled over or go to prison for life. Which will happen first 😈\n\nQuality Apparel: https://www.monstermax.com...",
+        "duration": 997
+      }
+    },
+    {
+      "uuid": "39a5371c-35b5-4f33-b6e5-b22d96045873",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "WxAVwgEbT0w",
+      "channelId": "UCdqp0KK_Io7TwK5cJMBvB0Q",
+      "title": "Buying a Combine and Farming with Zero Experience",
+      "folder": "downloads/completed/Buying a Combine and Farming with Zero Experience",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/WxAVwgEbT0w/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA_3fUNVBfPABLmMy41Rsnpuz8dPg",
+        "description": "Today I’m harvesting my healthy crops to sell to starving people, with my state of the art John Deere combine capable of picking 10000 acres a minute. My goal is to make $2-3M off of my corn...",
+        "duration": 1115
+      }
+    },
+    {
+      "uuid": "3957f591-6efb-4f77-ac76-d057f774fee9",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "zKRYqI84ov0",
+      "channelId": "UCdqp0KK_Io7TwK5cJMBvB0Q",
+      "title": "Driving my New Mustang Until I Total It",
+      "folder": "downloads/completed/Driving my New Mustang Until I Total It",
+      "date": 1719370147,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/zKRYqI84ov0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAVb_a-pp81V2e48i_RUN5Vb-GINQ",
+        "description": "The ford mustang is notorious for spontaneously plowing into crowds of people. So I bought one and today I'm going to be driving it until I plow through a crowd of people or total it. This...",
+        "duration": 1207
+      }
+    },
+    {
+      "uuid": "27315b8f-4833-44d4-a651-77ce60df167b",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "GFLb5h2O2Ww",
+      "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
+      "title": "This Disease is Deadlier Than The Plague",
+      "folder": "downloads/completed/This Disease is Deadlier Than The Plague",
+      "date": 1719370148,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/GFLb5h2O2Ww/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdlcYU-QYbogYmATx8nvXyR2RykA",
+        "description": "All Links, sources & further reading: https://sites.google.com/view/sources-tuberculosis?usp=sharing\nThis video was made possible through a grant by Gates Ventures.\n\nThe white death has haunted...",
+        "duration": 653
+      }
+    },
+    {
+      "uuid": "04db1161-907e-40f7-9d08-daed08d96b82",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "UebSfjmQNvs",
+      "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
+      "title": "Are You an NPC?",
+      "folder": "downloads/completed/Are You an NPC",
+      "date": 1719370148,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/UebSfjmQNvs/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhXIFQoZTAP&rs=AOn4CLA4M0kktqflWxPgzcYg0bfQCBTGgQ",
+        "description": "Take control over what occupies your mind with Ground News. Go to https://ground.news/nutshell to get 40% off unlimited access \nto a news platform that helps you break free from manipulative...",
+        "duration": 738
+      }
+    },
+    {
+      "uuid": "d18ef812-fc7f-4219-a4d0-aca923d94773",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "gk_bYzJLGNI",
+      "channelId": "UCgdTVe88YVSrOZ9qKumhULQ",
+      "title": "This problem in my home lab is finally solved.",
+      "folder": "downloads/completed/This problem in my home lab is finally solved.",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/gk_bYzJLGNI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCU1poWhXG5DMSR0S94vUwID6gYhw",
+        "description": "Go to craftcomputing.com the check out the axe effect! \nWatch @CraftComputing s video here: https://www.youtube.com/watch?v=bbxU_ZJRsPQ&pp=ygUPY3JhZnQgY29tcHV0aW5n\n\n► Want to support the...",
+        "duration": 944
+      }
+    },
+    {
+      "uuid": "9798ae7d-e278-4bed-8951-359c798e2732",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "RycXA-5LPA0",
+      "channelId": "UCgdTVe88YVSrOZ9qKumhULQ",
+      "title": "This Broken PC was Such a PAIN to Fix",
+      "folder": "downloads/completed/This Broken PC was Such a PAIN to Fix",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/RycXA-5LPA0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDRmA-3yrBOOuuO7wh4sINVHeOw_g",
+        "description": "Stop data brokers from exposing your personal information. Go to my sponsor https://aura.com/hardwarehaven to get a 14-day free trial and see how much of yours is being sold.\n\n► Want to support...",
+        "duration": 1456
+      }
+    },
+    {
+      "uuid": "1dd489d2-8729-409d-8f17-4b5ed543a58e",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "4mn0mC0cbi8",
+      "channelId": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "title": "This Bridge Should Have Been Closed Years Before It Collapsed",
+      "folder": "downloads/completed/This Bridge Should Have Been Closed Years Before It Collapsed",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/4mn0mC0cbi8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqNS6dSjRVRArq3qInIzJotsIPBg",
+        "description": "Why Fern Hollow Bridge collapsed\n🪒 Go to https://bit.ly/3CWiWJP and enter \"PRACTICALENGINEERING\" at checkout to get 100 free blades with your purchase.\n\nThis is a crazy case study of how...",
+        "duration": 1331
+      }
+    },
+    {
+      "uuid": "52f16eef-69c5-4fdc-b5bc-d056d5539b8b",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "ZwkNTwWJP5k",
+      "channelId": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "title": "The Most Confusing Part of the Power Grid",
+      "folder": "downloads/completed/The Most Confusing Part of the Power Grid",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/ZwkNTwWJP5k/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLArAp0Vkdi7EbhjRw3Ov9NZpdMihQ",
+        "description": "What the heck is power factor?\n🌌Get Nebula using my link for 40% off an annual subscription: https://go.nebula.tv/Practical-Engineering\n🚢Watch the next season of Jet Lag: https://nebula.tv/je...",
+        "duration": 1327
+      }
+    },
+    {
+      "uuid": "103e9fdf-f82c-420d-bd95-3d9348c98377",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "DX_zkaK5PaI",
+      "channelId": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "title": "Every Kind of Bridge Explained in 15 Minutes",
+      "folder": "downloads/completed/Every Kind of Bridge Explained in 15 Minutes",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/DX_zkaK5PaI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASpjUst4h6fF8DrnWoZxm1dkfISg",
+        "description": "See some cool bridges, learn some new words!\n📰Compare news coverage. Spot media bias. Try Ground News today and get 40% off your subscription by going to https://ground.news/practicalengineering...",
+        "duration": 1056
+      }
+    },
+    {
+      "uuid": "bcbbc2e5-3ec9-4f7c-81ad-47115888acc0",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "zLOVv09n46g",
+      "channelId": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "title": "How Bridge Engineers Design Against Ship Collisions",
+      "folder": "downloads/completed/How Bridge Engineers Design Against Ship Collisions",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/zLOVv09n46g/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmySe_6oEnK3ILDlYVZ3q4dFE5kw",
+        "description": "An overview of vessel collision design with help from @RoadGuyRob \n🌌Get Nebula using my link for 40% off an annual subscription: https://go.nebula.tv/Practical-Engineering\n🚢Watch The...",
+        "duration": 1725
+      }
+    },
+    {
+      "uuid": "d932c321-0377-44c8-bd46-1edcf0585ce7",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "7G4ipM2qjfw",
+      "channelId": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "title": "Connecting Solar to the Grid is Harder Than You Think",
+      "folder": "downloads/completed/Connecting Solar to the Grid is Harder Than You Think",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/7G4ipM2qjfw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDHLp5FRx6VtYFM3oAGDnc_XsOwZQ",
+        "description": "A lot of the interesting challenges with renewables are happening behind the scenes.\n🌌Get Nebula using my link for 40% off an annual subscription: https://go.nebula.tv/Practical-Engineering...",
+        "duration": 1128
+      }
+    },
+    {
+      "uuid": "e7f5641c-0a61-4ac9-9981-5aab84c528f9",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "MonfznEl1hk",
+      "channelId": "UCMOqf8ab-42UUQIdVoKwjlQ",
+      "title": "Why Fish Ladders (Mostly) Work",
+      "folder": "downloads/completed/Why Fish Ladders Mostly Work",
+      "date": 1719370149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/MonfznEl1hk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA4ouLsj5XT6hJZqlS22qFEOFeF9g",
+        "description": "🐟How fish get past a dam!\n📰Compare news coverage. Spot media bias. Avoid algorithms. Try Ground News today and get 40% off your subscription by going to https://ground.news/practicalengineeri...",
+        "duration": 978
+      }
+    },
+    {
+      "uuid": "bf090193-b4bd-4216-b398-5c7dc2372486",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "IxnqrEBxmm4",
+      "channelId": "UC7_gcs09iThXybpVgjHZ_7g",
+      "title": "Will The Sun’s Magnetic Field Flip This Year?",
+      "folder": "downloads/completed/Will The Suns Magnetic Field Flip This Year",
+      "date": 1719370150,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/IxnqrEBxmm4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAvjbdz3iIHF7Oj15Cg0lc4ukam5A",
+        "description": "Check out: https://incogni.com/spacetime and use the code spacetime\n\nCheck out the Space Time Merch Store\nhttps://www.pbsspacetime.com/shop\n\nSign Up on Patreon to get access to the Space Time...",
+        "duration": 1092
+      }
+    },
+    {
+      "uuid": "a6820b52-c429-4ac0-aca5-f18c4b1956b3",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "4uQF9Egc-fM",
+      "channelId": "UC7_gcs09iThXybpVgjHZ_7g",
+      "title": "Is It IMPOSSIBLE To Cross The Event Horizon? | Black Hole Firewall Paradox",
+      "folder": "downloads/completed/Is It IMPOSSIBLE To Cross The Event Horizon  Black Hole Firewall Paradox",
+      "date": 1719370150,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/4uQF9Egc-fM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGdoEeYO01YmSS2axR8vp6pu0rkw",
+        "description": "Check out the Space Time Merch Store\nhttps://www.pbsspacetime.com/shop\n\nSign Up on Patreon to get access to the Space Time Discord!\nhttps://www.patreon.com/pbsspacetime\n\nSo you’ve decided...",
+        "duration": 1115
+      }
+    },
+    {
+      "uuid": "b6cc5b8b-8eb7-494e-b66b-8a1ebe60de7e",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "2sSNWIJbV3Q",
+      "channelId": "UC7_gcs09iThXybpVgjHZ_7g",
+      "title": "How Supernovas Act as Universe’s Largest Particle Accelerators",
+      "folder": "downloads/completed/How Supernovas Act as Universes Largest Particle Accelerators",
+      "date": 1719370150,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/2sSNWIJbV3Q/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBjlv5lqloPf51lm_o6-NihRuTAfg",
+        "description": "Check out the Space Time Merch Store\nhttps://www.pbsspacetime.com/shop\n\nSign Up on Patreon to get access to the Space Time Discord!\nhttps://www.patreon.com/pbsspacetime\n\nCern's Large Hadron...",
+        "duration": 829
+      }
+    },
+    {
+      "uuid": "3ac3384a-9a60-4640-91e3-f2c82c4413fa",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "VLksV8krjsQ",
+      "channelId": "UCp3yVOm6A55nx65STpm3tXQ",
+      "title": "I switched to Linux 30 days ago... How did it go?",
+      "folder": "downloads/completed/I switched to Linux 30 days ago... How did it go",
+      "date": 1719370150,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/VLksV8krjsQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCoPS8rMjCCxLhulaEatdQqoFKA1A",
+        "description": "Grab yourself a Pint Glass at https://craftcomputing.store\n\nI've ran Linux on my laptop for well over a year, and have showed Linux on Gaming PCs too many times to count... but what about installin...",
+        "duration": 1726
+      }
+    },
+    {
+      "uuid": "3793fbf9-50bd-41c8-8bf4-cdc4331de127",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Lf67VAHfgGA",
+      "channelId": "UCp3yVOm6A55nx65STpm3tXQ",
+      "title": "Gaming on NVIDIA Tesla GPUs - Part 2 - NVIDIA Pascal",
+      "folder": "downloads/completed/Gaming on NVIDIA Tesla GPUs - Part 2 - NVIDIA Pascal",
+      "date": 1719370150,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Lf67VAHfgGA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDpTKQ1_ionosnA_h4TJTiXo_abAg",
+        "description": "Thanks to Maximum Settings Cloud Gaming for sponsoring today's video. Get started with your very own Cloud Gaming VM or Bare Metal Machine at https://bit.ly/3wxfUuB!\n\nGrab yourself a Pint Glass...",
+        "duration": 1591
+      }
+    },
+    {
+      "uuid": "e1c0e6d7-dcd8-4007-a8ba-f8f51066f802",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "S2OKQwN2fuc",
+      "channelId": "UCp3yVOm6A55nx65STpm3tXQ",
+      "title": "A BRAND NEW Console for my Server Rack",
+      "folder": "downloads/completed/A BRAND NEW Console for my Server Rack",
+      "date": 1719370150,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/S2OKQwN2fuc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOrqpQyZqNPN2GkLamb_qGsyaXQg",
+        "description": "Axe Effect (Beta) WiFi SNMP Temperature Sensors are still available! Get yours at https://craftcomputing.com\n\nGrab yourself a Pint Glass at https://craftcomputing.store\n\nBuying used server...",
+        "duration": 998
+      }
+    },
+    {
+      "uuid": "ee18c6c3-44dd-4b8e-be7c-a714b0a9ae14",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "rxBCPglhJes",
+      "channelId": "UCWFKCr40YwOZQx8FHU_ZqqQ",
+      "title": "What is it *REALLY* like owning a Rivian? - Time to spill the dirt...",
+      "folder": "downloads/completed/What is it REALLY like owning a Rivian - Time to spill the dirt...",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/rxBCPglhJes/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFsoWjAP&rs=AOn4CLBcM56sFPq3NbNHLq2laYIcgb8ddQ",
+        "description": "What is it REALLY like owning a Rivian R1T? Built ready, go freely with the ultimate 3-in-1 portable mobile power solution: Anker 3-in-1 Power Bank (5,000mAh): https://shop.anker.com/Y33UHq...",
+        "duration": 844
+      }
+    },
+    {
+      "uuid": "7d7dca52-1a04-4b41-9d49-861476c8bdf9",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "uyf_Vp9Hhno",
+      "channelId": "UCWFKCr40YwOZQx8FHU_ZqqQ",
+      "title": "Rivians NEW Truck has Color Changing Glass (and a 0-60 of 2.5 seconds)",
+      "folder": "downloads/completed/Rivians NEW Truck has Color Changing Glass and a 0-60 of 2.5 seconds",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/uyf_Vp9Hhno/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBUmg2mZU3sDLKRApK2V8vDlqgyLw",
+        "description": "Rivian just completely redesigned their vehicles! Get a 4-week trial, free postage, and a digital scale at https://www.stamps.com/jerryrig. Thanks to Stamps.com for sponsoring the show! I'm...",
+        "duration": 601
+      }
+    },
+    {
+      "uuid": "84d3096c-8e6b-44e8-bac8-c151f2c7f449",
+      "status": "removed",
+      "log": "Removed",
+      "automationEnabled": true,
+      "videoId": "JAFlMOvWG7U",
+      "channelId": "UCWFKCr40YwOZQx8FHU_ZqqQ",
+      "title": "The First *REAL GOLD* Tesla Cybertruck - What did it Cost?!",
+      "folder": "",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/JAFlMOvWG7U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDfmP2PwKW8hepuwWKtInQjpKqc_A",
+        "description": "The Worlds First 24K Gold Plated Cybertruck has arrived! Huge thanks to Ridge wallet for making this project possible! Get 30% off your new wallet HERE: https://www.ridge.com/jerryrig ive used...",
+        "duration": 810
+      }
+    },
+    {
+      "uuid": "b35fea2c-744e-4d2f-9801-a2512b04feed",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "jHP942Livy0",
+      "channelId": "UCy0tKL1T7wFoYcxCe0xjN6Q",
+      "title": "Your dishwasher is better than you think (tips, tricks, and how they work)",
+      "folder": "downloads/completed/Your dishwasher is better than you think tips tricks and how they work",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/jHP942Livy0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-LmU9v4skHLBYey7_r-s5U4VBYw",
+        "description": "Let your dishwasher do the work for you!\nLinks 'n' stuff:\n\nThe Connextras video on my dishwasher's program change-up:\nhttps://www.youtube.com/watch?v=0Kp3bjm55xw\n\nThe original dishwasher videos:...",
+        "duration": 1667
+      }
+    },
+    {
+      "uuid": "b95ac3ae-da10-4c0a-9edd-d280484b3e11",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "XeDCCNFAULk",
+      "channelId": "UCy0tKL1T7wFoYcxCe0xjN6Q",
+      "title": "Tilting, taking turns, and winning free games: the many tricks inside old pinball machines",
+      "folder": "downloads/completed/Tilting taking turns and winning free games the many tricks inside old pinball machines",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/XeDCCNFAULk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDSm6k4HdVgpwFrAo10L5WOETE3Ig",
+        "description": "Tilt!\nLinks 'n' stuff:\nThe Pinball Playlist (it'll getcha to parts 1 and 2)\nhttps://www.youtube.com/playlist?list=PLv0jwu7G_DFVAUoqtVxFVIu2oZc2GGyDf\n\nThis is the video on Bally Gay Time, a...",
+        "duration": 2860
+      }
+    },
+    {
+      "uuid": "f0786fa6-cdbf-4eea-bc79-c73d7abea470",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "TLm7Q92xMjQ",
+      "channelId": "UCy0tKL1T7wFoYcxCe0xjN6Q",
+      "title": "The simple, clever sensor behind automatic windshield wipers",
+      "folder": "downloads/completed/The simple clever sensor behind automatic windshield wipers",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/TLm7Q92xMjQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9bNiTClFmXhsOZeYC2v4v4H5Tvw",
+        "description": "When it's wet it wipes.\n\nLinks 'n' stuff:\n\nThe video I just did on stovetops:\nhttps://youtu.be/ff04ecF9Dfw\n\nTechnology Connections on Mastodon:\nhttps://mas.to/@TechConnectify\n\nTechnology Connection...",
+        "duration": 678
+      }
+    },
+    {
+      "uuid": "2b3cb0e2-ab76-43c8-aece-14316c27c6f4",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "ff04ecF9Dfw",
+      "channelId": "UCy0tKL1T7wFoYcxCe0xjN6Q",
+      "title": "Simmerstats: The genius old tech that controls your stovetop",
+      "folder": "downloads/completed/Simmerstats The genius old tech that controls your stovetop",
+      "date": 1719370151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/ff04ecF9Dfw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC73viTcX0OoBDLPkrWaAAA4Eno1A",
+        "description": "Hehe. Doody cycle.\n\nLinks 'n' stuff:\n\nMy video on turn signal flashers\nhttps://youtu.be/2z5A-COlDPk\n\nThe US electrical system and that 120/240V stuff\nhttps://youtu.be/jMmUoZh3Hq4\n\nThe Pinball...",
+        "duration": 2191
+      }
+    },
+    {
+      "uuid": "a1ec3f5e-ee90-48c0-afad-dc5247a6f37c",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "GJAZnqrza1Q",
+      "channelId": "UC5NO8MgTQKHAWXp6z8Xl7yQ",
+      "title": "Welder WINNERS! (CHICKEN DINNERS)",
+      "folder": "downloads/completed/Welder WINNERS CHICKEN DINNERS",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/GJAZnqrza1Q/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAzG96ogXlxCsDtJir2scRycTt2aw",
+        "description": "My apologies for the delay but here's to closing the loop on the welder giveaways.  Thanks to everyone who participated and congrats again to the winners!\n\nDave's video starts at 4:05\nDoug's...",
+        "duration": 479
+      }
+    },
+    {
+      "uuid": "8dd09bbb-d35a-400a-b92d-d624c2d431f7",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Ia3Iieejyg8",
+      "channelId": "UC5NO8MgTQKHAWXp6z8Xl7yQ",
+      "title": "Over Center Mechanisms But Were Afraid To Ask!",
+      "folder": "downloads/completed/Over Center Mechanisms But Were Afraid To Ask",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Ia3Iieejyg8/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCnwhGa-xZueoOpt0fucLws5_uyIA",
+        "description": "Good manners and over-center mechanisms are what separates us from the animals.  Let's talk way too much about them!\n\n------\nMusic: Wayne Jones - Mr. Sunny Face / Silent Partner - On Hold",
+        "duration": 1601
+      }
+    },
+    {
+      "uuid": "cb0f8474-768f-4200-9dab-ec3cc8ce5522",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "xI9KXhGBA5M",
+      "channelId": "UC5NO8MgTQKHAWXp6z8Xl7yQ",
+      "title": "Arbor Press Dental Work!",
+      "folder": "downloads/completed/Arbor Press Dental Work",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/xI9KXhGBA5M/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCt034itUW_e1RGjyeBlLP5wAO5CQ",
+        "description": "Time to get the arbor press off the floor and sorted.\nStick around while we knock out a couple of its teeth and make some simple tooling!\n\n-----\nMusic: Epic TV Theme - Audionautix",
+        "duration": 1688
+      }
+    },
+    {
+      "uuid": "9b37e28a-c634-4291-8d6f-ca4bf21117c7",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "n5d0hzgA9BI",
+      "channelId": "UCR-DXc1voovS8nhAvccRZhg",
+      "title": "I gave away 480 Raspberry Pis at Open Sauce",
+      "folder": "downloads/completed/I gave away 480 Raspberry Pis at Open Sauce",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/n5d0hzgA9BI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDW9wzOA9aVUnHPtGIuYG4GgMcSIA",
+        "description": "Head to https://www.squarespace.com/redshirtjeff to save 10% off your first purchase of a website or domain using code REDSHIRTJEFF.\n\nI built a 'Piz dispenser' to give away 480 Raspberry Pi...",
+        "duration": 1370
+      }
+    },
+    {
+      "uuid": "6e2e4a03-75f0-49ea-a36b-234104863f56",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "HgIMJbN0DS0",
+      "channelId": "UCR-DXc1voovS8nhAvccRZhg",
+      "title": "I Built a CoPilot+ AI PC (without Windows)",
+      "folder": "downloads/completed/I Built a CoPilot+ AI PC without Windows",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/HgIMJbN0DS0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1lNpHyFB-xFg2zrD4E7P8lz6iww",
+        "description": "Raspberry Pi AI enters the chat.\n\nThe new AI Kit is $70 and you can find more on Raspberry Pi's website: https://www.raspberrypi.com/news/raspberry-pi-ai-kit-available-now-at-70/\n\nFull disclosure:...",
+        "duration": 770
+      }
+    },
+    {
+      "uuid": "f51e830f-4262-478c-b5ce-6e56df56966f",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "3hFas54xFtg",
+      "channelId": "UCR-DXc1voovS8nhAvccRZhg",
+      "title": "I replaced my Apple TV—with a Raspberry Pi",
+      "folder": "downloads/completed/I replaced my Apple TVwith a Raspberry Pi",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/3hFas54xFtg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAClrj0dahXc8FZPR1ETtjs2qDONw",
+        "description": "Head to https://squarespace.com/redshirtjeff to save 10% off your first purchase of a website or domain using code (REDSHIRTJEFF).\n\nIf you want a TV box that's more flexible than Apple TV,...",
+        "duration": 972
+      }
+    },
+    {
+      "uuid": "aeab474d-00d9-4f38-a848-0c55ccf285f9",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "GKGtRrElu30",
+      "channelId": "UCR-DXc1voovS8nhAvccRZhg",
+      "title": "This is how you destroy Raspberry Pi",
+      "folder": "downloads/completed/This is how you destroy Raspberry Pi",
+      "date": 1719370152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/GKGtRrElu30/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJH4vGmGB-saoS4-ILYlWskmk5aw",
+        "description": "LattePanda's Mu is the latest entrant in the 'Pi Killer' battle, but it has a trick up its sleeve.\n\nLattePanda sent me the Mu and carrier board for review, so I'm marking this video as having...",
+        "duration": 550
+      }
+    },
+    {
+      "uuid": "9858b1f2-6962-48de-9b51-314b9b82e410",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "UQ6ueTe8KQM",
+      "channelId": "UCUQo7nzH1sXVpzL92VesANw",
+      "title": "Building the ENDGAME invisible PC",
+      "folder": "downloads/completed/Building the ENDGAME invisible PC",
+      "date": 1719370153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/UQ6ueTe8KQM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBRO0S9cS2kk_ZICk_2qm3993dpA",
+        "description": "Let's build the ENDGAME invisible PC! Thanks to FlexiSpot for sponsoring this project - they're having their Brand Day sale right now! Use code DIYPERKS to get $50 off on their E7 PRO and E7...",
+        "duration": 1650
+      }
+    },
+    {
+      "uuid": "9ec557b5-8ea2-46fb-90be-f66c24c41a74",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "W4PHhurAhwc",
+      "channelId": "UCUQo7nzH1sXVpzL92VesANw",
+      "title": "I built a next-gen PS5",
+      "folder": "downloads/completed/I built a next-gen PS5",
+      "date": 1719370153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/W4PHhurAhwc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAp1DGWdNpwFSQnseLAaduJlzvQlg",
+        "description": "Let's build the world's first PlayStation 5: Tablet Edition! Visit https://dbrand.com/diyperks if you'd like to customise your own PS5!\n\nCHANNEL LINKS:\nPatreon: https://www.patreon.com/DIYPerks/...",
+        "duration": 1091
+      }
+    },
+    {
+      "uuid": "3a89174b-74d8-4acf-a092-46894a5464c8",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "yFswDJPvtPY",
+      "channelId": "UCUQo7nzH1sXVpzL92VesANw",
+      "title": "Building an ACTUALLY water-cooled PC",
+      "folder": "downloads/completed/Building an ACTUALLY water-cooled PC",
+      "date": 1719370153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/yFswDJPvtPY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrUxgXnZJsrP_rmRii_jbnUBVmOw",
+        "description": "Sending PC hardware underwater in style! Thanks to ASUS for sponsoring this build! Visit https://asus.click/DIYPerks to check out the Zenbook Pro 14 Duo OLED for those in search of incredible!...",
+        "duration": 1203
+      }
+    },
+    {
+      "uuid": "13b0b7dd-4bea-4e5d-ab4f-3a0b735b58ef",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": false,
+      "videoId": "h6ddNFnwDTA",
+      "channelId": "UCe0iAfs-GMrx92OYZJ3udbA",
+      "title": "I took Taser Chess to Open Sauce",
+      "folder": "downloads/completed/I took Taser Chess to Open Sauce",
+      "date": 1719380047,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi_webp/h6ddNFnwDTA/maxresdefault.webp",
+        "description": "Thanks @ElectroBOOM and @Jabrils for being prototype victims, @JoelCreates for the initial inspiration with your excellent keyboard, @opensaucelive for bringing so many mad scientists under one roof, @raspberrypi for the brains, and @AlaskaAirlines  for allowing me to get so much practice with acrylic glue.\n\nYes, it took me an extra year to get this video out. I took it to Open Sauce v1 in 2023!\n\nIn Taser Chess, you strap your arm to a TENS unit, then your hand receives a shock for any \"bad\" move, based on a chess engine, puzzle solving, or a timed game. Powered by Raspberry Pi with python-chess doing the heavy lifting on chess logic. It supports all standard rules except en passant, because who does that.\n\n0:00 Hustling\n1:55 Creating the board \"keys\"\n2:47 First shocking test\n3:00 Board modes\n4:16 Building while traveling\n6:05 Advice from Open Sauce\n6:49 Crunch time\n7:56 Have board, will travel\n8:09 Disaster the first\n8:49 Disaster strikes again\n9:00 Open Sauce\n9:58 Return of Disaster\n10:28 Rebuilding again\n10:42 A visit to the master\n11:25 Playing taser keyboard\n11:40 A fourth rewiring\n12:00 Back where we started\n\n---\n\nMusic from StreamBeats by Harris Heller.\n#python #taser #chess",
+        "duration": 760
+      }
+    },
+    {
+      "uuid": "e8f9494d-2004-4416-a870-e22bb6c65b9b",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": false,
+      "videoId": "7wkVGcdI2vk",
+      "channelId": "UCR-DXc1voovS8nhAvccRZhg",
+      "title": "I Spy, with my Little Pi...",
+      "folder": "downloads/completed/I Spy with my Little Pi...",
+      "date": 1719384652,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/7wkVGcdI2vk/maxresdefault.jpg",
+        "description": "Build a free and open source NVR that's better than most commercial NVR's.\n\nI used Frigate, a Raspberry Pi, a Coral TPU, and Axzez's Interceptor 1U chassis.\n\nAxzez sent me the 1U chassis and the required accessories (not including hard drives or the Raspberry Pi) for this build, but they did not pay any money, nor did they have any input into the content in this video.\n\nResources mentioned in this video (some links are affiliate links):\n\n  - My open source Pi NVR project on GitHub: https://github.com/geerlingguy/pi-nvr\n  - Axzez 3HDD 1U Case: https://www.axzez.com/product-page/interceptor-3hdd-1u-case\n  - Axzez Interceptor: https://www.axzez.com/product-page/interceptor-carrier-board\n  - Hikvision 2MP Dome camera: https://amzn.to/3S8o2Kv\n  - ANNKE C800 4K camera: https://amzn.to/48N3VXT\n  - Resetting/upgrading Hikvision cameras: https://www.jeffgeerling.com/blog/2024/resetting-and-upgrading-old-hikvision-ip-cameras\n\nSupport me on Patreon: https://www.patreon.com/geerlingguy\nSponsor me on GitHub: https://github.com/sponsors/geerlingguy\nMerch: https://redshirtjeff.com\n2nd Channel: https://www.youtube.com/c/GeerlingEngineering\n\nContents:\n\n00:00 - I spy...\n02:26 - Not just with Pi\n03:04 - The build\n05:33 - Build complete\n07:58 - First boot\n11:31 - Pi-NVR and Frigate setup\n15:24 - Storage setup\n17:45 - Frigate install + PoE camera setup\n18:52 - Exploring Frigate\n22:49 - Next steps",
+        "duration": 1425
+      }
+    },
+    {
+      "uuid": "7cd3c35a-0af8-448a-adec-9e17c50789ec",
+      "status": "removed",
+      "log": "Removed",
+      "automationEnabled": false,
+      "videoId": "3pWQg4-VQ8o",
+      "channelId": "UC67SMH0qLMJ4b4Guud0mKjw",
+      "title": "Local Security Camera Recording with Frigate NVR",
+      "folder": "",
+      "date": 1719384737,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/3pWQg4-VQ8o/maxresdefault.jpg",
+        "description": "Record your IP Security Camera footage locally with Frigate, running as a Home Assistant Add-On or on Docker. \n\n❤️ Found this video useful and want to support the channel? I'd love a donation at https://paypal.me/homeautomationguy \n\nWhy pay cloud companies a monthly fee for 24/7 recording when you can do it yourself? Why should a cloud company even get access to your footage?!\n\nMore videos in this series:\n1. Frigate Basics (This video): https://youtu.be/3pWQg4-VQ8o\n2. Tweaking Frigate to get the best performance: https://youtu.be/gRCtvRsTHm0\n3. Integrating Frigate into Home Assistant: https://youtu.be/gQdtGLRzKRI\n\nLinks from the video:\nFrigate website: https://frigate.video/\nThe Hook Up Security Camera comparisons: https://www.youtube.com/playlist?list=PL-51DG-VULPom8Ud6vdf56Oeq51yA2xlp\nInstalling MQTT: https://www.youtube.com/watch?v=cZV2OOXLtEI\nDocker and Home Assistant: https://www.youtube.com/playlist?list=PL4ed4sZb-R_-tNhFmT6YR9zaKcVX-B8XC",
+        "duration": 826
+      }
+    },
+    {
+      "uuid": "34a017ba-ef35-403a-a32e-fef0434f187d",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": false,
+      "videoId": "FntUPnPGfM8",
+      "channelId": "UC6mIxFTvXkWQVEHPsEdflzQ",
+      "title": "Every Home needs this Upgrade! (Control EVERYTHING)",
+      "folder": "downloads/completed/Every Home needs this Upgrade Control EVERYTHING",
+      "date": 1719385015,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi_webp/FntUPnPGfM8/maxresdefault.webp",
+        "description": "Mid-Year Mega Sale $250 Coupon & More Surprises: https://jlcpcb.com/midyearsales\nApply for Combined Shipping of PCB,PCBA,3D Printing,CNC:  https://forms.gle/YDXj8ZnFbxtjiGAF7  \n\nYou can get the used products here: (affiliate links)\nScreen & Touchscreen: https://s.click.aliexpress.com/e/_DBxo8Pd\nRaspberry Pi 4: https://s.click.aliexpress.com/e/_DBxo8Pd\nEnclosure: https://s.click.aliexpress.com/e/_DEoVXbt\nRaspberry Pi 3: https://s.click.aliexpress.com/e/_DeYbX6r\n5V 3A Power Supply: https://s.click.aliexpress.com/e/_DlyfI0B\n5V 2.4A Power Supply: https://s.click.aliexpress.com/e/_Dkf8Wx5\nFlat HDMI cable: https://s.click.aliexpress.com/e/_DE6b7GL\n\nHere you can download the design files for my enclosure: https://www.patreon.com/posts/105218408\n\nWebsites that were shown/used during the video:\nhttps://www.youtube.com/watch?v=4hN0_yGVdUQ\nhttps://github.com/MarkWattTech/MarkWattTech-Tutorials/tree/main/A%20DIY%20Home%20Assistant%20Kiosk\nhttps://reelyactive.github.io/diy/pi-kiosk/\n\nTry the world's most trusted PCB design software, Altium Designer with\n365, for free and 25% off your purchase:\nhttps://www.altium.com/yt/greatscott!\nCheck out Altium 365: https://www.altium.com/altium-365\nCheck out OctoPart: https://octopart.com/\n\nPrevious video: https://youtu.be/gE_FuQuaKc0\nPrevious Home Assistant videos:\nhttps://youtu.be/IvI1RqYPO24\nhttps://youtu.be/PSzkaSy5lHY\nhttps://youtu.be/qspHm1RKsPc\nAliExpress video with Screen Kit:\n\nFacebook: https://www.facebook.com/greatscottlab\nTwitter: https://twitter.com/GreatScottLab\nInstagram: https://www.instagram.com/great.scott.lab/\nTikTok: https://www.tiktok.com/@greatscottlab\nDiscord:  https://discord.gg/zuAvkAuhsY\nSupport me for more videos: https://www.patreon.com/GreatScott?ty=h\n \nSmart Home Devices are awesome! But problems arise when you have too many that all use their own app. So in this video I am reactivating my home assistant server on my Raspberry and more importantly create an awesome dashboard screen. And No! I will not use a tablet. I will build something custom with another Raspberry Pi ;-) Let's get started!\n\nThanks to JLCPCB for sponsoring this video.\nVisit https://jlcpcb.com to get professional PCBs for low prices.\n\n0:00 My Smart Home Problem\n1:25 Intro\n2:20 Home Assistant Installation \n4:15 Kiosk Raspberry Pi Setup\n5:39 Finding a Fitting Screen\n7:53 Where to Position the Control Screen?\n8:40 Building the Control Screen\n10:10 Final Assembly & Verdict",
+        "duration": 674
+      }
+    },
+    {
+      "uuid": "9ad5cc71-dc66-4903-9383-cd3c57a84d9b",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "jriRW4rGQp4",
+      "channelId": "UC6mIxFTvXkWQVEHPsEdflzQ",
+      "title": "This Happens when all Buy Options Suck! (DIY or Buy)",
+      "folder": "downloads/completed/This Happens when all Buy Options Suck DIY or Buy",
+      "date": 1719385393,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/jriRW4rGQp4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAPUwqRlebskFlPntWCPjEADb21wg",
+        "description": "Mid-Year Mega Sale $250 Coupon & More Surprise: https://jlcpcb.com/midyearsales\nGet $20 OFF on JLCPCB 6-Layer PCBs:  https://jlcpcb.com/6-layer-pcb\n\nYou can get the used products here: (affiliate...",
+        "duration": 710
+      }
+    },
+    {
+      "uuid": "a686dedf-5da3-4d9e-8ad1-240a1d555bb2",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "qjrWHozUdIE",
+      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
+      "title": "Why did you make me build this?",
+      "folder": "downloads/completed/Why did you make me build this",
+      "date": 1719451138,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/qjrWHozUdIE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIFpp-cDygAkdO3JIYiyJPer8SGw",
+        "description": "Seasonic’s Vertex GX-1000 is on sale now. Because you also deserve a shiny new upgrade: https://lmg.gg/VTXSS\n\nWe did it Reddit! With your help Linus, Alex, and Elijah were able to build a...",
+        "duration": 1151
+      }
+    },
+    {
+      "uuid": "55005875-aba9-401a-a807-8fe1742cb1eb",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "kkpulrxmyIE",
+      "channelId": "UCYzO4HZxgXc2UJQD5bIo8AQ",
+      "title": "Custom Detailing Farm Land for SUPER Profit in Cities Skylines 2!",
+      "folder": "downloads/completed/Custom Detailing Farm Land for SUPER Profit in Cities Skylines 2",
+      "date": 1719451142,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/kkpulrxmyIE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBc7bRhyHm7hhZq7LRdO0v1tQycWw",
+        "description": "⭐Order Your Games here: https://www.instant-gaming.com/?igr=BiffaPlays - HUGE discounts with my affiliate link - thanks!⭐ \n\nCities Skylines 2: New Brewburgh returns. Enjoy :-)\n\n👍HOW...",
+        "duration": 2137
+      }
+    },
+    {
+      "uuid": "8687454c-8ed2-4146-b4ab-fca7dcff80c7",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "be8PzlIlNfQ",
+      "channelId": "UCWFKCr40YwOZQx8FHU_ZqqQ",
+      "title": "Is the NEW Surface Pro STRONGER than the iPad Pro?! - (Its only fair...)",
+      "folder": "downloads/completed/Is the NEW Surface Pro STRONGER than the iPad Pro - Its only fair...",
+      "date": 1719451149,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/be8PzlIlNfQ/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgTIDMofzAP&rs=AOn4CLCsIgi79s23wIwYtqlCQ7geDWoEsg",
+        "description": "The iPad Apple wishes it could make. Get a $10 reward for opening a Chime checking account when you activate your Chime Visa Debit Card. Just go to https://www.chime.com/JERRYRIG and enter...",
+        "duration": 539
+      }
+    },
+    {
+      "uuid": "323c99b0-716f-4894-a3ac-99a2c9471cf5",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "hUrrHPVHeLM",
+      "channelId": "UCsBjURrPoezykLs9EqgamOA",
+      "title": "Ex-OpenAI genius launches new “Super Intelligence” company",
+      "folder": "downloads/completed/Ex-OpenAI genius launches new Super Intelligence company",
+      "date": 1719451151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/hUrrHPVHeLM/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIEooQDAP&rs=AOn4CLBMNbIQ7kqEqQR_BfR-kwkg9JLiPw",
+        "description": "Ilya Sutskever recently emerged from the shadows to announced a new artificial super intelligence company called SSI. Let's examine his past controversy with OpenAI and his potential contributions...",
+        "duration": 279
+      }
+    },
+    {
+      "uuid": "cba1f226-f4d4-4399-8873-b8e3d1b0a041",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "BY81yNttfpg",
+      "channelId": "UCsBjURrPoezykLs9EqgamOA",
+      "title": "5 wild new AI tools you can try right now",
+      "folder": "downloads/completed/5 wild new AI tools you can try right now",
+      "date": 1719451151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/BY81yNttfpg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5RVM42SN299hj8viMNw-sKBr_sQ",
+        "description": "Collect massive amounts of data from the web to train your LLM with Bright Data https://brdta.com/fireship\n\nLearn about 5 new state-of-the-art AI tools released in 2024 that can generate videos,...",
+        "duration": 255
+      }
+    },
+    {
+      "uuid": "5d8d4c4b-792a-4622-9ba9-da02bd4c39ae",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "2DvrRadXwWY",
+      "channelId": "UCsBjURrPoezykLs9EqgamOA",
+      "title": "Ruby on Rails in 100 Seconds",
+      "folder": "downloads/completed/Ruby on Rails in 100 Seconds",
+      "date": 1719451151,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/2DvrRadXwWY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC7V4KjvdHrdEyQG5mxw63Q9aklTg",
+        "description": "Try Brilliant free for 30 days https://brilliant.org/fireship You’ll also get 20% off an annual premium subscription\n\nRuby on Rails is a web application framework that has build many unicorn...",
+        "duration": 213
+      }
+    },
+    {
+      "uuid": "eea18405-2aaf-4bba-b20f-7e5d47085af3",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "TljETvBCDmg",
+      "channelId": "UCcT_WBynr2K8nANsVrR8BYw",
+      "title": "Making Phosphoryl Chloride to Fight YouTube Censorship (REVISED VERSION)",
+      "folder": "downloads/completed/Making Phosphoryl Chloride to Fight YouTube Censorship REVISED VERSION",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/TljETvBCDmg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASjXq2oByDZ66joit6SJjWQ95AnQ",
+        "description": "Phosphoryl chloride is an exceptionally useful chemical, and one that doesn't have enough representation or accessible synthesis pathways here on YouTube. So you can imagine my dismay when...",
+        "duration": 658
+      }
+    },
+    {
+      "uuid": "af471225-7496-4869-b90d-b91b2925f5b9",
+      "status": "failed",
+      "log": "Download Failed",
+      "automationEnabled": true,
+      "videoId": "eFqnGDRMBxE",
+      "channelId": "UCcT_WBynr2K8nANsVrR8BYw",
+      "title": "Turning Salt Into Phosphoryl Chloride: The Chemical That Hospitalized Me",
+      "folder": "N/A",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/eFqnGDRMBxE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBawDeyNkEOvlSE96Jm7WzzMXh8CQ",
+        "description": "I've worked with, smelled, and even tasted a number of crazy chemicals on this channel, but only one has ever sent me to the hospital. And that chemical is phosphoryl chloride (phosphorus oxychlori...",
+        "duration": 787
+      }
+    },
+    {
+      "uuid": "22963665-d3d8-44ef-a0ed-1642bc7183f7",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "LbLgcdYta_s",
+      "channelId": "UCcT_WBynr2K8nANsVrR8BYw",
+      "title": "Making a Dangerous Energy Drink With a Powerful Caffeine Analog",
+      "folder": "downloads/completed/Making a Dangerous Energy Drink With a Powerful Caffeine Analog",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/LbLgcdYta_s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDDCZQTaI-qfetu7yzpu2ErAsrDtw",
+        "description": "Caffeine is good, but I want to make it better. So in this video, I'll be cooking up a legal analog of caffeine that is reported to be TEN TIMES STRONGER and potentially less stressful on the...",
+        "duration": 1244
+      }
+    },
+    {
+      "uuid": "b377c853-0c3f-4c05-b666-f374ad9c7506",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "1zjcnnx7igc",
+      "channelId": "UCR1IuLEqb6UEA_zQ81kwXfg",
+      "title": "The Insane Engineering of the F-117 Nighthawk",
+      "folder": "downloads/completed/The Insane Engineering of the F-117 Nighthawk",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/1zjcnnx7igc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACdRt_Qowapax_7XF-y_EV4ZUhAQ",
+        "description": "Get Nebula for 50% off with my link: https://go.nebula.tv/realengineering\n\nWatch this video ad free on Nebula: https://www.reddit.com/r/Nebula/comments/1dakfsj/the_insane_engineering_of_the_f117_ni...",
+        "duration": 1657
+      }
+    },
+    {
+      "uuid": "57bc2da1-5002-4d5a-9312-a065fb45b85e",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "I1ixCSAc3bc",
+      "channelId": "UCR1IuLEqb6UEA_zQ81kwXfg",
+      "title": "The Worst Oil Disaster Ever",
+      "folder": "downloads/completed/The Worst Oil Disaster Ever",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/I1ixCSAc3bc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqA0HCNHWLhZ3JGhUlz-py3qNRvg",
+        "description": "Get Nebula for 50% off with my link: https://go.nebula.tv/realengineering\n\nWatch this video ad free on Nebula: https://nebula.tv/videos/realengineering-the-biggest-fire-fighting-operation-ever...",
+        "duration": 1037
+      }
+    },
+    {
+      "uuid": "57fdc2eb-37dc-4dec-8d75-e1447f1ef9a8",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "nyG8XAmtYeQ",
+      "channelId": "UCR1IuLEqb6UEA_zQ81kwXfg",
+      "title": "Why Airport Security Suddenly Got Better",
+      "folder": "downloads/completed/Why Airport Security Suddenly Got Better",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/nyG8XAmtYeQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDZ5ORzdbyIfEmnJ6hGgBXOzRCLyA",
+        "description": "Sign up for free career guidance with 80,000 hours: https://www.80000hours.org/realengineering\n\nWatch this video ad free on Nebula: https://nebula.tv/videos/realengineering-why-airport-security-sud...",
+        "duration": 787
+      }
+    },
+    {
+      "uuid": "f0c3b163-4fe6-4161-9693-0ec547ebbe53",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "BKm45Az02YE",
+      "channelId": "UCR1IuLEqb6UEA_zQ81kwXfg",
+      "title": "The Insane Engineering of the Gameboy",
+      "folder": "downloads/completed/The Insane Engineering of the Gameboy",
+      "date": 1719451152,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/BKm45Az02YE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC0VNJOZCSgYqM_txBYY-TL6OfWmQ",
+        "description": "Take control of your data with 60% off at: https://incogni.com/realengineering\n\nWatch this video ad free on Nebula: https://nebula.tv/videos/realengineering-the-insane-engineering-of-the-gameboy...",
+        "duration": 1069
+      }
+    },
+    {
+      "uuid": "e6bdc7a6-ebfb-4809-afbb-296e926c8690",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "bQE_zNs5HOU",
+      "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+      "title": "Why Wyoming is so Weirdly Wealthy",
+      "folder": "downloads/completed/Why Wyoming is so Weirdly Wealthy",
+      "date": 1719451153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/bQE_zNs5HOU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAQRLQTdSeZsEIy3aM08fPlI775HA",
+        "description": "Get Nebula using my link for 40% off an annual subscription: https://go.nebula.tv/wendover\nWatch the Logistics of X: https://nebula.tv/thelogisticsofx\n\nYoutube: http://www.YouTube.com/WendoverProdu...",
+        "duration": 1195
+      }
+    },
+    {
+      "uuid": "7fdd034d-c08c-4726-9d56-4bb9dbcf371d",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "E5aGyiTCxDA",
+      "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+      "title": "The Logistics of German Reunification",
+      "folder": "downloads/completed/The Logistics of German Reunification",
+      "date": 1719451153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/E5aGyiTCxDA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmZYGKQVCkPlfuFLSjba1_Ngb-kw",
+        "description": "Get Exclusive NordVPN deal + 4 months extra here → https://nordvpn.com/wendover It’s risk-free with Nord’s 30-day money-back guarantee!\n\nYoutube: http://www.YouTube.com/WendoverProductions...",
+        "duration": 1275
+      }
+    },
+    {
+      "uuid": "81cd4ace-457a-45ae-ab5d-bf04ba983dd1",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "OK804tfnPEg",
+      "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+      "title": "The Six-Country Fight Over These Tiny, Terrible Islands",
+      "folder": "downloads/completed/The Six-Country Fight Over These Tiny Terrible Islands",
+      "date": 1719451153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/OK804tfnPEg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAaZGcdW-TeAwOjP9_H6JS_lcAfFw",
+        "description": "Sign up for Nebula for 40% off at http://nebula.tv/wendover\n\nInstagram: http://Instagram.com/sam.from.wendover\nTwitter: http://www.Twitter.com/WendoverPro\nSponsorship Enquiries: wendover@standard.t...",
+        "duration": 1388
+      }
+    },
+    {
+      "uuid": "0be5f29f-19a5-4206-9222-b5972f58a74c",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "XK8hpxR_r2Y",
+      "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+      "title": "How Private Equity Consumed America",
+      "folder": "downloads/completed/How Private Equity Consumed America",
+      "date": 1719451153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/XK8hpxR_r2Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAHCLikYtpS8kaF-Pa2BunINJ570A",
+        "description": "To try everything Brilliant has to offer for free for a full 30 days, visit http://brilliant.org/wendover\nYou’ll also get 20% off an annual premium subscription.\n\nYoutube: http://www.YouTube.com/...",
+        "duration": 1344
+      }
+    },
+    {
+      "uuid": "129495de-4690-4c03-94df-7dd7e2aea91f",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "PJLWlmp8CDM",
+      "channelId": "UClcE-kVhqyiHCcjYwcpfj9w",
+      "title": "Finding The .webp Vulnerability in 8s (Fuzzing with AFL++)",
+      "folder": "downloads/completed/Finding The .webp Vulnerability in 8s Fuzzing with AFL++",
+      "date": 1719451153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/PJLWlmp8CDM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBX5j-hlWoSWbWhhso26Q2BkRpsg",
+        "description": "A guide on how to do fuzzing with AFL++ in an attempt to rediscover the libwebp vulnerability CVE-2023-4863 that was used to hack iPhones.\n\nWant to learn hacking? Signup to https://hextree.io...",
+        "duration": 1451
+      }
+    },
+    {
+      "uuid": "484f5e73-9612-4560-87dc-969fab7db9c2",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "lAyhKaclsPM",
+      "channelId": "UClcE-kVhqyiHCcjYwcpfj9w",
+      "title": "A Vulnerability to Hack The World - CVE-2023-4863",
+      "folder": "downloads/completed/A Vulnerability to Hack The World - CVE-2023-4863",
+      "date": 1719451153,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/lAyhKaclsPM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAyRlcKxdj7sjiiBozFU-n2y8CoHQ",
+        "description": "Citizenlab discovered BLASTPASS, a 0day being actively exploited in the image format WebP. Known as CVE-2023-4863 and CVE-2023-41064, an issue in webp's build huffman table function can lead...",
+        "duration": 1080
+      }
+    },
+    {
+      "uuid": "111cbc82-1b39-4379-a85b-deef73c0ffc9",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "6gchoHrsCp4",
+      "channelId": "UC67gfx2Fg7K2NSHqoENVgwA",
+      "title": "Building a Turbine Car",
+      "folder": "downloads/completed/Building a Turbine Car",
+      "date": 1719451154,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/6gchoHrsCp4/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAKLX79p5l35acVQ5RYAj5hTdW6Fw",
+        "description": "You can try Onshape professional version for free at https://Onshape.Pro/TomStanton\n\nGet tickets for OpenSauce now: https://opensauce.com/\n\nEnjoy my videos? These are made possible due to help...",
+        "duration": 843
+      }
+    },
+    {
+      "uuid": "176170ff-1396-4b3d-9b97-94e8f280c156",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "eoVUdwOgjiA",
+      "channelId": "UC67gfx2Fg7K2NSHqoENVgwA",
+      "title": "This Car Travels Farther Than You Push It",
+      "folder": "downloads/completed/This Car Travels Farther Than You Push It",
+      "date": 1719451154,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/eoVUdwOgjiA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4UuP-WauVKnE-LUmfP07a1l0iPw",
+        "description": "Get 50% off your first month of KiwiCo with code TOMSTANTON at https://kiwico.com/tomstanton\n\nGet Started in Onshape for Free at: https://Onshape.pro/TomStanton\n\nLasersaber's EZ Spin motor:...",
+        "duration": 822
+      }
+    },
+    {
+      "uuid": "c7f7ae65-ebe5-41db-bb37-974c2dbc4237",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "zEahoJZgfys",
+      "channelId": "UC67gfx2Fg7K2NSHqoENVgwA",
+      "title": "Super Capacitor Plane",
+      "folder": "downloads/completed/Super Capacitor Plane",
+      "date": 1719451154,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/zEahoJZgfys/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCD2eoGA55B2BbfW_dwPYQ5iVssw",
+        "description": "Keep exploring at https://brilliant.org/TomStanton/ . Get started for free, the first 200 people get 20% off an annual premium subscription!\n\nGet Started in Onshape for Free at: https://Onshape.pro...",
+        "duration": 824
+      }
+    },
+    {
+      "uuid": "eeeb4bc8-8a5c-4d71-adba-d5f2abc6fb9b",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "Ho2l1K4Jprg",
+      "channelId": "UC67gfx2Fg7K2NSHqoENVgwA",
+      "title": "Flying a Plane Powered by AIR",
+      "folder": "downloads/completed/Flying a Plane Powered by AIR",
+      "date": 1719451154,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/Ho2l1K4Jprg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMJZBurM-_LYb2NgdyI6i_-5Lrag",
+        "description": "💻 Thanks to Opera for sponsoring this video! Get a browser that’s literally better at everything, download Opera today: https://opr.as/Opera-browser-TomStanton\n\nGet Started in Onshape...",
+        "duration": 1003
+      }
+    },
+    {
+      "uuid": "e276d448-54c6-49f3-88f8-cb87e4734e2d",
+      "status": "downloaded",
+      "log": "Complete",
+      "automationEnabled": true,
+      "videoId": "wyulG9NFw7U",
+      "channelId": "UCZYvU-ZWbgl1rJv0trRk_fA",
+      "title": "Building a CNC Mill/Router - Part 2",
+      "folder": "downloads/completed/Building a CNC MillRouter - Part 2",
+      "date": 1719451154,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/wyulG9NFw7U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCmUCoJ4H5oIhWEAefD8LwzZsb8aA",
+        "description": "Filling my new CNC mill/router with sand and epoxy resin to create epoxy granite, which will increase it's weight and vibration damping!\n\nCNC Part 1: https://youtu.be/t7yjEYOrYFo\n\nOld CNC router...",
+        "duration": 540
+      }
+    },
+    {
+      "uuid": "1842bb26-b6eb-415b-9862-fc2c6e8df5e8",
+      "status": "queued",
+      "log": "Queued for download",
+      "automationEnabled": true,
+      "videoId": "ral8t-sGyqM",
+      "channelId": "UCJ0-OtVpF0wOKEqT2Z1HEtA",
+      "title": "How Many ERRORS Can You Fit in a Video?!",
+      "folder": "N/A",
+      "date": 1719451155,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/ral8t-sGyqM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCThSsFA8SRJxnOuy7td1dUoWpU8Q",
+        "description": "Try everything Brilliant has to offer for free for a full 30 days visiting https://brilliant.org/electroboom. You’ll also get 20% off an annual premium subscription.\n\nMy Merch: https://electroboo...",
+        "duration": 1240
+      }
+    },
+    {
+      "uuid": "964ffb2e-4a21-48db-b947-48d751512491",
+      "status": "queued",
+      "log": "Queued for download",
+      "automationEnabled": true,
+      "videoId": "UzqkdNO5c70",
+      "channelId": "UCJ0-OtVpF0wOKEqT2Z1HEtA",
+      "title": "Repairing Faulty Ground Fault Failure",
+      "folder": "N/A",
+      "date": 1719451155,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/UzqkdNO5c70/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUEltsv6T3LXrqGZsbjfEJ9laUXw",
+        "description": "Try everything Brilliant has to offer for free for a full 30 days visiting https://brilliant.org/electroboom. You’ll also get 20% off an annual premium subscription.\nAlso Always test your...",
+        "duration": 977
+      }
+    },
+    {
+      "uuid": "45271c02-e814-4979-bd7a-f147d5d902e1",
+      "status": "queued",
+      "log": "Queued for download",
+      "automationEnabled": true,
+      "videoId": "t9rClZrbnrQ",
+      "channelId": "UCj1VqrHhDte54oLgPG4xpuQ",
+      "title": "Precision guided launcher turns noobs into pros",
+      "folder": "N/A",
+      "date": 1719451155,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/t9rClZrbnrQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCG3FGrer8GoFsiGhgGRjFatfIZjg",
+        "description": "Check out https://brilliant.org/StuffMadeHere/ for a free 30-day trial and 20% off your annual premium subscription!\nBe sure to subscribe to catch part 2 where I'll be adding computer controlled...",
+        "duration": 1543
+      }
+    },
+    {
+      "uuid": "1e6d7d54-e7a0-4d87-9b61-01c2324d7423",
+      "status": "queued",
+      "log": "Queued for download",
+      "automationEnabled": true,
+      "videoId": "9SRFbFreCkE",
+      "channelId": "UCj1VqrHhDte54oLgPG4xpuQ",
+      "title": "I made these to do a ridiculously high dunk",
+      "folder": "N/A",
+      "date": 1719451155,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/9SRFbFreCkE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBrJci1kasvHcrLWqj4bSHSOL1KJg",
+        "description": "Head to https://brilliant.org/StuffMadeHere/ to start your free 30-day trial, and the first 200 people get 20% off an annual premium subscription!\nSupport these projects on Patreon, private...",
+        "duration": 1287
+      }
+    },
+    {
+      "uuid": "5f69bd49-a988-4cb6-bc30-a346baae8565",
+      "status": "queued",
+      "log": "Queued for manual download",
+      "automationEnabled": false,
+      "videoId": "qjfaoe847qQ",
+      "channelId": "UC6nSFpj9HTCZ5t-N3Rm3-HA",
+      "title": "What Is Consciousness?",
+      "folder": "N/A",
+      "date": 1719460861,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/qjfaoe847qQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ3zRG11bfzkMYTG7sA_6jVewqNg",
+        "description": "LEANBACK IS HERE: http://www.youtube.com/watch?v=JoR0bMohcNo&list=PLE3048008DAA29B0A&feature=plpp_play_all\n\nMusic courtesy of Jake Chudnow: http://www.soundcloud.com/jakechudnow\n\nTWITTER: @tweetsauce\nFACEBOOK: http://www.Facebook.com/VsauceGaming\n\nLearn more:\n\nCleverbot: http://cleverbot.com/\n\nWikipedia on Consciousness: http://en.wikipedia.org/wiki/Consciousness\n\nPhilosophical ZOMBIES: http://plato.stanford.edu/entries/zombies/\n\nNAMI on Anosognosia: http://www.nami.org/Content/NavigationMenu/Mental_Illnesses/Schizophrenia9/Anosognosia_Fact_Sheet.htm\n\nInformation is Beautiful on Consciousness Theories: http://www.informationisbeautiful.net/play/what-is-consciousness/\n\nGoogle Books: Awarenes of Deficit After Brain Injury\": http://books.google.com/books?id=xze89PCLaWMC&lpg=PP1&pg=PA53#v=onepage&q&f=false\n\n\"What is consciousness\" conscious \"what is identity\" identity vsauce \"Michael Stevens\" brain neuroscience \"other minds\"",
+        "duration": 435
+      }
+    },
+    {
+      "uuid": "cd33e64b-2b96-4f91-acae-369c5d59aa09",
+      "status": "queued",
+      "log": "Queued for download",
+      "automationEnabled": true,
+      "videoId": "zyUqg2FBO-I",
+      "channelId": "UCXuqSBlHAE6Xw-yeJA0Tunw",
+      "title": "I Bought a $5000 PC in a Random Asian Tech Mall",
+      "folder": "N/A",
+      "date": 1719461180,
+      "metadata": {
+        "thumbnail": "https://i.ytimg.com/vi/zyUqg2FBO-I/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBuHgG67n1Fl_kM0i3qyKqK7tr38w",
+        "description": "Treat your feet with Vessi! Save 15% on your first order at http://vessi.com/LinusTechTips\n\nCheck out the Corsair K65 Plus Wireless Keyboard at: https://lmg.gg/corsairk65plus\n\nWould you wander...",
+        "duration": 1332
+      }
+    }
+  ]
 }
