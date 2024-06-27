@@ -304,22 +304,31 @@ window.loadChannels = async () => {
   const tbodyElement = document.createElement("tbody");
 
   const channels = await fetchChannels();
+  const downloads = await fetchDownloads();
 
   tableElement.replaceChildren();
   tableElement.appendChild(theadElement);
   tableElement.appendChild(tbodyElement);
 
   theadElement.replaceChildren(
-    createTableRow("th", [
-      "",
-      "Channel",
-      "Download Buffer Count",
-      "Maximum Duration",
-      "Actions",
-    ])
+    createTableRow("th", ["", "Channel", "Actions"])
   );
 
-  for (const channel of channels.items) {
+  const channelItemsSorted = channels.items.sort((a, b) => {
+    if (a.downloadCount > 0 && b.downloadCount > 0) {
+      return 0;
+    }
+
+    if (a.downloadCount === 0) {
+      return 1;
+    }
+
+    if (b.downloadCount === 0) {
+      return -1;
+    }
+  });
+
+  for (const channel of channelItemsSorted) {
     // ThumbTD Element
     const thumbTdElement = document.createElement("td");
     if (channel.metadata.thumbnail) {
@@ -334,6 +343,48 @@ window.loadChannels = async () => {
     // Channel TD Element
     const channelTdElement = document.createElement("td");
     if (channel.name && channel.id) {
+      const metric = {
+        count: 0,
+        automationEnabled: 0,
+        downloaded: 0,
+        downloading: 0,
+        failed: 0,
+        queued: 0,
+        removed: 0,
+      };
+
+      for (const download of downloads.items) {
+        if (download.channelId !== channel.id) {
+          continue;
+        }
+
+        metric.count++;
+
+        if (download.automationEnabled) {
+          metric.automationEnabled++;
+        }
+
+        if (download.status === "downloaded") {
+          metric.downloaded++;
+        }
+
+        if (download.status === "failed") {
+          metric.failed++;
+        }
+
+        if (download.status === "downloading") {
+          metric.downloading++;
+        }
+
+        if (download.status === "queued") {
+          metric.queued++;
+        }
+
+        if (download.status === "removed") {
+          metric.removed++;
+        }
+      }
+
       const channelNameElement = document.createElement("span");
       channelNameElement.className = "fw-medium";
       channelNameElement.innerText = channel.name;
@@ -342,9 +393,16 @@ window.loadChannels = async () => {
       channelIdElement.className = "text-muted";
       channelIdElement.innerText = channel.id;
 
+      const infoRow = document.createElement("small");
+      infoRow.style = "display: block; font-size: 12px; margin-top: 15px";
+      infoRow.className = "text-muted tex-sm";
+      infoRow.innerText = `Downloads: ${metric.count} • Downloaded: ${metric.downloaded} • Downloading: ${metric.downloading} • Failed: ${metric.failed} • Queued: ${metric.queued} • Removed: ${metric.removed}`;
+
       channelTdElement.appendChild(channelNameElement);
       channelTdElement.appendChild(document.createElement("br"));
       channelTdElement.appendChild(channelIdElement);
+      channelTdElement.appendChild(document.createElement("br"));
+      channelTdElement.appendChild(infoRow);
     }
 
     // Actions
@@ -382,8 +440,6 @@ window.loadChannels = async () => {
     const row = createTableRow("td", [
       thumbTdElement,
       channelTdElement,
-      channel.downloadCount,
-      channel.maximumDuration,
       actionsTdElement,
     ]);
 

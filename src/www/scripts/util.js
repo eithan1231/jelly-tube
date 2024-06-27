@@ -10,7 +10,12 @@ window.createTableRow = (type, values) => {
       if (Array.isArray(value)) {
         value.map((x) => colElem.appendChild(x));
       } else {
-        colElem.appendChild(value);
+        if (value.tagName === "TD") {
+          rowElem.appendChild(value);
+          continue;
+        } else {
+          colElem.appendChild(value);
+        }
       }
     }
 
