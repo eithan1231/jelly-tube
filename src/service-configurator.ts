@@ -2,18 +2,18 @@ import express from "express";
 import {
   ConfigChannelItemSchemaType,
   ConfigDownloadItemSchemaType,
-  addChannel,
-  addDownload,
-  getChannels,
-  getDownloads,
-  removeChannels,
-  updateChannels,
-  updateDownloads,
+  addConfigChannel,
+  addConfigDownload,
+  getConfigChannels,
+  getConfigDownloads,
+  removeConfigChannels,
+  updateConfigChannels,
+  updateConfigDownloads,
 } from "./config";
 import { handleRemoval } from "./service-core";
 import { randomUUID } from "crypto";
 import { unixTimestamp } from "./util";
-import { getSearch, getVideo, getVideoBasicInfo } from "./youtube";
+import { getChannelInfo, getSearch, getVideo } from "./youtube";
 import { YTNodes } from "youtubei.js";
 
 const buildDownloadsFilter = (
@@ -70,7 +70,7 @@ export const setupConfigurator = async () => {
   server.get("/downloads", async (req, res) => {
     console.log(`[express] GET (/downloads)`);
 
-    const downloads = await getDownloads(buildDownloadsFilter(req.query));
+    const downloads = await getConfigDownloads(buildDownloadsFilter(req.query));
 
     res.json({
       items: downloads,
@@ -91,7 +91,9 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    const downloads = await getDownloads(buildDownloadsFilter({ videoId }));
+    const downloads = await getConfigDownloads(
+      buildDownloadsFilter({ videoId })
+    );
 
     if (downloads.length >= 1) {
       res.json({
@@ -121,15 +123,18 @@ export const setupConfigurator = async () => {
       metadata: {},
     };
 
-    const videoBasicInfo = await getVideoBasicInfo(videoId);
+    const videoInfo = await getVideo(videoId);
 
-    payload.channelId = videoBasicInfo.channel_id ?? "";
-    payload.title = videoBasicInfo.title ?? "";
-    payload.metadata.description = videoBasicInfo.short_description;
-    payload.metadata.duration = videoBasicInfo.duration;
+    payload.channelId = videoInfo.basic_info.channel_id ?? "";
+    payload.title = videoInfo.basic_info.title ?? "";
+    payload.metadata.description = videoInfo.basic_info.short_description;
+    payload.metadata.duration = videoInfo.basic_info.duration;
 
-    if (videoBasicInfo.thumbnail && videoBasicInfo.thumbnail.length >= 1) {
-      payload.metadata.thumbnail = videoBasicInfo.thumbnail[0].url;
+    if (
+      videoInfo.basic_info.thumbnail &&
+      videoInfo.basic_info.thumbnail.length >= 1
+    ) {
+      payload.metadata.thumbnail = videoInfo.basic_info.thumbnail[0].url;
     }
 
     if (!payload.channelId) {
@@ -141,25 +146,40 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    const channels = await getChannels({
+    const configChannels = await getConfigChannels({
       id: payload.channelId,
     });
 
     if (
-      channels.length === 0 &&
-      videoBasicInfo.channel?.id &&
-      videoBasicInfo.channel?.name
+      configChannels.length === 0 &&
+      videoInfo.basic_info.channel?.id &&
+      videoInfo.basic_info.channel?.name
     ) {
-      await addChannel({
+      const youtubeChannel = await getChannelInfo(
+        videoInfo.basic_info.channel.id
+      );
+      let thumbnail = undefined;
+
+      if (
+        youtubeChannel.metadata.thumbnail &&
+        youtubeChannel.metadata.thumbnail[0].url
+      ) {
+        thumbnail = youtubeChannel.metadata.thumbnail[0].url;
+      }
+
+      await addConfigChannel({
         downloadCount: 0,
         maximumDuration: 30,
-        id: videoBasicInfo.channel.id,
-        name: videoBasicInfo.channel.name,
+        id: videoInfo.basic_info.channel.id,
+        name: videoInfo.basic_info.channel.name,
+        metadata: {
+          thumbnail,
+        },
       });
     }
 
     try {
-      await addDownload(payload);
+      await addConfigDownload(payload);
 
       res.json({
         success: true,
@@ -182,7 +202,7 @@ export const setupConfigurator = async () => {
   server.delete("/downloads", async (req, res) => {
     console.log(`[express] DELETE (/downloads)`);
 
-    const downloads = await getDownloads(buildDownloadsFilter(req.query));
+    const downloads = await getConfigDownloads(buildDownloadsFilter(req.query));
 
     let errors = [];
 
@@ -240,7 +260,7 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    await updateDownloads(buildDownloadsFilter(req.query), req.body);
+    await updateConfigDownloads(buildDownloadsFilter(req.query), req.body);
 
     res.json({
       success: true,
@@ -251,7 +271,7 @@ export const setupConfigurator = async () => {
   server.get("/channels", async (req, res) => {
     console.log(`[express] GET (/channels)`);
 
-    const channels = await getChannels(buildChannelsFilter(req.query));
+    const channels = await getConfigChannels(buildChannelsFilter(req.query));
 
     res.json({
       items: channels,
@@ -261,7 +281,7 @@ export const setupConfigurator = async () => {
   server.post("/channels", async (req, res) => {
     console.log(`[express] POST (/channels)`);
 
-    const existingChannels = await getChannels({
+    const existingChannels = await getConfigChannels({
       id: req.body["id"],
     });
 
@@ -278,7 +298,7 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    await addChannel(req.body);
+    await addConfigChannel(req.body);
 
     res.json({
       success: true,
@@ -289,7 +309,9 @@ export const setupConfigurator = async () => {
   server.delete("/channels", async (req, res) => {
     console.log(`[express] DELETE (/channels)`);
 
-    const existingChannels = await getChannels(buildChannelsFilter(req.query));
+    const existingChannels = await getConfigChannels(
+      buildChannelsFilter(req.query)
+    );
 
     if (existingChannels.length > 1) {
       res.json({
@@ -304,7 +326,7 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    await removeChannels(buildChannelsFilter(req.query));
+    await removeConfigChannels(buildChannelsFilter(req.query));
 
     res.json({
       success: true,
@@ -315,7 +337,7 @@ export const setupConfigurator = async () => {
   server.patch("/channels", async (req, res) => {
     console.log(`[express] PATCH (/channels)`);
 
-    if (typeof req.body["id"] !== "undefined") {
+    if (typeof req.body["id"] !== "string") {
       res.json({
         success: false,
         errors: [
@@ -328,7 +350,7 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    await updateChannels(buildChannelsFilter(req.query), req.body);
+    await updateConfigChannels(buildChannelsFilter(req.query), req.body);
 
     res.json({
       success: true,

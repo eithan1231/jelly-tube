@@ -1,17 +1,19 @@
 import {
   downloadAudio,
   downloadVideo,
+  getChannelInfo,
   getChannelVideos,
   getVideoBasicInfo,
 } from "./youtube";
 import {
   ConfigDownloadItemSchemaType,
-  addDownload,
-  getChannel,
-  getChannels,
-  getDownload,
-  getDownloads,
-  updateDownloads,
+  addConfigDownload,
+  getConfigChannel,
+  getConfigChannels,
+  getConfigDownload,
+  getConfigDownloads,
+  updateConfigChannels,
+  updateConfigDownloads,
 } from "./config";
 import { mkdir, rename, rm, writeFile } from "fs/promises";
 import path from "path";
@@ -29,7 +31,7 @@ export type ServiceCoreGenericResult = {
 export const handleDownload = async (uuid: string) => {
   console.log(`[handleDownload] ${uuid}`);
 
-  const download = await getDownload({ uuid });
+  const download = await getConfigDownload({ uuid });
 
   if (!download) {
     console.log(`[handleDownload] ${uuid} cannot find uuid`);
@@ -41,7 +43,7 @@ export const handleDownload = async (uuid: string) => {
     `[handleDownload] ${uuid}, meta ${download.videoId} Title: "${download.title}"`
   );
 
-  await updateDownloads(
+  await updateConfigDownloads(
     { uuid },
     {
       log: "Downloading Video and Audio",
@@ -51,7 +53,7 @@ export const handleDownload = async (uuid: string) => {
 
   try {
     const [channel, resultVideo, resultAudio] = await Promise.all([
-      await getChannel({ id: download.channelId }),
+      await getConfigChannel({ id: download.channelId }),
       await downloadVideo(download.videoId),
       await downloadAudio(download.videoId),
     ]);
@@ -65,7 +67,7 @@ export const handleDownload = async (uuid: string) => {
         `[handleDownload] ${download.videoId} Unable to download, exceeds maximum duration`
       );
 
-      await updateDownloads(
+      await updateConfigDownloads(
         { uuid },
         {
           status: "failed",
@@ -80,7 +82,7 @@ export const handleDownload = async (uuid: string) => {
       `[handleDownload] ${download.videoId} Downloaded audio and video`
     );
 
-    await updateDownloads(
+    await updateConfigDownloads(
       { uuid },
       {
         channelId: resultAudio.video.basic_info.channel_id ?? "N/A",
@@ -137,7 +139,7 @@ export const handleDownload = async (uuid: string) => {
       path.join(process.cwd(), processingVideoOutputFile)
     );
 
-    await updateDownloads(
+    await updateConfigDownloads(
       { uuid },
       { log: "Copying to destination directory" }
     );
@@ -164,7 +166,7 @@ export const handleDownload = async (uuid: string) => {
       `[handleDownload] ${download.videoId} Removed processing folder.`
     );
 
-    await updateDownloads(
+    await updateConfigDownloads(
       { uuid },
       {
         log: "Complete",
@@ -185,7 +187,7 @@ export const handleDownload = async (uuid: string) => {
       }
     }
 
-    await updateDownloads(
+    await updateConfigDownloads(
       { uuid },
       {
         log: message,
@@ -204,7 +206,7 @@ export const handleRemoval = async (
 
   const result: ServiceCoreGenericResult = { errors: [] };
 
-  const downloads = await getDownloads({
+  const downloads = await getConfigDownloads({
     uuid,
   });
 
@@ -225,7 +227,7 @@ export const handleRemoval = async (
       await rm(download.folder, { recursive: true });
     }
 
-    await updateDownloads(
+    await updateConfigDownloads(
       { uuid: download.uuid },
       {
         status: "removed",
@@ -245,7 +247,7 @@ export const handleRemoval = async (
 export const routineChannelsCrawl = async () => {
   console.log(`[routineChannelsCrawl] Initiated`);
 
-  const channels = await getChannels();
+  const channels = await getConfigChannels();
   for (const channel of channels) {
     console.log(
       `[routineChannelsCrawl] Processing channel ${channel.name} (${channel.id}), with a non-preserved download limit of ${channel.downloadCount}`
@@ -263,7 +265,7 @@ export const routineChannelsCrawl = async () => {
 
     const targetDownloadVideos = channelVideos.slice(0, channel.downloadCount);
 
-    const channelDownloads = await getDownloads({
+    const channelDownloads = await getConfigDownloads({
       channelId: channel.id,
     });
 
@@ -288,7 +290,7 @@ export const routineChannelsCrawl = async () => {
     }
 
     for (const video of targetDownloadVideos) {
-      const download = await getDownload({
+      const download = await getConfigDownload({
         videoId: video.id,
       });
 
@@ -324,7 +326,7 @@ export const routineChannelsCrawl = async () => {
         downloadItem.log = `Video is upcoming ${video.upcoming.toISOString()}`;
       }
 
-      await addDownload(downloadItem);
+      await addConfigDownload(downloadItem);
     }
   }
 
@@ -334,7 +336,7 @@ export const routineChannelsCrawl = async () => {
 export const routineDownloadQueue = async () => {
   console.log(`[routineDownloadQueue] Started`);
 
-  const downloadsQueued = await getDownloads({
+  const downloadsQueued = await getConfigDownloads({
     status: "queued",
   });
 
@@ -366,7 +368,7 @@ export const routineDownloadQueue = async () => {
 export const routineDownloadThumbnailRefresh = async () => {
   console.log(`[routineDownloadThumbnailRefresh] Started`);
 
-  const downloads = await getDownloads();
+  const downloads = await getConfigDownloads();
 
   for (const download of downloads) {
     if (!download.metadata.thumbnail) {
@@ -399,7 +401,7 @@ export const routineDownloadThumbnailRefresh = async () => {
       )}... to ${thumbnail.substring(0, 64)}...`
     );
 
-    await updateDownloads(
+    await updateConfigDownloads(
       { uuid: download.uuid },
       {
         metadata: {
@@ -415,4 +417,65 @@ export const routineDownloadThumbnailRefresh = async () => {
   }
 
   console.log(`[routineDownloadThumbnailRefresh] Finished`);
+};
+
+export const routineChannelThumbnailRefresh = async () => {
+  console.log(`[routineChannelThumbnailRefresh] Started`);
+
+  const channels = await getConfigChannels();
+
+  for (const channel of channels) {
+    if (!channel.metadata.thumbnail) {
+      continue;
+    }
+
+    const response = await fetch(channel.metadata.thumbnail);
+    if (response.status !== 404) {
+      continue;
+    }
+
+    console.log(
+      `[routineChannelThumbnailRefresh] Thumbnail ${channel.id} is invalid`
+    );
+
+    const channelInfo = await getChannelInfo(channel.id);
+
+    if (
+      !channelInfo.metadata.thumbnail ||
+      !channelInfo.metadata.thumbnail[0].url
+    ) {
+      console.log(
+        `[routineChannelThumbnailRefresh] Thumbnail ${channel.id} failed to find best thumb`
+      );
+
+      continue;
+    }
+
+    const thumbnail = channelInfo.metadata.thumbnail[0].url;
+
+    console.log(
+      `[routineChannelThumbnailRefresh] Thumbnail ${
+        channel.id
+      } Updating... ${channel.metadata.thumbnail.substring(
+        0,
+        64
+      )}... to ${thumbnail.substring(0, 64)}...`
+    );
+
+    await updateConfigChannels(
+      { id: channel.id },
+      {
+        metadata: {
+          ...channel.metadata,
+          thumbnail,
+        },
+      }
+    );
+
+    console.log(
+      `[routineChannelThumbnailRefresh] Thumbnail ${channel.id} updated successfully`
+    );
+  }
+
+  console.log(`[routineChannelThumbnailRefresh] Finished`);
 };

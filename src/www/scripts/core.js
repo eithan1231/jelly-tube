@@ -66,8 +66,14 @@ window.createDownloads = async (payload) => {
   return response.json();
 };
 
-window.fetchChannels = async (channelId = undefined) => {
-  const response = await fetch("./channels");
+window.fetchChannels = async (channelId) => {
+  let url = "./channels?";
+
+  if (channelId) {
+    url += `id=${channelId}&`;
+  }
+
+  const response = await fetch(url);
 
   return response.json();
 };
@@ -75,6 +81,18 @@ window.fetchChannels = async (channelId = undefined) => {
 window.createChannels = async (channel) => {
   const response = await fetch("./channels", {
     method: "POST",
+    body: JSON.stringify(channel),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  return response.json();
+};
+
+window.patchChannels = async (channelId, channel) => {
+  const response = await fetch(`./channels?id=${channelId}`, {
+    method: "PATCH",
     body: JSON.stringify(channel),
     headers: {
       "Content-Type": "application/json",
@@ -293,8 +311,8 @@ window.loadChannels = async () => {
 
   theadElement.replaceChildren(
     createTableRow("th", [
-      "Name",
-      "Channel Id",
+      "",
+      "Channel",
       "Download Buffer Count",
       "Maximum Duration",
       "Actions",
@@ -302,31 +320,74 @@ window.loadChannels = async () => {
   );
 
   for (const channel of channels.items) {
-    const deleteButton = document.createElement("button");
-    deleteButton.className = "btn btn-danger";
-    deleteButton.textContent = "Delete";
-    console.log(channel.id);
+    // ThumbTD Element
+    const thumbTdElement = document.createElement("td");
+    if (channel.metadata.thumbnail) {
+      const videoImageElement = document.createElement("img");
+      videoImageElement.style = "height: 5em";
+      videoImageElement.className = "border rounded rounded-3";
+      videoImageElement.src = channel.metadata.thumbnail;
 
-    deleteButton.onclick = async () => {
-      console.log(channel);
-      const result = await window.deleteChannels(channel.id);
+      thumbTdElement.appendChild(videoImageElement);
+    }
 
-      console.log(result);
+    // Channel TD Element
+    const channelTdElement = document.createElement("td");
+    if (channel.name && channel.id) {
+      const channelNameElement = document.createElement("span");
+      channelNameElement.className = "fw-medium";
+      channelNameElement.innerText = channel.name;
 
-      if (!result.success) {
-        alert(result.errors.map((error) => error.message).join("\n"));
-      }
+      const channelIdElement = document.createElement("small");
+      channelIdElement.className = "text-muted";
+      channelIdElement.innerText = channel.id;
 
-      await window.loadChannels();
-    };
+      channelTdElement.appendChild(channelNameElement);
+      channelTdElement.appendChild(document.createElement("br"));
+      channelTdElement.appendChild(channelIdElement);
+    }
+
+    // Actions
+    const actionsTdElement = document.createElement("td");
+    if (channel.id) {
+      const buttonGroup = document.createElement("div");
+      buttonGroup.className = "btn-group btn-group-sm";
+
+      const editButton = document.createElement("a");
+      editButton.className = "btn btn-primary";
+      editButton.textContent = "Edit";
+      editButton.href = `edit-channel.html?channelId=${channel.id}`;
+
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "btn btn-danger";
+      deleteButton.textContent = "Delete";
+      deleteButton.onclick = async () => {
+        console.log(channel);
+        const result = await window.deleteChannels(channel.id);
+
+        console.log(result);
+
+        if (!result.success) {
+          alert(result.errors.map((error) => error.message).join("\n"));
+        }
+
+        await window.loadChannels();
+      };
+
+      buttonGroup.appendChild(editButton);
+      buttonGroup.appendChild(deleteButton);
+      actionsTdElement.appendChild(buttonGroup);
+    }
 
     const row = createTableRow("td", [
-      channel.name,
-      channel.id,
+      thumbTdElement,
+      channelTdElement,
       channel.downloadCount,
       channel.maximumDuration,
-      deleteButton,
+      actionsTdElement,
     ]);
+
+    row.id = `item_${channel.id}`;
 
     tbodyElement.appendChild(row);
   }
@@ -428,7 +489,7 @@ window.populateSearchTableVideos = (videos) => {
       thumbTdElement.appendChild(videoIdLinkElement);
     }
 
-    // Channel TD Element
+    // Video TD Element
     const videoTdElement = document.createElement("td");
     if (video.channelName) {
       const videoTitleElement = document.createElement("span");

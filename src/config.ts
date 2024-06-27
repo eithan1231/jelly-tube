@@ -9,6 +9,9 @@ const ConfigChannelItemSchema = z.object({
   name: z.string().min(1),
   downloadCount: z.number(),
   maximumDuration: z.number(),
+  metadata: z.object({
+    thumbnail: z.string().optional(),
+  }),
 });
 
 export type ConfigChannelItemSchemaType = z.infer<
@@ -73,7 +76,7 @@ export const saveConfig = async (): Promise<void> => {
   await writeFile(CONFIG_FILENAME, JSON.stringify(config, null, 2), "utf-8");
 };
 
-export const addDownload = async (item: ConfigDownloadItemSchemaType) => {
+export const addConfigDownload = async (item: ConfigDownloadItemSchemaType) => {
   const config = await getConfig();
 
   const download = await ConfigDownloadItemSchema.parseAsync(item);
@@ -83,7 +86,7 @@ export const addDownload = async (item: ConfigDownloadItemSchemaType) => {
   await saveConfig();
 };
 
-export const removeDownloads = async (
+export const removeConfigDownloads = async (
   filter: Partial<ConfigDownloadItemSchemaType>
 ) => {
   const config = await getConfig();
@@ -103,11 +106,11 @@ export const removeDownloads = async (
   });
 };
 
-export const updateDownloads = async (
+export const updateConfigDownloads = async (
   filter: Partial<ConfigDownloadItemSchemaType>,
   update: Partial<ConfigDownloadItemSchemaType>
 ) => {
-  const downloads = await getDownloads(filter);
+  const downloads = await getConfigDownloads(filter);
 
   for (const download of downloads) {
     const updateKeys = Object.keys(update) as Array<
@@ -122,7 +125,7 @@ export const updateDownloads = async (
   await saveConfig();
 };
 
-export const getDownloads = async (
+export const getConfigDownloads = async (
   filter: Partial<ConfigDownloadItemSchemaType> = {}
 ) => {
   const config = await getConfig();
@@ -145,10 +148,10 @@ export const getDownloads = async (
   });
 };
 
-export const getDownload = async (
+export const getConfigDownload = async (
   filter: Partial<ConfigDownloadItemSchemaType>
 ) => {
-  const downloads = await getDownloads(filter);
+  const downloads = await getConfigDownloads(filter);
 
   if (downloads.length >= 1) {
     return downloads[0];
@@ -157,7 +160,7 @@ export const getDownload = async (
   return null;
 };
 
-export const addChannel = async (item: ConfigChannelItemSchemaType) => {
+export const addConfigChannel = async (item: ConfigChannelItemSchemaType) => {
   const config = await getConfig();
 
   const channel = await ConfigChannelItemSchema.parseAsync(item);
@@ -167,7 +170,7 @@ export const addChannel = async (item: ConfigChannelItemSchemaType) => {
   await saveConfig();
 };
 
-export const removeChannels = async (
+export const removeConfigChannels = async (
   filter: Partial<ConfigChannelItemSchemaType>
 ) => {
   const config = await getConfig();
@@ -189,11 +192,11 @@ export const removeChannels = async (
   await saveConfig();
 };
 
-export const updateChannels = async (
+export const updateConfigChannels = async (
   filter: Partial<ConfigChannelItemSchemaType>,
   update: Partial<ConfigChannelItemSchemaType>
 ) => {
-  const channels = await getChannels(filter);
+  const channels = await getConfigChannels(filter);
 
   for (const channel of channels) {
     const updateKeys = Object.keys(update) as Array<
@@ -208,7 +211,7 @@ export const updateChannels = async (
   await saveConfig();
 };
 
-export const getChannels = async (
+export const getConfigChannels = async (
   filter: Partial<ConfigChannelItemSchemaType> = {}
 ) => {
   const config = await getConfig();
@@ -231,10 +234,10 @@ export const getChannels = async (
   });
 };
 
-export const getChannel = async (
+export const getConfigChannel = async (
   filter: Partial<ConfigChannelItemSchemaType> = {}
 ) => {
-  const channels = await getChannels(filter);
+  const channels = await getConfigChannels(filter);
 
   if (channels.length >= 1) {
     return channels[0];

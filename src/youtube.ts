@@ -90,17 +90,9 @@ export const downloadAudio = async (id: string) => {
 export const getVideo = async (id: string) => {
   const client = await getClient();
 
-  const result = await client.search(id);
+  const result = await client.getBasicInfo(id);
 
-  for (const video of result.videos) {
-    if (video.is(YTNodes.Video)) {
-      if (video.id === id) {
-        return video;
-      }
-    }
-  }
-
-  return null;
+  return result;
 };
 
 export const getVideoBasicInfo = async (id: string) => {
@@ -109,6 +101,14 @@ export const getVideoBasicInfo = async (id: string) => {
   const result = await client.getBasicInfo(id);
 
   return result.basic_info;
+};
+
+export const getChannelInfo = async (id: string) => {
+  const client = await getClient();
+
+  const result = await client.getChannel(id);
+
+  return result;
 };
 
 export const getSearch = async (query: string) => {
