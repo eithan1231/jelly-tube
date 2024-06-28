@@ -28,6 +28,20 @@
         <a href="search.html">Search</a>
       </div>
       <div>
+        <form method="get" class="row pt-4 pb-3">
+          <div class="col-2">
+            <select id="input-filter-status" name="status" class="form-select form-select-sm" aria-label="Default select example">
+              <option value="">Ignore</option>
+            </select>
+
+            <input id="input-filter-channel-id" type="hidden" name="channelId" value="">
+          </div>
+
+          <div class="col-2">
+            <button type="submit" class="btn btn-sm btn-light col">Apply Filter</button>
+            <a href="?" class="btn btn-sm btn-light col">Clear Filter</a>
+          </div>
+        </form>
         <table id="downloads" class="table"></table>
       </div>
     </div>
@@ -35,6 +49,27 @@
 
   <script>
     (() => {
+      const params = new URLSearchParams(window.location.search);
+
+      const channelId = params.get('channelId');
+      if(channelId) {
+        document.getElementById('input-filter-channel-id').value = channelId
+      }
+
+      const statusOptions = ['queued', 'downloading', 'downloaded', 'failed', 'removed'];
+      
+      const filterStatusElement = document.getElementById('input-filter-status');
+      for(const statusOption of statusOptions) {
+        const elem = document.createElement('option');
+        elem.innerText = statusOption;
+        elem.value = statusOption;
+
+        elem.selected = params.get('status') === statusOption;
+
+        filterStatusElement.appendChild(elem);
+      }
+
+
       window.loadDownloads();
     })();
   </script>

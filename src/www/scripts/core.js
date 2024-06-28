@@ -10,12 +10,9 @@ window.fetchSearch = async (search) => {
   return response.json();
 };
 
-window.fetchDownloads = async (channelId = undefined) => {
-  let url = "./downloads?";
-
-  if (channelId) {
-    url += `channelId=${channelId}&`;
-  }
+window.fetchDownloads = async (options = {}) => {
+  const params = new URLSearchParams(options);
+  let url = `downloads?${params.toString()}`;
 
   const response = await fetch(url);
 
@@ -121,7 +118,19 @@ window.loadDownloads = async () => {
   const theadElement = document.createElement("thead");
   const tbodyElement = document.createElement("tbody");
 
-  const downloads = await fetchDownloads();
+  const downloadsFilter = {};
+
+  const params = new URLSearchParams(window.location.search);
+
+  if(params.get('channelId')) {
+    downloadsFilter.channelId = params.get('channelId');
+  }
+
+  if(params.get('status')) {
+    downloadsFilter.status = params.get('status');
+  }
+
+  const downloads = await window.fetchDownloads(downloadsFilter);
   const channels = await fetchChannels();
 
   tableElement.replaceChildren();
@@ -385,20 +394,48 @@ window.loadChannels = async () => {
         }
       }
 
-      const channelNameElement = document.createElement("span");
-      channelNameElement.className = "fw-medium";
-      channelNameElement.innerText = channel.name;
+      const channelNameLinkElement = document.createElement('a');
+      channelNameLinkElement.className = "fw-medium text-dark text-decoration-none"
+      channelNameLinkElement.href = `downloads.html?channelId=${channel.id}`;
+      channelNameLinkElement.innerText = channel.name
 
-      const channelIdElement = document.createElement("small");
-      channelIdElement.className = "text-muted";
+      const channelIdElement = document.createElement("a");
+      channelIdElement.style = "font-size: 14px;";
+      channelIdElement.className = "text-muted text-decoration-none";
       channelIdElement.innerText = channel.id;
+      channelIdElement.href = `https://youtube.com/channel/${channel.id}`
 
-      const infoRow = document.createElement("small");
+      const infoSections = [];
+
+      infoSections.push(`Download Count Target: ${channel.downloadCount}`);
+      infoSections.push(`Max Duration: ${channel.maximumDuration}min`);
+
+      if(metric.downloaded) {
+        infoSections.push(`Downloaded: ${metric.downloaded}`);
+      }
+
+      if(metric.downloading) {
+        infoSections.push(`Downloading: ${metric.downloading}`);
+      }
+
+      if(metric.failed) {
+        infoSections.push(`Failed: ${metric.failed}`);
+      }
+
+      if(metric.queued) {
+        infoSections.push(`Queued: ${metric.queued}`);
+      }
+
+      if(metric.removed) {
+        infoSections.push(`Removed: ${metric.removed}`);
+      }
+
+      const infoRow = document.createElement("span");
       infoRow.style = "display: block; font-size: 12px; margin-top: 15px";
       infoRow.className = "text-muted tex-sm";
-      infoRow.innerText = `Downloads: ${metric.count} • Downloaded: ${metric.downloaded} • Downloading: ${metric.downloading} • Failed: ${metric.failed} • Queued: ${metric.queued} • Removed: ${metric.removed}`;
+      infoRow.innerText =infoSections.join(' • ');// `Downloads: ${metric.count} • Downloaded: ${metric.downloaded} • Downloading: ${metric.downloading} • Failed: ${metric.failed} • Queued: ${metric.queued} • Removed: ${metric.removed}`;
 
-      channelTdElement.appendChild(channelNameElement);
+      channelTdElement.appendChild(channelNameLinkElement);
       channelTdElement.appendChild(document.createElement("br"));
       channelTdElement.appendChild(channelIdElement);
       channelTdElement.appendChild(document.createElement("br"));
@@ -592,6 +629,9 @@ window.populateSearchTableVideos = (videos) => {
 };
 
 window.loadSearch = async (query) => {
+  document.getElementById('input-submit').disabled = true;
+  document.getElementById('input-search').disabled = true;
+
   const searchResults = await window.fetchSearch(query);
 
   populateSearchTableChannels(
@@ -601,4 +641,7 @@ window.loadSearch = async (query) => {
   populateSearchTableVideos(
     searchResults.items.filter((item) => item.type === "video")
   );
+
+  document.getElementById('input-submit').disabled = false;
+  document.getElementById('input-search').disabled = false;
 };

@@ -33,6 +33,20 @@ const buildDownloadsFilter = (
     filter.channelId = query["channelId"];
   }
 
+  if (typeof query["status"] === "string") {
+    filter.status = query["status"] as any;
+  }
+
+  if (typeof query["title"] === "string") {
+    filter.title = query["title"] as any;
+  }
+
+  if (typeof query["automationEnabled"] === "string") {
+    filter.automationEnabled = ["true", "yes", "1"].includes(
+      query["automationEnabled"].toLowerCase()
+    );
+  }
+
   return filter;
 };
 
@@ -298,7 +312,31 @@ export const setupConfigurator = async () => {
       return;
     }
 
-    await addConfigChannel(req.body);
+    const payload: ConfigChannelItemSchemaType = {
+      id: req.body["id"],
+      name: req.body["name"] ?? "",
+      downloadCount: req.body["downloadCount"] ?? 0,
+      maximumDuration: req.body["maximumDuration"] ?? 0,
+      metadata: {
+        ...req.body["metadata"],
+      },
+    };
+
+    const youtubeChannel = await getChannelInfo(payload.id);
+
+    if (!payload.name) {
+      payload.name = youtubeChannel.title ?? "";
+    }
+
+    if (
+      !payload.metadata.thumbnail &&
+      youtubeChannel.metadata.thumbnail &&
+      youtubeChannel.metadata.thumbnail.length >= 1
+    ) {
+      payload.metadata.thumbnail = youtubeChannel.metadata.thumbnail[0].url;
+    }
+
+    await addConfigChannel(payload);
 
     res.json({
       success: true,
