@@ -90,6 +90,8 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
+
+        <a id="view-downloads-link">View Downloads</a>
       </form>
     </div>
   </body>
@@ -112,6 +114,10 @@
       }
 
       const channel = channels.items[0];
+
+      document.getElementById(
+        "view-downloads-link"
+      ).href = `downloads.html?channelId=${channelId}`;
 
       document.getElementById("input-channel-id").value = channel.id;
       document.getElementById("input-channel-name").value = channel.name;

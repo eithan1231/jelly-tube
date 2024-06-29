@@ -113,6 +113,66 @@ window.deleteChannels = async (id) => {
   return response.json();
 };
 
+window.calculateChannelMetrics = async (channelId, downloadItems = null) => {
+  let items = downloadItems;
+
+  if (!items) {
+    const result = window.fetchDownloads({ channelId });
+
+    if (result.items) {
+      items = result.items;
+    }
+
+    if (!items) {
+      throw new Error("Failed to fetch downloads");
+    }
+  }
+
+  const metric = {
+    count: 0,
+    automationEnabled: 0,
+    downloaded: 0,
+    downloading: 0,
+    failed: 0,
+    queued: 0,
+    removed: 0,
+  };
+
+  for (const download of items) {
+    if (download.channelId !== channelId) {
+      continue;
+    }
+
+    metric.count++;
+
+    if (download.automationEnabled) {
+      metric.automationEnabled++;
+    }
+
+    if (download.status === "downloaded") {
+      metric.downloaded++;
+    }
+
+    if (download.status === "failed") {
+      metric.failed++;
+    }
+
+    if (download.status === "downloading") {
+      metric.downloading++;
+    }
+
+    if (download.status === "queued") {
+      metric.queued++;
+    }
+
+    if (download.status === "removed") {
+      metric.removed++;
+    }
+  }
+
+  return metric;
+};
+
 window.loadDownloads = async () => {
   const tableElement = document.getElementById("downloads");
   const theadElement = document.createElement("thead");
@@ -122,12 +182,12 @@ window.loadDownloads = async () => {
 
   const params = new URLSearchParams(window.location.search);
 
-  if(params.get('channelId')) {
-    downloadsFilter.channelId = params.get('channelId');
+  if (params.get("channelId")) {
+    downloadsFilter.channelId = params.get("channelId");
   }
 
-  if(params.get('status')) {
-    downloadsFilter.status = params.get('status');
+  if (params.get("status")) {
+    downloadsFilter.status = params.get("status");
   }
 
   const downloads = await window.fetchDownloads(downloadsFilter);
@@ -195,9 +255,11 @@ window.loadDownloads = async () => {
       videoTitleElement.className = "fw-medium";
       videoTitleElement.innerText = download.title;
 
-      const videoIdElement = document.createElement("small");
-      videoIdElement.className = "text-muted";
+      const videoIdElement = document.createElement("a");
+      videoIdElement.style = "font-size: 14px;";
+      videoIdElement.className = "text-muted text-decoration-none";
       videoIdElement.innerText = download.videoId;
+      videoIdElement.href = `https://youtube.com/watch?v=${download.videoId}`;
 
       tdVideoElement.appendChild(videoTitleElement);
       tdVideoElement.appendChild(document.createElement("br"));
@@ -207,15 +269,18 @@ window.loadDownloads = async () => {
     // Channel TD Element
     const channelTdElement = document.createElement("td");
     if (download.channelId) {
-      const channelNameElement = document.createElement("span");
-      channelNameElement.className = "fw-medium";
+      const channelNameElement = document.createElement("a");
+      channelNameElement.className = "fw-medium text-dark text-decoration-none";
+      channelNameElement.href = `edit-channel.html?channelId=${download.channelId}`;
       channelNameElement.innerText =
         channels.items.find((channel) => channel.id === download.channelId)
           ?.name ?? "";
 
-      const channelIdElement = document.createElement("small");
-      channelIdElement.className = "text-muted";
+      const channelIdElement = document.createElement("a");
+      channelIdElement.style = "font-size: 14px;";
+      channelIdElement.className = "text-muted text-decoration-none";
       channelIdElement.innerText = download.channelId;
+      channelIdElement.href = `https://youtube.com/channel/${download.channelId}`;
 
       channelTdElement.appendChild(channelNameElement);
       channelTdElement.appendChild(document.createElement("br"));
@@ -323,6 +388,8 @@ window.loadChannels = async () => {
     createTableRow("th", ["", "Channel", "Actions"])
   );
 
+  theadElement.childNodes[0].childNodes[0].style = "width: 78px";
+
   const channelItemsSorted = channels.items.sort((a, b) => {
     if (a.downloadCount > 0 && b.downloadCount > 0) {
       return 0;
@@ -338,6 +405,13 @@ window.loadChannels = async () => {
   });
 
   for (const channel of channelItemsSorted) {
+    const channelMetrics = await window.calculateChannelMetrics(
+      channel.id,
+      downloads.items
+    );
+
+    console.log(channelMetrics);
+
     // ThumbTD Element
     const thumbTdElement = document.createElement("td");
     if (channel.metadata.thumbnail) {
@@ -352,88 +426,47 @@ window.loadChannels = async () => {
     // Channel TD Element
     const channelTdElement = document.createElement("td");
     if (channel.name && channel.id) {
-      const metric = {
-        count: 0,
-        automationEnabled: 0,
-        downloaded: 0,
-        downloading: 0,
-        failed: 0,
-        queued: 0,
-        removed: 0,
-      };
-
-      for (const download of downloads.items) {
-        if (download.channelId !== channel.id) {
-          continue;
-        }
-
-        metric.count++;
-
-        if (download.automationEnabled) {
-          metric.automationEnabled++;
-        }
-
-        if (download.status === "downloaded") {
-          metric.downloaded++;
-        }
-
-        if (download.status === "failed") {
-          metric.failed++;
-        }
-
-        if (download.status === "downloading") {
-          metric.downloading++;
-        }
-
-        if (download.status === "queued") {
-          metric.queued++;
-        }
-
-        if (download.status === "removed") {
-          metric.removed++;
-        }
-      }
-
-      const channelNameLinkElement = document.createElement('a');
-      channelNameLinkElement.className = "fw-medium text-dark text-decoration-none"
+      const channelNameLinkElement = document.createElement("a");
+      channelNameLinkElement.className =
+        "fw-medium text-dark text-decoration-none";
       channelNameLinkElement.href = `downloads.html?channelId=${channel.id}`;
-      channelNameLinkElement.innerText = channel.name
+      channelNameLinkElement.innerText = channel.name;
 
       const channelIdElement = document.createElement("a");
       channelIdElement.style = "font-size: 14px;";
       channelIdElement.className = "text-muted text-decoration-none";
       channelIdElement.innerText = channel.id;
-      channelIdElement.href = `https://youtube.com/channel/${channel.id}`
+      channelIdElement.href = `https://youtube.com/channel/${channel.id}`;
 
       const infoSections = [];
 
       infoSections.push(`Download Count Target: ${channel.downloadCount}`);
       infoSections.push(`Max Duration: ${channel.maximumDuration}min`);
 
-      if(metric.downloaded) {
-        infoSections.push(`Downloaded: ${metric.downloaded}`);
+      if (channelMetrics.downloaded) {
+        infoSections.push(`Downloaded: ${channelMetrics.downloaded}`);
       }
 
-      if(metric.downloading) {
-        infoSections.push(`Downloading: ${metric.downloading}`);
+      if (channelMetrics.downloading) {
+        infoSections.push(`Downloading: ${channelMetrics.downloading}`);
       }
 
-      if(metric.failed) {
-        infoSections.push(`Failed: ${metric.failed}`);
+      if (channelMetrics.failed) {
+        infoSections.push(`Failed: ${channelMetrics.failed}`);
       }
 
-      if(metric.queued) {
-        infoSections.push(`Queued: ${metric.queued}`);
+      if (channelMetrics.queued) {
+        infoSections.push(`Queued: ${channelMetrics.queued}`);
       }
 
-      if(metric.removed) {
-        infoSections.push(`Removed: ${metric.removed}`);
+      if (channelMetrics.removed) {
+        infoSections.push(`Removed: ${channelMetrics.removed}`);
       }
 
       const infoRow = document.createElement("span");
       infoRow.style = "display: block; font-size: 12px; margin-top: 15px";
       infoRow.className = "text-muted tex-sm";
-      infoRow.innerText =infoSections.join(' • ');// `Downloads: ${metric.count} • Downloaded: ${metric.downloaded} • Downloading: ${metric.downloading} • Failed: ${metric.failed} • Queued: ${metric.queued} • Removed: ${metric.removed}`;
+      infoRow.innerText = infoSections.join(" • ");
 
       channelTdElement.appendChild(channelNameLinkElement);
       channelTdElement.appendChild(document.createElement("br"));
@@ -629,8 +662,8 @@ window.populateSearchTableVideos = (videos) => {
 };
 
 window.loadSearch = async (query) => {
-  document.getElementById('input-submit').disabled = true;
-  document.getElementById('input-search').disabled = true;
+  document.getElementById("input-submit").disabled = true;
+  document.getElementById("input-search").disabled = true;
 
   const searchResults = await window.fetchSearch(query);
 
@@ -642,6 +675,6 @@ window.loadSearch = async (query) => {
     searchResults.items.filter((item) => item.type === "video")
   );
 
-  document.getElementById('input-submit').disabled = false;
-  document.getElementById('input-search').disabled = false;
+  document.getElementById("input-submit").disabled = false;
+  document.getElementById("input-search").disabled = false;
 };
