@@ -1,6 +1,5 @@
 import z from "zod";
 import { readFile, writeFile } from "fs/promises";
-import { randomUUID } from "crypto";
 
 const CONFIG_FILENAME = "./config/watching.json" as const;
 
@@ -46,6 +45,8 @@ export type ConfigDownloadItemSchemaType = z.infer<
 >;
 
 export const ConfigSchema = z.object({
+  ffmpegTimeout: z.number().default(60 * 30),
+
   channels: z.array(ConfigChannelItemSchema),
 
   downloads: z.array(ConfigDownloadItemSchema),
@@ -74,6 +75,20 @@ export const saveConfig = async (): Promise<void> => {
   await ConfigSchema.parseAsync(config);
 
   await writeFile(CONFIG_FILENAME, JSON.stringify(config, null, 2), "utf-8");
+};
+
+export const getFfmpegTimeout = async () => {
+  const config = await getConfig();
+
+  return config.ffmpegTimeout;
+};
+
+export const setFfmpegTimeout = async (duration: number) => {
+  const config = await getConfig();
+
+  config.ffmpegTimeout = duration;
+
+  await saveConfig();
 };
 
 export const addConfigDownload = async (item: ConfigDownloadItemSchemaType) => {

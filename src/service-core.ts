@@ -136,12 +136,19 @@ export const handleDownload = async (uuid: string) => {
       `[handleDownload] ${download.videoId} Copied source and NFO files to processing directory`
     );
 
-    await processFfmpeg(
-      download.videoId,
-      path.join(process.cwd(), processingVideoOriginalFile),
-      path.join(process.cwd(), processingAudioOriginalFile),
-      path.join(process.cwd(), processingVideoOutputFile)
-    );
+    try {
+      await processFfmpeg(
+        download.videoId,
+        path.join(process.cwd(), processingVideoOriginalFile),
+        path.join(process.cwd(), processingAudioOriginalFile),
+        path.join(process.cwd(), processingVideoOutputFile)
+      );
+    } catch (err) {
+      await rm(processingFolder, { recursive: true });
+      await rm(destinationFolder, { recursive: true });
+
+      throw err;
+    }
 
     await updateConfigDownloads(
       { uuid },
