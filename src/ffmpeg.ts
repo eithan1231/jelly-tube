@@ -1,6 +1,6 @@
 import ffmpeg from "fluent-ffmpeg";
 import { unixTimestamp } from "./util";
-import { getFfmpegTimeout } from "./config";
+import { getFfmpegTimeout, updateConfigDownloads } from "./config";
 
 type FfmpegEventProgress = {
   frames: number;
@@ -15,19 +15,15 @@ export const processFfmpeg = (
   id: string,
   originalVideo: string,
   originalAudio: string,
-  outputFile: string
+  outputFile: string,
+  onLogMessage?: (message: string) => void | undefined
 ) => {
   return new Promise(async (resolve, reject) => {
     const ffmpegTimeoutDuration = await getFfmpegTimeout();
-
     console.log(`[processFfmpeg] Timeout duration ${ffmpegTimeoutDuration}`);
 
-    let timeout = setTimeout(() => {
-      command.kill("SIGKILL");
-    }, ffmpegTimeoutDuration * 1000);
-
-    let lastProgressTime = 0;
-    const progressTimeDelay = 5;
+    let standardErrorOutput: string[] = [];
+    let timeout: NodeJS.Timeout;
 
     const command = ffmpeg()
       .addInput(originalVideo)
@@ -39,23 +35,29 @@ export const processFfmpeg = (
 
         resolve(null);
       })
-      .once("error", (err) => {
+      .once("error", (err, stdout, stderr) => {
         clearTimeout(timeout);
 
         reject(err);
       })
-      .on("stderr", (line) => console.error(line))
-      .on("progress", (progress: FfmpegEventProgress) => {
-        if (lastProgressTime + progressTimeDelay >= unixTimestamp()) {
-          return;
+      .on("stderr", (line) => {
+        standardErrorOutput.push(line);
+      })
+      .on("progress", async (progress: FfmpegEventProgress) => {
+        if (onLogMessage) {
+          onLogMessage(`Processing at ${progress.percent.toFixed(2)}%`);
         }
-
-        console.log(
-          `[processFfmpeg] ${id} - event 'progress', percent ${progress.percent}%, frames: ${progress.frames}, timemark: ${progress.timemark}`
-        );
-
-        lastProgressTime = unixTimestamp();
       })
       .save(outputFile);
+
+    timeout = setTimeout(() => {
+      console.log(
+        `[processFfmpeg] Reached timeout, sending kill signal to process`
+      );
+
+      console.log(standardErrorOutput.join("\n"));
+
+      command.kill("SIGKILL");
+    }, ffmpegTimeoutDuration * 1000);
   });
 };

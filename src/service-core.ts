@@ -141,7 +141,15 @@ export const handleDownload = async (uuid: string) => {
         download.videoId,
         path.join(process.cwd(), processingVideoOriginalFile),
         path.join(process.cwd(), processingAudioOriginalFile),
-        path.join(process.cwd(), processingVideoOutputFile)
+        path.join(process.cwd(), processingVideoOutputFile),
+        (message) => {
+          updateConfigDownloads(
+            { uuid },
+            {
+              log: message,
+            }
+          );
+        }
       );
     } catch (err) {
       await rm(processingFolder, { recursive: true });
@@ -347,6 +355,34 @@ export const routineChannelsCrawl = async () => {
   }
 
   console.log(`[routineChannelsCrawl] Finished`);
+};
+
+export const routineStartupCleanup = async () => {
+  console.log(`[routineStartupCleanup] Started`);
+
+  const downloadsDownloading = await getConfigDownloads({
+    status: "downloading",
+  });
+
+  console.log(
+    `[routineStartupCleanup] Updating ${downloadsDownloading.length} downloads with a status of "downloading" to "queued"`
+  );
+
+  for (const download of downloadsDownloading) {
+    await updateConfigDownloads(
+      { uuid: download.uuid },
+      {
+        status: "queued",
+        log: "Reset to queued by startup routine",
+      }
+    );
+
+    console.log(
+      `[routineStartupCleanup] Requeued ${download.videoId}, ${download.title}`
+    );
+  }
+
+  console.log(`[routineStartupCleanup] Finished`);
 };
 
 export const routineDownloadQueue = async () => {

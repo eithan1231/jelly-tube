@@ -3,11 +3,14 @@ import {
   routineChannelsCrawl,
   routineDownloadQueue,
   routineDownloadThumbnailRefresh,
+  routineStartupCleanup,
 } from "./service-core";
 import { sleep, unixTimestamp } from "./util";
 import { setupConfigurator } from "./service-configurator";
 
 const main = async () => {
+  await routineStartupCleanup();
+
   await setupConfigurator();
 
   const runtimeLoop = !process.argv.includes("--disable-loop");
